@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algoritmica deeploans — Campaign Report · May 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #0a192f 0%, #112240 65%, #1b3a5c 100%);
+    color: #fff;
+    padding: 36px 48px 30px;
+    border-bottom: 4px solid #00b4d8;
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: #fff;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: #90e0ef;
+    margin-top: 5px;
+  }
+  .header-right {
+    text-align: right;
+  }
+  .header-right .period {
+    font-size: 20px;
+    font-weight: 800;
+    color: #00b4d8;
+  }
+  .header-right .period-sub {
+    font-size: 11px;
+    color: #90e0ef;
+    margin-top: 4px;
+  }
+  .header-meta {
+    max-width: 960px;
+    margin: 18px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header-meta span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    color: #caf0f8;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #0a192f;
+    border-bottom: 2px solid #00b4d8;
+    padding-bottom: 7px;
+    margin-bottom: 18px;
+  }
+
+  /* ── EXEC BOX ── */
+  .exec-box {
+    background: #fff;
+    border-left: 5px solid #00b4d8;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .exec-box .etitle {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00b4d8;
+    margin-bottom: 10px;
+  }
+  .exec-box p {
+    font-size: 13.5px;
+    color: #334;
+    line-height: 1.75;
+  }
+
+  /* ── STAT CARDS ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+  }
+  .stat-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 16px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 3px solid #00b4d8;
+  }
+  .stat-card.green  { border-top-color: #06d6a0; }
+  .stat-card.amber  { border-top-color: #f4a261; }
+  .stat-card.indigo { border-top-color: #6366f1; }
+  .stat-card.teal   { border-top-color: #14b8a6; }
+  .stat-card .num {
+    font-size: 32px;
+    font-weight: 900;
+    color: #0a192f;
+    line-height: 1;
+  }
+  .stat-card .slabel {
+    font-size: 11px;
+    color: #667;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+  }
+  .stat-card .ssub {
+    font-size: 11px;
+    color: #06d6a0;
+    margin-top: 5px;
+    font-weight: 600;
+  }
+
+  /* ── WEEK CARDS ── */
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .week-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .week-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid #00b4d8;
+  }
+  .week-card.green  { border-left-color: #06d6a0; }
+  .week-card.amber  { border-left-color: #f4a261; }
+  .week-card.indigo { border-left-color: #6366f1; }
+  .week-card .wnum  {
+    font-size: 30px;
+    font-weight: 900;
+    color: #0a192f;
+    line-height: 1;
+  }
+  .week-card .wlabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: #334;
+    margin-top: 6px;
+  }
+  .week-card .wdesc {
+    font-size: 12px;
+    color: #778;
+    margin-top: 6px;
+    line-height: 1.55;
+  }
+
+  /* ── TABLES ── */
+  .table-wrap {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 12px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #0a192f; }
+  thead th {
+    padding: 11px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #caf0f8;
+    white-space: nowrap;
+  }
+  thead th.r { text-align: right; }
+  tbody tr { border-bottom: 1px solid #edf0f5; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #f8fafc; }
+  tbody td {
+    padding: 11px 16px;
+    font-size: 13px;
+    color: #334;
+    vertical-align: middle;
+  }
+  tbody td.r {
+    text-align: right;
+    font-weight: 600;
+    color: #1a1a2e;
+    font-size: 13px;
+  }
+  tbody td.muted { color: #888; }
+  .tfoot tr { background: #eef4fb; }
+  .tfoot td {
+    padding: 11px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0a192f;
+    border-top: 2px solid #d4e4f4;
+  }
+  .tfoot td.r {
+    text-align: right;
+    font-weight: 700;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .prog {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;
+  }
+  .prog-track {
+    flex: 1;
+    max-width: 72px;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .prog-fill {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #00b4d8, #0096c7);
+  }
+  .prog-fill.green { background: linear-gradient(90deg, #06d6a0, #059669); }
+  .prog-pct {
+    font-size: 12px;
+    font-weight: 700;
+    color: #334;
+    white-space: nowrap;
+  }
+
+  /* ── PILLS ── */
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .pill.green  { background: #d1fae5; color: #065f46; }
+  .pill.blue   { background: #dbeafe; color: #1e40af; }
+  .pill.amber  { background: #fef3c7; color: #92400e; }
+  .pill.red    { background: #fee2e2; color: #991b1b; }
+  .pill.gray   { background: #f3f4f6; color: #6b7280; }
+  .pill.orange { background: #ffedd5; color: #9a3412; }
+
+  /* ── PROSPECT CARDS ── */
+  .prospect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .prospect-grid { grid-template-columns: 1fr; }
+  }
+  .prospect-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid #06d6a0;
+  }
+  .prospect-card.hot {
+    border-left-color: #f59e0b;
+    background: #fffcf0;
+  }
+  .prospect-card .pname {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0a192f;
+  }
+  .prospect-card .prole {
+    font-size: 12px;
+    color: #667;
+    margin-top: 3px;
+  }
+  .prospect-card .pnote {
+    font-size: 12px;
+    color: #445;
+    margin-top: 9px;
+    line-height: 1.6;
+  }
+  .prospect-card .ptag { margin-top: 10px; }
+
+  /* ── KPI GRID ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 600px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .kpi-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 18px 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .kpi-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #889;
+    font-weight: 600;
+  }
+  .kpi-val {
+    font-size: 26px;
+    font-weight: 900;
+    color: #0a192f;
+    margin-top: 4px;
+    line-height: 1;
+  }
+  .kpi-note {
+    font-size: 11px;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .kpi-note.good  { color: #059669; }
+  .kpi-note.warn  { color: #d97706; }
+  .kpi-note.info  { color: #6366f1; }
+
+  /* ── INSIGHT CARDS ── */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .insight-grid { grid-template-columns: 1fr; }
+  }
+  .insight-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-top: 3px solid #06d6a0;
+  }
+  .insight-card.watch { border-top-color: #f59e0b; }
+  .insight-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0a192f;
+    margin-bottom: 7px;
+  }
+  .insight-card p {
+    font-size: 12px;
+    color: #556;
+    line-height: 1.6;
+  }
+
+  /* ── NEXT STEPS ── */
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 720px) {
+    .next-grid { grid-template-columns: 1fr; }
+  }
+  .next-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .next-card .icon { font-size: 20px; margin-bottom: 8px; }
+  .next-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0a192f;
+    margin-bottom: 7px;
+  }
+  .next-card p {
+    font-size: 12px;
+    color: #556;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 16px;
+    background: #00b4d8;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    transition: background 0.15s;
+  }
+  .cta-btn:hover { background: #0096c7; }
+  .cta-btn.ghost {
+    background: transparent;
+    border: 1.5px solid #00b4d8;
+    color: #00b4d8;
+  }
+  .cta-btn.ghost:hover { background: #e8f8fd; }
+
+  /* ── MISC ── */
+  .note {
+    font-size: 11.5px;
+    color: #889;
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .persona-label {
+    font-size: 11px;
+    color: #778;
+    margin-top: 1px;
+  }
+
+  .footer {
+    text-align: center;
+    color: #aab;
+    font-size: 11px;
+    padding-top: 24px;
+    border-top: 1px solid #dde;
+    margin-top: 8px;
+    line-height: 1.8;
+  }
+  .footer strong { color: #667; }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <h1>deeploans — Outreach Campaign Report</h1>
+      <div class="subtitle">Algoritmica · LinkedIn &amp; Email · Foundation Project</div>
+    </div>
+    <div class="header-right">
+      <div class="period">March – May 2026</div>
+      <div class="period-sub">Report period: 2026-03-30 → 2026-05-08</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span>Client: Luca Borella · Algoritmica</span>
+    <span>Sender: Farhan Sakib (LinkedIn)</span>
+    <span>Prepared by: Prospect Engine</span>
+    <a href="https://barcelona.aitinkerers.org/p/structured-finance-hackathon-2026" target="_blank" style="text-decoration:none;"><span style="cursor:pointer;">🔗 Hackathon: June 10, Barcelona</span></a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ══ EXEC SUMMARY ══ -->
+  <div class="exec-box">
+    <div class="etitle">Campaign Overview</div>
+    <p>
+      The deeploans LinkedIn outreach campaign has been live for approximately six weeks across three audience segments — Data Engineers (Persona A), Credit Risk Analysts &amp; Quants (Persona B), and Heads of Data / AI / Innovation (Persona C). To date, <strong>889 connection requests</strong> have been sent to qualified prospects across the EU financial services space, with <strong>25 meaningful replies</strong> received and active conversations ongoing. The primary call-to-action throughout — the Structured Finance Hackathon 2026 — has generated direct interest from senior professionals, including a Group Head of Data Strategy at doValue who has requested a call with co-founder Luca.
+    </p>
+  </div>
+
+  <!-- ══ OVERALL NUMBERS ══ -->
+  <div class="section">
+    <div class="section-title">Overall Campaign — Key Numbers</div>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num">889</div>
+        <div class="slabel">LinkedIn Connections Requested</div>
+        <div class="ssub">From 3,151 qualified prospects</div>
+      </div>
+      <div class="stat-card green">
+        <div class="num">194</div>
+        <div class="slabel">Accepted &amp; In Sequence</div>
+        <div class="ssub">~22% acceptance rate</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="num">25</div>
+        <div class="slabel">Replies Received</div>
+        <div class="ssub">12.9% of acceptors</div>
+      </div>
+      <div class="stat-card indigo">
+        <div class="num">199</div>
+        <div class="slabel">Emails Sent</div>
+        <div class="ssub">490 loaded · Persona C queued</div>
+      </div>
+      <div class="stat-card teal">
+        <div class="num">402</div>
+        <div class="slabel">Follow-up Messages Delivered</div>
+        <div class="ssub">M2 · M3 · M4 across sequences</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ THIS WEEK ══ -->
+  <div class="section">
+    <div class="section-title">This Week's Activity (May 5 – 8, 2026)</div>
+    <div class="week-grid">
+      <div class="week-card">
+        <div class="wnum">54</div>
+        <div class="wlabel">New Connection Requests</div>
+        <div class="wdesc">Sent to qualified Persona B and C prospects. Campaign enters an accelerated invite phase this week.</div>
+      </div>
+      <div class="week-card green">
+        <div class="wnum">128</div>
+        <div class="wlabel">Follow-up Messages Delivered</div>
+        <div class="wdesc">Sequences progressed across all three personas — M2, M3, and M4 delivered to active contacts on schedule.</div>
+      </div>
+      <div class="week-card amber">
+        <div class="wnum">9</div>
+        <div class="wlabel">Personalized Replies Sent</div>
+        <div class="wdesc">Each engaged prospect received a custom reply tied to their role, company, and the Hackathon's hybrid format.</div>
+      </div>
+      <div class="week-card indigo">
+        <div class="wnum">25</div>
+        <div class="wlabel">Total Replies to Date</div>
+        <div class="wdesc">Conversations open across all three segments. Persona B leads with the highest reply rate.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LINKEDIN PIPELINE ══ -->
+  <div class="section">
+    <div class="section-title">LinkedIn Pipeline — Cumulative Status</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th class="r">Total Prospects</th>
+            <th class="r">Invited</th>
+            <th>Progress</th>
+            <th class="r">In Sequence</th>
+            <th class="r">M2</th>
+            <th class="r">M3</th>
+            <th class="r">M4</th>
+            <th class="r">Replies</th>
+            <th class="r">Reply Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Persona A</strong>
+              <div class="persona-label">Data Engineers</div>
+            </td>
+            <td class="r">999</td>
+            <td class="r">176</td>
+            <td>
+              <div class="prog">
+                <div class="prog-track"><div class="prog-fill" style="width:17.6%"></div></div>
+                <span class="prog-pct">17.6%</span>
+              </div>
+            </td>
+            <td class="r">66</td>
+            <td class="r">32</td>
+            <td class="r muted">—</td>
+            <td class="r muted">—</td>
+            <td class="r">6</td>
+            <td class="r"><span class="pill blue">0.6%</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Persona B</strong>
+              <div class="persona-label">Credit Risk &amp; Quants</div>
+            </td>
+            <td class="r">1,098</td>
+            <td class="r">189</td>
+            <td>
+              <div class="prog">
+                <div class="prog-track"><div class="prog-fill" style="width:17.2%"></div></div>
+                <span class="prog-pct">17.2%</span>
+              </div>
+            </td>
+            <td class="r">46</td>
+            <td class="r">33</td>
+            <td class="r">27</td>
+            <td class="r">16</td>
+            <td class="r">13</td>
+            <td class="r"><span class="pill green">1.2%</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Persona C</strong>
+              <div class="persona-label">Head of Data / AI</div>
+            </td>
+            <td class="r">1,054</td>
+            <td class="r">524</td>
+            <td>
+              <div class="prog">
+                <div class="prog-track"><div class="prog-fill green" style="width:49.7%"></div></div>
+                <span class="prog-pct">49.7%</span>
+              </div>
+            </td>
+            <td class="r">82</td>
+            <td class="r">80</td>
+            <td class="r">20</td>
+            <td class="r muted">—</td>
+            <td class="r">6</td>
+            <td class="r"><span class="pill blue">0.6%</span></td>
+          </tr>
+        </tbody>
+        <tfoot class="tfoot">
+          <tr>
+            <td><strong>Total LinkedIn</strong></td>
+            <td class="r">3,151</td>
+            <td class="r">889</td>
+            <td><strong>28.2%</strong></td>
+            <td class="r">194</td>
+            <td class="r">145</td>
+            <td class="r">47</td>
+            <td class="r">16</td>
+            <td class="r">25</td>
+            <td class="r"><span class="pill green">2.8%</span></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="note">Reply rate of 2.8% is calculated against total invited. Among those who accepted and entered the sequence, 12.9% have replied — a strong engagement signal at this stage of the campaign.</p>
+  </div>
+
+  <!-- ══ EMAIL PIPELINE ══ -->
+  <div class="section">
+    <div class="section-title">Email Outreach — Status</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th class="r">Loaded in Campaign</th>
+            <th class="r">Sent</th>
+            <th class="r">Remaining</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Email — Persona A</strong>
+              <div class="persona-label">Data Engineers · support@algoritmica.ai</div>
+            </td>
+            <td class="r">490</td>
+            <td class="r">199</td>
+            <td class="r">291</td>
+            <td><span class="pill orange">Paused</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Email — Persona C</strong>
+              <div class="persona-label">Head of Data / AI · support@algoritmica.ai</div>
+            </td>
+            <td class="r">227</td>
+            <td class="r muted">—</td>
+            <td class="r">227</td>
+            <td><span class="pill orange">Paused · Not yet sent</span></td>
+          </tr>
+        </tbody>
+        <tfoot class="tfoot">
+          <tr>
+            <td><strong>Total Email</strong></td>
+            <td class="r">717</td>
+            <td class="r">199</td>
+            <td class="r">518</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="note">Both email campaigns are currently paused. 199 of 490 Persona A emails have been delivered. Persona C (227 contacts) has not yet been sent. Sending will resume when campaigns are reactivated.</p>
+  </div>
+
+  <!-- ══ ENGAGED PROSPECTS ══ -->
+  <div class="section">
+    <div class="section-title">Active Conversations — Engaged Prospects</div>
+    <p style="font-size:13px; color:#556; margin-bottom:16px; line-height:1.7;">The following prospects have replied and are in active conversation. Each has been personally followed up this week with a message tailored to their role and the Structured Finance Hackathon.</p>
+    <div class="prospect-grid">
+
+      <div class="prospect-card hot">
+        <div class="pname">Luca Di Matteo</div>
+        <div class="prole">Group Head Data Strategy · doValue</div>
+        <div class="pnote">Asked specifically for Hackathon judge details and requested a call with co-founder Luca. doValue is a leading European credit servicer — a highly relevant strategic conversation.</div>
+        <div class="ptag"><span class="pill amber">Priority — Awaiting Luca's follow-up</span></div>
+      </div>
+
+      <div class="prospect-card hot">
+        <div class="pname">Raúl González Pinto</div>
+        <div class="prole">Head of Data · Renta 4 Banco</div>
+        <div class="pnote">Re-engaged after clarifying the Hackathon's hybrid format. Had initially assumed in-person only. Strong strategic fit. Awaiting response to judge invitation.</div>
+        <div class="ptag"><span class="pill amber">Warm · Follow-up sent</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Abraham Konan</div>
+        <div class="prole">Credit Risk Analyst · Natixis CIB</div>
+        <div class="pnote">Engaged on the EU AI Act compliance angle. CIB credit context makes deeploans directly relevant. Invited as a Hackathon judge.</div>
+        <div class="ptag"><span class="pill green">In conversation</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Arnaud Demes, CFA</div>
+        <div class="prole">AI Engineer · Amundi ETF</div>
+        <div class="pnote">AI and credit risk background at Europe's largest asset manager. Replied positively. Invited as builder or judge.</div>
+        <div class="ptag"><span class="pill green">In conversation</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Bidisa Biswas</div>
+        <div class="prole">Data Governance · SIGNAL IDUNA</div>
+        <div class="pnote">Engaged on audit trail and EU AI Act data governance requirements. deeploans' transformation logging is directly relevant to her role.</div>
+        <div class="ptag"><span class="pill green">In conversation</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Pablo Pérez Blach</div>
+        <div class="prole">IRB Data Scientist · Santander España</div>
+        <div class="pnote">Replied expressing interest but noted he was busy. Re-engaged with the virtual-first Hackathon format — no travel required.</div>
+        <div class="ptag"><span class="pill amber">Warm · Follow-up sent</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Venkat Sambandan</div>
+        <div class="prole">Senior Manager AI · Deloitte</div>
+        <div class="pnote">AI consulting background at a Big 4 firm. Relevant to deeploans positioning across financial institution clients. Invited as a Hackathon builder.</div>
+        <div class="ptag"><span class="pill green">In conversation</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Nicholas Marini</div>
+        <div class="prole">Lead Analytics Engineer · Vontobel</div>
+        <div class="pnote">Asset management scale — multi-source loan data problem maps directly to deeploans. Invited as a builder or potential judge.</div>
+        <div class="ptag"><span class="pill green">In conversation</span></div>
+      </div>
+
+      <div class="prospect-card">
+        <div class="pname">Rodrick-Aurell Zegang</div>
+        <div class="prole">Data Engineer · Bpifrance</div>
+        <div class="pnote">State-backed finance institution. Strong technical fit for deeploans. Invited as a builder for the Hackathon's virtual phase.</div>
+        <div class="ptag"><span class="pill green">In conversation</span></div>
+      </div>
+
+    </div>
+    <p class="note" style="margin-top:14px;">16 additional replies are in earlier stages of conversation. Total active conversations: 25. Sequences for opted-out contacts have been stopped and are not included here.</p>
+  </div>
+
+  <!-- ══ KPIs ══ -->
+  <div class="section">
+    <div class="section-title">Performance KPIs</div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Overall Reply Rate</div>
+        <div class="kpi-val">2.8%</div>
+        <div class="kpi-note good">✓ Above 2% target</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Acceptance → Reply Rate</div>
+        <div class="kpi-val">12.9%</div>
+        <div class="kpi-note good">✓ Strong engagement</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Persona B Reply Rate</div>
+        <div class="kpi-val">1.2%</div>
+        <div class="kpi-note warn">Approaching 2% target</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Persona C Invited</div>
+        <div class="kpi-val">49.7%</div>
+        <div class="kpi-note info">Of 1,054 total pool</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Remaining Invite Pool</div>
+        <div class="kpi-val">1,439</div>
+        <div class="kpi-note info">~6 weeks at current pace</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Active Conversations</div>
+        <div class="kpi-val">25</div>
+        <div class="kpi-note good">Across all personas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ INSIGHTS ══ -->
+  <div class="section">
+    <div class="section-title">Campaign Insights</div>
+    <div class="insight-grid">
+      <div class="insight-card">
+        <h4>EU AI Act Angle — Strong Hook for Persona B</h4>
+        <p>The compliance messaging (high-risk AI classification, audit trail for loan data) is generating the most engagement among credit risk and quant profiles. Persona B has the highest reply rate of any segment.</p>
+      </div>
+      <div class="insight-card">
+        <h4>Hybrid Format — Unlocks More Prospects</h4>
+        <p>Several prospects had gone quiet assuming the event was in-person only. Clarifying the virtual phase (May 27–June 9) has re-opened conversations and should be emphasised in all future messages.</p>
+      </div>
+      <div class="insight-card">
+        <h4>Judge Invitation Works for Persona C</h4>
+        <p>Senior professionals respond better to a judge invitation than a general attendee ask. The framing is credibility-affirming and generates more meaningful replies at the Head of Data / AI level.</p>
+      </div>
+      <div class="insight-card">
+        <h4>Accuracy Data Builds Instant Credibility</h4>
+        <p>The 16–24% accuracy improvement stat vs IRB models from 50+ European banks is consistently referenced in positive replies. Specific, testable, and memorable — continue leading with this in sequences.</p>
+      </div>
+      <div class="insight-card watch">
+        <h4>Persona C — Follow-up Pipeline Growing</h4>
+        <p>Persona C has the highest invite volume (524) but 0.6% reply rate. With 80 now on M2 and 20 on M3, the follow-up pipeline is maturing. The judge angle in M2 is the key lever to monitor.</p>
+      </div>
+      <div class="insight-card watch">
+        <h4>Email Campaigns Paused</h4>
+        <p>Both Persona A and Persona C email campaigns are currently paused. 199 of 490 Persona A emails have been delivered. Persona C has not yet been sent. Recommend reviewing and reactivating when ready.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ REMAINING POOL ══ -->
+  <div class="section">
+    <div class="section-title">Remaining Prospect Pool</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th class="r">Remaining to Invite</th>
+            <th>Daily Pace</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Persona B</strong> — Credit Risk Analysts</td>
+            <td class="r">909</td>
+            <td>25 / day</td>
+            <td>~early July 2026</td>
+          </tr>
+          <tr>
+            <td><strong>Persona C</strong> — Head of Data / AI</td>
+            <td class="r">530</td>
+            <td>25 / day</td>
+            <td>~mid June 2026</td>
+          </tr>
+          <tr>
+            <td><strong>Persona A</strong> — Data Engineers</td>
+            <td class="r">823</td>
+            <td>To be confirmed</td>
+            <td>Pending direction</td>
+          </tr>
+        </tbody>
+        <tfoot class="tfoot">
+          <tr>
+            <td><strong>Total Remaining</strong></td>
+            <td class="r"><strong>2,262</strong></td>
+            <td colspan="2">Healthy pipeline for the next 60 days</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="note">Persona A: the initial active extract has been fully invited. 823 additional Persona A contacts are available in the database. Please confirm whether to proceed with this group or prioritise depth in Persona B and C.</p>
+  </div>
+
+  <!-- ══ NEXT STEPS ══ -->
+  <div class="section">
+    <div class="section-title">Next Steps</div>
+    <div class="next-grid">
+      <div class="next-card">
+        <div class="icon">🔴</div>
+        <h4>Follow up with Luca Di Matteo — doValue</h4>
+        <p>He has requested a call with co-founder Luca and expressed interest in the judge role. This is the highest-value active lead in the campaign. Recommend reaching out directly this week.</p>
+      </div>
+      <div class="next-card">
+        <div class="icon">📣</div>
+        <h4>Add Hybrid Notice to Hackathon Page</h4>
+        <p>Multiple prospects re-engaged only after learning about the virtual phase (May 27–June 9). Making this prominent on the registration landing page will reduce drop-off from new invites.</p>
+        <a class="cta-btn ghost" href="https://barcelona.aitinkerers.org/p/structured-finance-hackathon-2026" target="_blank">View Registration Page →</a>
+      </div>
+      <div class="next-card">
+        <div class="icon">⚡</div>
+        <h4>Continue Accelerated LinkedIn Invite Phase</h4>
+        <p>60 new connections per day through May 10, then 25 / day from May 11. With the Hackathon on June 10, maximising invites now gives 4–6 weeks for sequences to mature before the event.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="footer">
+    <strong>Prospect Engine</strong> · Outreach managed via Farhan Sakib (LinkedIn) · support@algoritmica.ai (Email)<br>
+    Structured Finance Hackathon 2026 · Virtual: May 27 – June 9 · Demo Day: June 10, Barcelona<br>
+    <a href="https://barcelona.aitinkerers.org/p/structured-finance-hackathon-2026" target="_blank" style="color:#00b4d8; text-decoration:none; font-weight:600;">barcelona.aitinkerers.org/p/structured-finance-hackathon-2026</a>
+  </div>
+
+</div>
+</body>
+</html>
