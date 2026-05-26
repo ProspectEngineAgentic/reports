@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deeploans x Algoritmica - 2-Week Project Report</title>
+<style>
+  :root{
+    --navy:#0b1f3a;
+    --navy2:#13294b;
+    --accent:#2dd4bf;
+    --accent2:#38bdf8;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --bg:#f1f5f9;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;
+    -webkit-font-smoothing:antialiased;font-size:15px;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px 72px}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#1e3a5f 100%);
+    color:#fff;padding:48px 44px 52px;border-radius:0 0 24px 24px;
+  }
+  .brandrow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+  .brand{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:700}
+  .badge{background:rgba(45,212,191,.15);border:1px solid rgba(45,212,191,.35);color:var(--accent);
+    font-size:12px;font-weight:700;letter-spacing:.5px;padding:5px 14px;border-radius:999px;}
+  h1{font-size:32px;font-weight:800;letter-spacing:-.6px;margin-bottom:10px}
+  .sub{color:#cbd5e1;font-size:15px;max-width:640px;line-height:1.65}
+
+  /* KPI STRIP */
+  .kpi-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    margin:-34px auto 0;max-width:900px;padding:0 20px;
+  }
+  .kpi{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 18px 18px;box-shadow:0 8px 28px rgba(15,23,42,.07);
+  }
+  .kpi .n{font-size:32px;font-weight:800;color:var(--navy);letter-spacing:-1px;line-height:1}
+  .kpi .n sup{font-size:16px;color:var(--accent);font-weight:700;vertical-align:super;letter-spacing:0}
+  .kpi .l{font-size:12px;color:var(--muted);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+  /* SECTIONS */
+  section{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:28px 30px;margin-top:18px;
+  }
+  h2{
+    font-size:15.5px;font-weight:800;color:var(--navy);
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  h2::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent);flex-shrink:0}
+  p{font-size:14.5px;color:#334155;margin-bottom:10px}
+  p:last-child{margin-bottom:0}
+  b{color:var(--ink)}
+
+  /* FUNNEL */
+  .funnel{display:flex;align-items:stretch;gap:0;margin-top:4px;overflow:hidden;border-radius:12px;border:1px solid var(--line)}
+  .funnel-step{
+    flex:1;padding:18px 14px 16px;text-align:center;position:relative;
+    border-right:1px solid var(--line);background:#f8fafc;
+  }
+  .funnel-step:last-child{border-right:none}
+  .funnel-step:first-child{background:#eef9f8}
+  .funnel-step .fs-n{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-1px}
+  .funnel-step .fs-l{font-size:11.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+  .funnel-step .fs-rate{font-size:11px;color:var(--accent);font-weight:700;margin-top:4px}
+  .arrow{display:flex;align-items:center;justify-content:center;
+    font-size:18px;color:var(--line);font-weight:400;flex-shrink:0}
+
+  /* MSG BREAKDOWN */
+  .msg-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:4px}
+  .msg-cell{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px 10px;text-align:center}
+  .msg-cell .mn{font-size:22px;font-weight:800;color:var(--navy)}
+  .msg-cell .ml{font-size:11px;color:var(--muted);font-weight:700;margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
+
+  /* REPLY BREAKDOWN */
+  .reply-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+  .reply-cell{border-radius:12px;padding:16px 14px;text-align:center}
+  .reply-cell.green{background:#f0fdf4;border:1px solid #bbf7d0}
+  .reply-cell.slate{background:#f8fafc;border:1px solid var(--line)}
+  .reply-cell.red{background:#fff5f5;border:1px solid #fecaca}
+  .reply-cell .rn{font-size:26px;font-weight:800;letter-spacing:-1px}
+  .reply-cell.green .rn{color:#16a34a}
+  .reply-cell.slate .rn{color:var(--navy)}
+  .reply-cell.red .rn{color:#dc2626}
+  .reply-cell .rl{font-size:12px;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.4px}
+  .reply-cell.green .rl{color:#15803d}
+  .reply-cell.slate .rl{color:var(--muted)}
+  .reply-cell.red .rl{color:#b91c1c}
+
+  /* QUOTES */
+  blockquote{
+    background:#f8fafc;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;
+    padding:14px 16px;margin:14px 0 0;
+  }
+  blockquote p{font-size:14px;color:#475569;font-style:italic;margin:0}
+  blockquote .attrib{font-size:12px;color:var(--muted);font-weight:600;margin-top:6px;font-style:normal}
+
+  /* CHIPS */
+  .names{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{
+    background:#eef6ff;border:1px solid #d6e8fb;color:#13294b;
+    border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:600;line-height:1.3
+  }
+  .chip b{color:#0b5ab0;font-weight:700}
+
+  /* TWO-COL */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:4px}
+  .mini{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:18px 16px}
+  .mini .t{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700}
+  .mini .v{font-size:24px;font-weight:800;color:var(--navy);margin-top:6px;letter-spacing:-.5px}
+  .mini .sv{font-size:13px;color:var(--muted);margin-top:4px}
+
+  /* NEXT LIST */
+  ul.next{list-style:none;margin-top:0}
+  ul.next li{
+    font-size:14.5px;color:#334155;padding:10px 0 10px 30px;
+    position:relative;border-bottom:1px dashed var(--line);
+  }
+  ul.next li:last-child{border-bottom:none}
+  ul.next li::before{
+    content:"\279C";position:absolute;left:0;top:10px;
+    color:var(--accent2);font-size:14px;font-weight:800;
+  }
+  .tag{
+    display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;
+    border-radius:999px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;
+  }
+  .tag.action{background:#fef3c7;color:#92400e}
+  .tag.luca{background:#ede9fe;color:#5b21b6}
+
+  /* FOOTER */
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px;padding-top:20px;border-top:1px solid var(--line)}
+
+  @media(max-width:700px){
+    .kpi-grid{grid-template-columns:repeat(2,1fr)}
+    .funnel{flex-direction:column}
+    .funnel-step{border-right:none;border-bottom:1px solid var(--line)}
+    .msg-row{grid-template-columns:repeat(3,1fr)}
+    .reply-grid{grid-template-columns:1fr}
+    .two{grid-template-columns:1fr}
+    .hero{padding:36px 24px 44px}
+    h1{font-size:26px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="brandrow">
+    <div class="brand">deeploans &nbsp;&times;&nbsp; Algoritmica</div>
+    <div class="badge">2-Week Project Report</div>
+  </div>
+  <h1>Campaign Report: 13 to 26 May 2026</h1>
+  <p class="sub">Two full weeks of LinkedIn outreach to senior structured finance and data leaders, a 227-person quant prospect list delivered, the open source contributor network mapped, and the Hackathon launching tomorrow. Here is the complete picture.</p>
+</div>
+
+<!-- KPI STRIP -->
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="n">205</div>
+    <div class="l">Messages sent</div>
+  </div>
+  <div class="kpi">
+    <div class="n">44</div>
+    <div class="l">New connections</div>
+  </div>
+  <div class="kpi">
+    <div class="n">15</div>
+    <div class="l">Real prospect replies</div>
+  </div>
+  <div class="kpi">
+    <div class="n">10<sup>+</sup></div>
+    <div class="l">Tier 1 leaders reached</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- OUTREACH FUNNEL -->
+  <section>
+    <h2>Outreach funnel</h2>
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="fs-n">251</div>
+        <div class="fs-l">Invitations sent</div>
+      </div>
+      <div class="funnel-step">
+        <div class="fs-n">44</div>
+        <div class="fs-l">Connections accepted</div>
+        <div class="fs-rate">18% acceptance</div>
+      </div>
+      <div class="funnel-step">
+        <div class="fs-n">205</div>
+        <div class="fs-l">Follow-up messages</div>
+        <div class="fs-rate">M1 to M5 sequence</div>
+      </div>
+      <div class="funnel-step">
+        <div class="fs-n">15</div>
+        <div class="fs-l">Real prospect replies</div>
+        <div class="fs-rate">7.3% reply rate</div>
+      </div>
+    </div>
+
+    <p style="margin-top:18px">We sent <b>251 invitations</b> and added <b>44 new connections</b>, an acceptance rate of about <b>18%</b>. That is a healthy rate for cold outreach to senior people in banking and asset management, where inboxes are crowded. The reply rate of <b>7.3%</b> is normal for a cold sequence at this seniority. It takes several touches before a C-suite or MD-level buyer replies, and the sequence ran all five steps this period.</p>
+
+    <p>Total messages also reflect an active conversation backlog. Many connected prospects received M1 through M5 across the two weeks, so the 205 figure is cumulative across the full sequence, not 205 separate people.</p>
+  </section>
+
+  <!-- MESSAGE STEP BREAKDOWN -->
+  <section>
+    <h2>Message breakdown by step</h2>
+    <div class="msg-row">
+      <div class="msg-cell"><div class="mn">20</div><div class="ml">M1</div></div>
+      <div class="msg-cell"><div class="mn">39</div><div class="ml">M2</div></div>
+      <div class="msg-cell"><div class="mn">73</div><div class="ml">M3</div></div>
+      <div class="msg-cell"><div class="mn">34</div><div class="ml">M4</div></div>
+      <div class="msg-cell"><div class="mn">39</div><div class="ml">M5</div></div>
+    </div>
+    <p style="margin-top:16px">The volume is heaviest at M3 and M5 because the campaign was already in motion before this window opened. Prospects who connected earlier received M2 and M3 during this period, and those who connected at the start of the window reached M3 to M5 by the end. M1 is lighter this fortnight because most of the effort went into nurturing the established base through the later steps. M1 volume rises again as new connections come through the sequence.</p>
+  </section>
+
+  <!-- REPLY ANALYSIS -->
+  <section>
+    <h2>Reply analysis</h2>
+    <p><b>16 replies received in total.</b> One was inbound noise (a recruiter message, filtered out). The 15 real prospect replies break down like this:</p>
+
+    <div class="reply-grid">
+      <div class="reply-cell green">
+        <div class="rn">6</div>
+        <div class="rl">Acknowledged or warm</div>
+      </div>
+      <div class="reply-cell slate">
+        <div class="rn">6</div>
+        <div class="rl">Neutral or off-topic</div>
+      </div>
+      <div class="reply-cell red">
+        <div class="rn">3</div>
+        <div class="rl">Declined</div>
+      </div>
+    </div>
+
+    <p style="margin-top:18px">The <b>6 warm replies</b> are the ones worth watching. These are people who took a moment to say something more than no. A few examples, anonymised:</p>
+
+    <blockquote>
+      <p>"Very interesting"</p>
+      <div class="attrib">Senior quant leader, global asset manager</div>
+    </blockquote>
+
+    <blockquote>
+      <p>"Thanks, will have a look."</p>
+      <div class="attrib">AI engineer, CFA, European asset manager</div>
+    </blockquote>
+
+    <blockquote>
+      <p>"Hi, thanks for reaching out, I'll have a look."</p>
+      <div class="attrib">Head of Data Science, financial services</div>
+    </blockquote>
+
+    <p style="margin-top:14px">None of these have converted to a booked call yet, which is normal at this sequence stage. The next step is a light follow-up on those 6 warm threads, timed for after the hackathon kickoff, when there is a concrete event to reference.</p>
+
+    <p>The <b>3 declines</b> are clean: polite, definitive, no friction in the thread. They do not indicate a messaging problem. One prospect noted they are too busy right now, one said the topic does not match their current role, and one said they are not interested at this time. All three conversations are closed and will not receive further messages.</p>
+
+    <p>The <b>6 neutral replies</b> include a couple of off-topic inbound messages and one prospect who sent only their email address. No action is needed on those except logging.</p>
+  </section>
+
+  <!-- SENIOR LEADERS REACHED -->
+  <section>
+    <h2>Senior decision-makers reached directly</h2>
+    <p>The Persona C push put deeploans in front of C-suite and director-level leaders at tier 1 banks, asset managers, and fintechs. These contacts received a personalised message with your name attached and a direct invitation to the hackathon or a call with Luca. Named contacts reached this period:</p>
+    <div class="names">
+      <span class="chip">Group CIO &middot; <b>Starling</b></span>
+      <span class="chip">MD Quant Solutions &middot; <b>UBS</b></span>
+      <span class="chip">Chief Transformation, Data &amp; AI &middot; <b>Santander UK</b></span>
+      <span class="chip">Unit Head, Data Strategy &middot; <b>HSBC</b></span>
+      <span class="chip">Head of Digital Analytics &middot; <b>Fidelity International</b></span>
+      <span class="chip">Head of Transaction Monitoring &middot; <b>Rabobank</b></span>
+      <span class="chip">Head AI &amp; Automation &middot; <b>KfW</b></span>
+      <span class="chip">Chief AI Officer &middot; <b>Generali Investments</b></span>
+      <span class="chip">Product Owner, Alto Studio &middot; <b>Amundi</b></span>
+      <span class="chip">VP Head of Data &amp; AI Europe &middot; <b>Valtech</b></span>
+    </div>
+    <p style="margin-top:16px">Each of these was sent a tailored message, not a generic blast. Job title, institution, and the relevant hook (hackathon judge role or a call with Luca) were matched per person before the message was written.</p>
+  </section>
+
+  <!-- CONTENT -->
+  <section>
+    <h2>Content on LinkedIn</h2>
+    <p>A regular posting cadence ran on Farhan's LinkedIn profile throughout the two weeks to keep deeploans visible in the structured finance and AI conversation. The content sits in the feed of every connection and acts as a warm layer on top of the direct outreach.</p>
+    <p>The latest piece went live today, 26 May: an infographic on ECB tokenization framed as an iceberg. The format is designed to pull attention from the exact audience we are messaging. Executives who saw the post before they received a DM will recognise the name and the angle.</p>
+    <p>Upcoming: the hackathon kickoff tomorrow is a natural content moment. A post anchored to launch day will keep momentum through the virtual event (27 May to 9 June).</p>
+  </section>
+
+  <!-- QUANT LIST -->
+  <section>
+    <h2>Quant prospect list</h2>
+    <div class="two">
+      <div class="mini">
+        <div class="t">Names profiled</div>
+        <div class="v">227</div>
+        <div class="sv">From the GABS quant network</div>
+      </div>
+      <div class="mini">
+        <div class="t">Personas tagged</div>
+        <div class="v">B + C</div>
+        <div class="sv">Credit Risk Analysts and Heads of Data</div>
+      </div>
+    </div>
+    <p style="margin-top:16px">Every name in the list has a persona tag (B or C) and a written value proposition tailored to their role. The list is ready to feed directly into the outreach sequence. It was compiled, tagged, and delivered to Luca this week.</p>
+    <p>This doubles as a messaging sanity check. Going through 227 names one by one against the persona definitions confirmed the Persona B and C copy still holds. No adjustments needed.</p>
+  </section>
+
+  <!-- OSS COMMUNITY -->
+  <section>
+    <h2>deeploans open source community</h2>
+    <ul class="next" style="margin-top:0">
+      <li>Mapped <b>189 potential contributors</b> from the deeploans network and adjacent structured finance, credit, and quant open source projects. Each was assessed for fit against the deeploans contributor profile.</li>
+      <li>Thanked an external contributor directly on his pull request and invited him to the hackathon in the same message, representing deeploans in the open source space.</li>
+      <li>Opened the first maintainer outreach thread with a high-fit candidate from the contributor pool, representing Algoritmica.</li>
+      <li><b>PR 34 is open and waiting on your merge.</b> <span class="tag luca">Action: Luca</span> This was the first external contribution. Merging it signals to the community that contributions are welcome and reviewed quickly. Recommend doing this before or just after the hackathon kickoff.</li>
+    </ul>
+  </section>
+
+  <!-- HACKATHON -->
+  <section>
+    <h2>Structured Finance Hackathon 2026</h2>
+    <div class="two">
+      <div class="mini">
+        <div class="t">Virtual kickoff</div>
+        <div class="v">27 May</div>
+        <div class="sv">Tomorrow</div>
+      </div>
+      <div class="mini">
+        <div class="t">Demo day</div>
+        <div class="v">10 June</div>
+        <div class="sv">Barcelona, in person</div>
+      </div>
+    </div>
+    <p style="margin-top:16px">The Persona C messages sent on 23 May were the most direct hackathon push of the whole campaign. Senior buyers at Santander UK, Rabobank, KfW, Generali, Amundi, UBS, Fidelity, and HSBC all received a personal invite to attend as a judge or senior participant. That message landed four days before kickoff, which is the right timing for a decision-maker who needs notice but not weeks of lead time.</p>
+    <p>The virtual phase runs 27 May to 9 June. Demo day is in Barcelona on 10 June. Any warm reply that comes in during the virtual phase is a live opportunity to extend an in-person invitation for Barcelona.</p>
+  </section>
+
+  <!-- WHAT IS NEXT -->
+  <section>
+    <h2>What is next</h2>
+    <ul class="next">
+      <li>Follow up on the 6 warm replies after kickoff day. The hackathon launch gives a natural, concrete reason to reach back out without it feeling like a chase.</li>
+      <li>Continue inviting the Persona C pool at a steady pace, feeding new senior connections into the sequence ahead of the hackathon.</li>
+      <li>Feed the 227-name quant list (Persona B and C) into the invite sequence as the primary new prospecting source.</li>
+      <li>Publish a hackathon launch post on kickoff day and keep a minimum one post per week through the event to stay visible in the feed.</li>
+      <li>Continue contributor outreach for the deeploans open source community. First thread is open; more to follow from the 189-name mapped pool.</li>
+      <li><b>PR 34 merge: waiting on Luca.</b> <span class="tag luca">Action: Luca</span> Merge when ready so the external contributor sees a response before the hackathon ends.</li>
+    </ul>
+  </section>
+
+  <div class="foot">Prepared by Prospect Engine for Algoritmica &middot; deeploans &middot; 26 May 2026</div>
+</div>
+
+</body>
+</html>
