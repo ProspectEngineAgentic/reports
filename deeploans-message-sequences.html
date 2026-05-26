@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deeploans — LinkedIn Message Sequences</title>
+<style>
+  :root{--ink:#0f172a;--muted:#64748b;--line:#e6ebf2;--bg:#eef2f7;--card:#fff;--navy:#0b1f3a;--accent:#0e7490;--a:#2563eb;--b:#7c3aed;--c:#0f766e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 72px}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0b1f3a,#13294b);color:#fff;padding:38px 32px;border-radius:0 0 22px 22px;margin-bottom:10px}
+  .hero h1{font-size:25px;font-weight:800;letter-spacing:-.4px}
+  .hero .lead{color:#cbd5e1;font-size:14.5px;margin-top:10px;max-width:600px;line-height:1.7}
+  .rules{background:#0d2236;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 18px;margin-top:20px}
+  .rules b{color:#7dd3fc;font-size:13px;letter-spacing:.3px}
+  .rules ul{margin:10px 0 0 18px;color:#cbd5e1;font-size:13px}
+  .rules li{margin-bottom:7px}
+  .rules li:last-child{margin-bottom:0}
+
+  /* PERSONA HEADER */
+  .phead{display:flex;align-items:center;gap:12px;margin:40px 0 0}
+  .pill{font-size:11.5px;font-weight:800;color:#fff;border-radius:999px;padding:5px 13px;letter-spacing:.5px;white-space:nowrap}
+  .pa{background:var(--a)}.pb{background:var(--b)}.pc{background:var(--c)}
+  .phead h2{font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+
+  .meta{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+  .meta .row{display:flex;gap:14px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .meta .row:last-child{border-bottom:none}
+  .meta .k{flex:0 0 96px;color:var(--muted);font-weight:700;text-transform:uppercase;font-size:10.5px;letter-spacing:.6px;padding-top:2px}
+  .meta .v{flex:1;font-size:14px;color:#334155}
+
+  /* MESSAGE CARD */
+  .msg{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:18px;box-shadow:0 6px 18px rgba(15,23,42,.05)}
+  .msg-head{display:flex;align-items:center;gap:10px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--line)}
+  .tag{display:inline-block;font-size:11px;font-weight:800;color:#fff;background:var(--accent);border-radius:7px;padding:4px 10px;letter-spacing:.5px}
+  .note{font-size:12px;color:var(--muted);font-weight:600;font-style:italic}
+  .msg p{margin:0 0 14px;line-height:1.72;font-size:15px;color:#1f2937}
+  .msg p:last-child{margin-bottom:0}
+  .msg .greet{font-weight:600;color:#0f172a;margin-bottom:14px}
+  .msg .sign{color:#64748b;font-weight:600;margin-top:2px}
+  .msg .link{color:var(--a);word-break:break-all}
+
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:36px;padding-top:18px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>deeploans — LinkedIn Message Sequences</h1>
+  <p class="lead">Full A, B and C sequences. Each message explains deeploans in plain words, opens on a real pain, and ends on one easy reply trigger.</p>
+  <div class="rules">
+    <b>GROUND RULES</b>
+    <ul>
+      <li>Plain words, no jargon. Simple, everyday English.</li>
+      <li>One real pain to open, one low friction ask to close.</li>
+      <li>Persona A goal is to recruit a contributor, with a soft step by step ladder.</li>
+      <li>Co founder Luca call is offered to Persona C only.</li>
+      <li>{fn} is the first name, filled in per person at send time.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ PERSONA A ============ -->
+  <div class="phead"><span class="pill pa">PERSONA A</span><h2>Data, ML and MLOps engineers</h2></div>
+  <div class="meta">
+    <div class="row"><div class="k">Who</div><div class="v">Engineers inside banks who build and run the credit data pipelines.</div></div>
+    <div class="row"><div class="k">Real pain</div><div class="v">Loan files land in many formats every month. Cleaning them by hand eats their week.</div></div>
+    <div class="row"><div class="k">Our goal</div><div class="v">Recruit them as open source contributors to deeploans.</div></div>
+    <div class="row"><div class="k">Ladder</div><div class="v">Take a look, then give an opinion, then a good first issue, then contribute.</div></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">A · M1</span><span class="note">first message after they connect</span></div>
+    <p class="greet">Hi {fn},</p>
+    <p>Saw you work in data engineering. Quick one that might land for you. If you ever wrangle loan or credit data, you know the worst part is cleaning files that arrive in ten different shapes.</p>
+    <p>We hit that same wall and open sourced our fix. Mind if I share it?</p>
+    <p class="sign">Farhan, Algoritmica</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">A · M2</span><span class="note">plain explainer, repo, low friction opinion ask</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>Here is the short version. Banks get loan files from many sources every month, all in different formats. Cleaning and standardizing them by hand eats days.</p>
+    <p>deeploans does it automatically. Messy files in, clean standard data out, and it flags the bad records so you can see exactly what failed. Free and open source, Apache 2.0.</p>
+    <p class="link">github.com/Algoritmica-ai/deeploans</p>
+    <p>If you took a look, what would you change about how we handle it?</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">A · M3</span><span class="note">what is interesting, then a good first issue</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>One bit you might like. It runs raw files through a Bronze, Silver, Gold flow and ships the actual ECB and ESMA templates, so the messy mapping is already done.</p>
+    <p>We are a small group building it in the open. People have added new asset classes like auto loans and even data center financing.</p>
+    <p>If there is a format or check your team needs, that is the kind of thing you could add. Want me to point you to a good first issue?</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">A · M4</span><span class="note">motivation: learning, your name on it, quick review</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>No rush on this. People jump in because it is a clean way to learn the guts of credit data standards, and a real open source project in the credit space is a good thing to have your name on.</p>
+    <p>It is actively maintained, so a first pull request gets a quick review, not weeks of silence.</p>
+    <p>Happy to suggest a small piece that fits your background if you are curious.</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">A · M5</span><span class="note">soft close</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>Last note for now. deeploans is here if loan data is ever a pain for you:</p>
+    <p class="link">github.com/Algoritmica-ai/deeploans</p>
+    <p>Stars, issues and pull requests all welcome, and I am around if you want a hand getting started.</p>
+    <p class="sign">Farhan, Algoritmica</p>
+  </div>
+
+  <!-- ============ PERSONA B ============ -->
+  <div class="phead"><span class="pill pb">PERSONA B</span><h2>Credit risk analysts, quants, lawyers</h2></div>
+  <div class="meta">
+    <div class="row"><div class="k">Who</div><div class="v">The human in the loop who reads model output and has to defend credit decisions. Not developers.</div></div>
+    <div class="row"><div class="k">Real pain</div><div class="v">They must trust and defend data they did not clean, now under regulatory pressure.</div></div>
+    <div class="row"><div class="k">Our goal</div><div class="v">Get them to build on top of deeploans and share it with their developers.</div></div>
+    <div class="row"><div class="k">Best angle</div><div class="v">The EU AI Act "show your work" audit trail (message M3).</div></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">B · M1</span><span class="note">first message after they connect</span></div>
+    <p class="greet">Hi {fn},</p>
+    <p>Your credit risk background is why I reached out. A quick thought that might be relevant.</p>
+    <p>A credit model is only as good as the loan data behind it, and that data is usually messy and slow to clean. We built a free tool that fixes exactly that. Can I share it?</p>
+    <p class="sign">Farhan, Algoritmica</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">B · M2</span><span class="note">explainer tilted to their benefit, Prospekto, interest question</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>Short version. deeploans is a free tool that cleans and standardizes messy loan data, so the numbers your models and reports run on are ones you can trust.</p>
+    <p>Once the data is clean, you can do more with it. One example is Prospekto, which lets you ask plain English questions about a deal and get answers back:</p>
+    <p class="link">https://youtu.be/8aXRj4QRLkg</p>
+    <p>Does messy input data slow your team down?</p>
+    <p class="sign">Farhan, Algoritmica</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">B · M3</span><span class="note">regulatory audit trail, the strongest B message</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>One thing becoming a real headache for credit teams. The EU AI Act now treats credit scoring as high risk, so banks have to explain the data going into a model, not just the result.</p>
+    <p>Most data cleaning leaves no record of what was changed. deeploans logs every step by default, so when an auditor asks, you can show your work.</p>
+    <p>Is that on your radar yet?</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">B · M4</span><span class="note">augment, not replace</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>To be clear, deeploans is not about replacing your judgment. It takes the messy data prep off your plate so your time goes to the calls that actually need a person.</p>
+    <p>If your team ever wants a checker or a small tool built on your own data, that is what it is for. Happy to point the way.</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">B · M5</span><span class="note">share with devs close</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>Last note for now. If any of this is useful, the easiest next step is to pass deeploans to your developers. Free and open source:</p>
+    <p class="link">algoritmica-ai.github.io/deeploans</p>
+    <p>And if you ever want help building something on top of it, just say the word.</p>
+    <p class="sign">Farhan, Algoritmica</p>
+  </div>
+
+  <!-- ============ PERSONA C ============ -->
+  <div class="phead"><span class="pill pc">PERSONA C</span><h2>Heads of Data and Heads of AI</h2></div>
+  <div class="meta">
+    <div class="row"><div class="k">Who</div><div class="v">Senior leaders who own AI strategy and budget. Time poor.</div></div>
+    <div class="row"><div class="k">Real pain</div><div class="v">Pressure to build their own AI stack, prove ROI, and avoid regulatory risk.</div></div>
+    <div class="row"><div class="k">Our goal</div><div class="v">A short strategic call with co founder Luca. Persona C only.</div></div>
+    <div class="row"><div class="k">Tone</div><div class="v">Peer to peer. Two lines of value, no feature lists.</div></div>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">C · M1</span><span class="note">cold, strategic</span></div>
+    <p class="greet">Hi {fn},</p>
+    <p>Keeping this short. Banks are now expected to build their own data and AI setup instead of renting from the same vendors for another 20 years. The hardest part is the loan data underneath it.</p>
+    <p>We built deeploans, a free and open foundation for exactly that, aligned to ECB and ESMA rules from the start.</p>
+    <p>Thought it worth a note given your work on data and AI strategy.</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">C · M2</span><span class="note">ROI and regulatory risk</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>The thing that slows AI down in a bank is rarely the model. It is getting clean, governed data into it without adding regulatory risk.</p>
+    <p>deeploans handles that. Standard loan data, every change logged, built to ECB and ESMA rules. It lowers both the build cost and the audit risk of your AI work.</p>
+    <p>Is building out your loan data foundation on the roadmap this year?</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="msg">
+    <div class="msg-head"><span class="tag">C · M3</span><span class="note">the ask: a call with Luca, Persona C only</span></div>
+    <p class="greet">Hey {fn},</p>
+    <p>Last note from me. If it is useful, I would be glad to set up a short call with Luca, one of our founders. He can show how other teams are using deeploans as the foundation under their AI work, and what it took.</p>
+    <p>Twenty minutes, no pitch. Worth your time?</p>
+    <p class="sign">Farhan</p>
+  </div>
+
+  <div class="foot">Prepared by Prospect Engine for Algoritmica · deeploans · 27 May 2026 · draft for review</div>
+</div>
+</body>
+</html>
