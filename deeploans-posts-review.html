@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deeploans — LinkedIn Posts for Review</title>
+<style>
+  :root{--ink:#0f172a;--muted:#64748b;--line:#e6ebf2;--bg:#eef2f7;--card:#fff;--navy:#0b1f3a;--accent:#0e7490;--a:#2563eb;--hook:#0f766e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 72px}
+
+  .hero{background:linear-gradient(135deg,#0b1f3a,#13294b);color:#fff;padding:38px 32px;border-radius:0 0 22px 22px;margin-bottom:10px}
+  .hero h1{font-size:25px;font-weight:800;letter-spacing:-.4px}
+  .hero .lead{color:#cbd5e1;font-size:14.5px;margin-top:10px;max-width:620px;line-height:1.7}
+  .rules{background:#0d2236;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 18px;margin-top:20px}
+  .rules b{color:#7dd3fc;font-size:13px;letter-spacing:.3px}
+  .rules ul{margin:10px 0 0 18px;color:#cbd5e1;font-size:13px}
+  .rules li{margin-bottom:7px}
+  .rules li:last-child{margin-bottom:0}
+
+  .checks{background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:18px 20px;margin-top:24px}
+  .checks b{color:#9a3412;font-size:12.5px;letter-spacing:.4px;text-transform:uppercase}
+  .checks ol{margin:10px 0 0 18px;color:#7c2d12;font-size:13.5px}
+  .checks li{margin-bottom:8px}
+  .checks li:last-child{margin-bottom:0}
+
+  .post{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-top:20px;box-shadow:0 6px 18px rgba(15,23,42,.05)}
+  .post-head{display:flex;align-items:baseline;gap:10px;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .num{display:inline-flex;align-items:center;justify-content:center;flex:0 0 28px;height:28px;background:var(--navy);color:#fff;border-radius:8px;font-weight:800;font-size:13px}
+  .title{font-size:16.5px;font-weight:800;color:var(--navy);letter-spacing:-.2px;line-height:1.4}
+  .hookline{background:#ecfdf5;border-left:3px solid var(--hook);border-radius:0 8px 8px 0;padding:9px 13px;margin:14px 0 16px;font-size:12.5px;color:#065f46}
+  .hookline b{color:#064e3b;text-transform:uppercase;letter-spacing:.4px;font-size:10.5px}
+  .body p{margin:0 0 13px;line-height:1.72;font-size:15px;color:#1f2937}
+  .body p:last-child{margin-bottom:0}
+  .body .link{color:var(--a);word-break:break-all}
+  .src{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
+  .src .lbl{font-size:10.5px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
+  .src ul{margin:0 0 0 16px;padding:0}
+  .src li{font-size:12px;color:#475569;margin-bottom:5px;line-height:1.5}
+  .src a{color:var(--a);word-break:break-all}
+  .vis{margin-top:12px;font-size:12px;color:var(--muted);font-style:italic}
+  .vis b{font-style:normal;color:#475569}
+
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:36px;padding-top:18px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>deeploans — LinkedIn Posts for Review</h1>
+  <p class="lead">Ten posts for Farhan's profile. Each one starts from a recent, dated industry development, then connects it to the deeploans angle. Plain English, value first, soft close. Sources are listed under every post so you can check the facts. Nothing is published yet.</p>
+  <div class="rules">
+    <b>HOW THESE ARE BUILT</b>
+    <ul>
+      <li>Each post opens on a real, recent news item, not a product pitch.</li>
+      <li>The deeploans story sits underneath as light support, never the headline.</li>
+      <li>All ten cover different topics. No overlap.</li>
+      <li>Goal is value for the reader and a strong first two lines, so people stop and read.</li>
+    </ul>
+  </div>
+  <div class="checks">
+    <b>A few quick checks for you, Luca</b>
+    <ol>
+      <li><b>Post 9</b> uses the "79% prioritise sovereign AI" figure from your own OSFF keynote post. Please confirm it so we quote it cleanly.</li>
+      <li><b>Post 5</b> describes Nu Holdings' NuFormer from their SEC filing. A quick read of the wording would be great.</li>
+      <li><b>Post 9</b> sits on your home turf (FINOS, sovereign AI). Please sanity check the framing so it sits well next to your own posts.</li>
+      <li><b>Good news:</b> the EU AI Act date is now settled. The high risk deadline, which includes credit scoring, moved to 2 December 2027 (deal agreed 7 May 2026, final sign off still pending).</li>
+    </ol>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- POST 1 -->
+  <div class="post">
+    <div class="post-head"><span class="num">1</span><span class="title">The AI Act just gave credit scoring teams 16 extra months. Most will waste them.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;EU Digital Omnibus deal, 7 May 2026: high risk AI rules (incl. credit scoring) move from Aug 2026 to 2 Dec 2027.</div>
+    <div class="body">
+      <p>Last week the EU pushed the AI Act's high risk deadline back by 16 months.</p>
+      <p>If you score credit with AI, that is not relief. That is a runway.</p>
+      <p>Credit scoring is still high risk. The duties did not shrink. They just start on 2 December 2027 instead of August 2026. The deal was agreed on 7 May. It still needs final sign off.</p>
+      <p>So here is the trap. Most teams will read "delay" and move the work to the bottom of the list.</p>
+      <p>The hard part was never the model. The hard part is proving your training data was relevant, representative, and as clean as you could make it. And proving where every field came from.</p>
+      <p>That is data plumbing. It takes longer than a model swap. 16 months is not a lot when your loan tapes arrive every month from dozens of originators in different shapes.</p>
+      <p>My advice. Use the runway to fix the data layer now, while there is no fire.</p>
+      <p>Curious if your team sees the delay as relief or as runway.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>AI Act delay to 2 Dec 2027, agreed 7 May 2026, pending formal adoption: <a href="https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines">Latham &amp; Watkins</a>, <a href="https://www.traverssmith.com/knowledge/knowledge-container/eu-agrees-to-delay-key-ai-act-compliance-deadlines/">Travers Smith</a></li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a runway with a "2 Dec 2027" marker and a small clock. Headline "delay is not relief, it is runway."</div>
+  </div>
+
+  <!-- POST 2 -->
+  <div class="post">
+    <div class="post-head"><span class="num">2</span><span class="title">Regulators just put private credit on a watch list. The problem is they cannot see inside it.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;FSB "Vulnerabilities in Private Credit" report, 6 May 2026, plus IMF opacity warnings and record EU fundraising.</div>
+    <div class="body">
+      <p>Regulators just put private credit under a brighter light. The catch is they can barely see inside it.</p>
+      <p>On 6 May 2026 the Financial Stability Board published a report on the risks in private credit. The IMF has said the same thing for two years. The market is huge and growing, and the data is opaque.</p>
+      <p>European private credit raised a record 66 billion dollars in just the first nine months of 2025. That is a lot of loans with no public, standard way to look at them.</p>
+      <p>Here is the quiet truth behind the warnings. You cannot manage what you cannot see at the loan level. Valuations get stale. Risk hides in the gaps.</p>
+      <p>The fix is not another rule. It is better data hygiene at the source. Standard fields. A clear record of what was cleaned and what was missing.</p>
+      <p>That is the work I spend my days on. Taking raw loan data and making it consistent and inspectable, instead of trapped in someone's spreadsheet.</p>
+      <p>If you invest in or lend through private credit, I would love your take. Is data opacity your biggest blind spot too?</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>FSB Report on Vulnerabilities in Private Credit, 6 May 2026: <a href="https://www.fsb.org/uploads/P060526.pdf">fsb.org</a></li>
+      <li>IMF private credit opacity warning: <a href="https://www.imf.org/en/blogs/articles/2024/04/08/fast-growing-usd2-trillion-private-credit-market-warrants-closer-watch">imf.org</a></li>
+      <li>Record ~66bn USD EU private credit, first nine months 2025: <a href="https://www.withintelligence.com/insights/private-credit-outlook-2026/">With Intelligence</a></li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a magnifying glass over a stack of loan files, most blurred, one in sharp focus. Headline "you cannot manage what you cannot see."</div>
+  </div>
+
+  <!-- POST 3 -->
+  <div class="post">
+    <div class="post-head"><span class="num">3</span><span class="title">The number that should scare every European bank running internal models in 2026.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;Basel IV output floor rises to 55% in 2026 (72.5% by 2030); EBA estimates a 6 to 9% Tier 1 rise for IRB banks.</div>
+    <div class="body">
+      <p>72.5%. That is the number quietly reshaping how European banks hold capital.</p>
+      <p>That is the Basel output floor at full phase in. Your internal models cannot push capital below 72.5% of the standard approach. It hits 55% in 2026 and climbs from there.</p>
+      <p>For banks that use internal models, this is real money. The EBA estimates Tier 1 capital needs could rise about 6 to 9% for IRB banks once the floor is fully in.</p>
+      <p>So what do you do when the floor squeezes your models? You make the models you keep work harder and prove cleaner.</p>
+      <p>And here is the part people skip. Better model output starts with better model input. A floor on capital is a strong reason to stop feeding models messy loan tapes full of gaps.</p>
+      <p>We saw the input effect directly. A model trained on data we cleaned and standardized beat IRB benchmarks from more than 50 European banks by 16 to 24%. Same kind of model. Cleaner data.</p>
+      <p>When capital gets tighter, clean data is not a nice to have. It is leverage.</p>
+      <p>If you work in credit risk or capital, I would love your read on the 2026 to 2028 window.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>Output floor 55% in 2026, 72.5% by 2030: <a href="https://financialregulations.eu/blog/crr-iii-crd-vi-guide">financialregulations.eu</a>, <a href="https://www.pwc.com/cz/en/rizeni-rizik/PwC_CZ_CRR_III_IRB_banks.pdf">PwC</a></li>
+      <li>EBA estimate ~6 to 9% Tier 1 increase for IRB banks: <a href="https://www.creditbenchmark.com/knowledge-base/basel-iv-risk-management/">Credit Benchmark</a></li>
+      <li>16 to 24% lift vs 50+ banks IRB benchmarks: deeploans internal result.</li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a bar pushed up against a ceiling line marked "72.5% floor." Headline "the floor is rising. make your inputs count."</div>
+  </div>
+
+  <!-- POST 4 -->
+  <div class="post">
+    <div class="post-head"><span class="num">4</span><span class="title">Banks are not short on AI ideas. They are short on data the agents can trust.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;MIT Technology Review, "Data readiness for agentic AI in financial services", 14 May 2026, plus NVIDIA's 2026 finance survey.</div>
+    <div class="body">
+      <p>Banks are not short on AI ideas. They are short on data their AI agents can trust.</p>
+      <p>MIT Technology Review made this point sharp on 14 May 2026. The bottleneck for agentic AI in finance is rarely compute. It is data availability and quality. Agents amplify the weakest link, and that link is usually the data.</p>
+      <p>NVIDIA's 2026 survey of more than 800 finance pros found the same. Agent adoption is rising. Data issues are still near the top of the blocker list.</p>
+      <p>Think about what an AI agent does in credit. It reads a loan, judges risk, maybe acts. If the loan data has holes and the fields do not line up, the agent does not slow down. It gives a confident, wrong answer.</p>
+      <p>That is dangerous in a way a slow human never was.</p>
+      <p>So before you give an agent the keys, ask one question. Is the loan data under it clean, standard, and inspectable?</p>
+      <p>That base layer is the work, not the demo. It is the part I help build.</p>
+      <p>If you are piloting agents on credit data, I am curious what broke first. Usually it is the data.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>MIT Technology Review, data readiness for agentic AI in financial services, 14 May 2026: <a href="https://www.technologyreview.com/2026/05/14/1137034/data-readiness-for-agentic-ai-in-financial-services/">technologyreview.com</a></li>
+      <li>NVIDIA 2026 State of AI in Financial Services survey (800+ respondents): <a href="https://blogs.nvidia.com/blog/ai-in-financial-services-survey-2026/">blogs.nvidia.com</a></li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a robot hand reaching for a cracked, leaking data block. Headline "agents amplify your weakest link."</div>
+  </div>
+
+  <!-- POST 5 -->
+  <div class="post">
+    <div class="post-head"><span class="num">5</span><span class="title">A bank in Brazil built its own credit foundation model. The lesson is not the model.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;Nu Holdings FY2026 6-K (filed 14 May 2026): NuFormer foundation models now in production for credit decisions.</div>
+    <div class="body">
+      <p>A bank in Brazil just put its own credit foundation model into live decisions. The lesson is not the model.</p>
+      <p>Nu Holdings disclosed this on 14 May 2026. Their in house models, called NuFormer, now run credit card decisions in Brazil and Mexico, and unsecured lending in Brazil. Not a pilot. Production.</p>
+      <p>This is the new pattern. Banks are building their own AI, not renting a black box. NVIDIA's 2026 survey shows the whole industry leaning this way, a lot of it on open source.</p>
+      <p>Here is the part that matters for the rest of us.</p>
+      <p>A foundation model is only as good as the data history it learns from. Nu had years of clean, consistent transaction data because they own the rails end to end.</p>
+      <p>Most lenders in Europe do not. Their loan history is scattered across dozens of originators, in mismatched formats, with fields that say "not applicable."</p>
+      <p>You cannot train a strong model on that. Not yet. The first job is to make that history clean and standard.</p>
+      <p>That is the unglamorous step everyone wants to skip. It is also the step that decides if your model is any good.</p>
+      <p>If you are thinking about building in house, I would love to compare notes on the data groundwork.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>Nu Holdings NuFormer in production, FY2026 6-K filed 14 May 2026: <a href="https://www.sec.gov/Archives/edgar/data/0001691493/000129281426003057/nu20260514_6k2.htm">SEC EDGAR</a></li>
+      <li>NVIDIA 2026 survey, finance building on AI and open source: <a href="https://blogs.nvidia.com/blog/ai-in-financial-services-survey-2026/">blogs.nvidia.com</a></li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a model engine on a long clean data timeline vs a broken scattered one. Headline "the model is only as good as its history."</div>
+  </div>
+
+  <!-- POST 6 -->
+  <div class="post">
+    <div class="post-head"><span class="num">6</span><span class="title">The biggest change in European loan data last year was not a new rule. It was a quiet switch off.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;The ECB loan level reporting template was retired in Q4 2024; data now lands only in ESMA or FCA formats.</div>
+    <div class="body">
+      <p>The biggest change in European loan data last year was not a flashy new rule. It was a quiet switch off.</p>
+      <p>In Q4 2024 the old ECB loan level reporting template was retired. Since then, securitisation loan data lands only in ESMA or FCA formats.</p>
+      <p>Sounds like a small admin change. It is not.</p>
+      <p>It means years of history now sit in one format, and everything new sits in another. If you want to study a portfolio across time, the two halves do not line up. The European DataWarehouse is even building a special All in One database just to stitch the old and new series back together.</p>
+      <p>This is the hidden tax of credit data. Formats change. Templates get revised. Your history fragments. And every team patches it by hand, again and again.</p>
+      <p>A clean data layer fixes this at the root. You map raw inputs to one standard shape, and you keep a record of every change. So when a template shifts, your time series survives.</p>
+      <p>This is exactly the kind of plumbing we build in the open.</p>
+      <p>If you have ever lost a week reconciling old and new templates, you know the pain. Curious how your team handles it.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>ECB template stopped Q4 2024, data now ESMA/FCA only; EDW All in One database stitching ECB (2013-2024) and ESMA series: <a href="https://eurodw.eu/esma-vs-ecb-reporting-formats-what-you-need-to-know/">European DataWarehouse</a>, <a href="https://eurodw.eu/unlocking-the-value-in-european-datawarehouses-all-in-one-aio-database/">EDW AIO</a></li>
+      <li>deeploans maps raw inputs to one standard and logs every change: deeploans internal.</li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> two puzzle pieces "ECB 2013-2024" and "ESMA 2025+" that do not fit, with a bridge piece between. Headline "your history should survive a format change."</div>
+  </div>
+
+  <!-- POST 7 -->
+  <div class="post">
+    <div class="post-head"><span class="num">7</span><span class="title">Banks moved 260 billion euros of risk off their books this way. Now regulators want a closer look.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;Synthetic risk transfer (SRT) hit ~260bn euros in 2024 (record); BIS published an SRT risk paper in Q1 2026.</div>
+    <div class="body">
+      <p>Banks moved about 260 billion euros of credit risk off their books in a single year using one tool. Now regulators want a closer look at it.</p>
+      <p>The tool is significant risk transfer, or SRT. A bank keeps the loans but sells off the risk on a slice of them, often to insurers and funds. It frees up capital. In 2024 it hit record volumes, and insurers nearly doubled how much they backed.</p>
+      <p>It got big enough that the BIS published a paper this year on the rise and risks of SRT, and the press started asking hard questions.</p>
+      <p>Here is the data angle most coverage misses.</p>
+      <p>Every SRT deal rests on a pool of loans. To price it, to monitor it, and to satisfy a regulator, you need clean, standard, loan level data on that pool. Buyers want to see what they are taking on. Supervisors want to see it too.</p>
+      <p>When the deals were rare, manual data work was fine. At record volume, hand cleaning every pool does not scale.</p>
+      <p>This is the quiet bottleneck behind a booming market. The data work has to grow with the deal flow.</p>
+      <p>If you work on the SRT side, I would love your read. Is data prep slowing your deals down yet?</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>~260bn euros synthetic securitisation in 2024, record, insurers nearly doubled participation: <a href="https://www.mayerbrown.com/en/insights/publications/2025/05/synthetic-risk-transfer-srt-in-2025">Mayer Brown</a></li>
+      <li>BIS paper on rise and risks of SRT (Q1 2026 quarterly review): <a href="https://www.bis.org/publ/qtrpdf/r_qt2603c.htm">bis.org</a></li>
+      <li>Regulator concern, Dec 2025: <a href="https://www.bloomberg.com/news/articles/2025-12-08/srts-what-are-significant-risk-transfers-and-why-are-regulators-worried">Bloomberg</a></li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a balance sheet with a risk slice lifting toward an insurer icon, loan pool underneath labelled "needs clean data." Headline "the deal rests on the data."</div>
+  </div>
+
+  <!-- POST 8 -->
+  <div class="post">
+    <div class="post-head"><span class="num">8</span><span class="title">Europe is rewriting its securitisation rulebook right now. Whatever the final text says, the data work grows.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;European Parliament passed its securitisation reform position on 5 May 2026; trilogues in H2 2026, likely effective ~June 2027.</div>
+    <div class="body">
+      <p>Europe is rewriting its securitisation rulebook as we speak. And almost nobody is talking about what it does to the data work.</p>
+      <p>On 5 May 2026 the European Parliament passed its reform position. Now it goes to trilogue with the Council, likely landing around June 2027. The goal is to revive the market and cut some red tape.</p>
+      <p>One of the biggest fights is about private deals. The Council wants private securitisations to report through repositories. The Parliament wants a simpler template sent straight to national authorities.</p>
+      <p>Notice something. Both sides still want the data. They only disagree on the shape and the route.</p>
+      <p>So whichever way the vote goes, the work does not disappear. You will still have to produce structured, accurate loan data, just in a new template.</p>
+      <p>This is the pattern of the last ten years. The rules change. The templates change. The duty to report clean loan data only grows.</p>
+      <p>The smart move is to stop building one off pipelines for each template. Build a clean base layer once, then map it to whatever shape the rule demands.</p>
+      <p>If you follow the securitisation file, I would love your take on where the private reporting fight lands.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>Parliament passed reform position 5 May 2026, trilogues H2 2026, effective ~June 2027: <a href="https://www.stblaw.com/about-us/publications/view/2026/05/12/eu-securitisation-reforms-may-2026">Simpson Thacher</a></li>
+      <li>Council vs Parliament split on private securitisation reporting: <a href="https://finreg.aoshearman.com/eu-securitisation-reform-econ-draft-reports-and-council-of-the-eu-compromise-texts-published">A&amp;O Shearman</a></li>
+      <li>June 2025 reform package origin: <a href="https://finance.ec.europa.eu/news/revitalising-eu-securitisation-2025-06-27_en">European Commission</a></li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a rulebook being edited with two arrows ("repository" vs "national authority") and one clean data block feeding both. Headline "the template changes. the data duty does not."</div>
+  </div>
+
+  <!-- POST 9 -->
+  <div class="post">
+    <div class="post-head"><span class="num">9</span><span class="title">The most senior people in banking just agreed on one thing. They are done renting black box intelligence.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;OSFF Toronto 2026 (FINOS): banks push "sovereign AI" and open source; FINOS launched Common Controls and the Fluxnova platform.</div>
+    <div class="body">
+      <p>The most senior people in banking just agreed on one thing. They are done renting black box intelligence.</p>
+      <p>At the Open Source in Finance Forum this year, the message from banks was blunt. If you do not control your own data, models, and platform, you are renting opaque intelligence. And in a regulated industry, that is a risk.</p>
+      <p>This is not talk. FINOS and big banks like Fidelity, NatWest, Deutsche Bank and Capital One launched open platforms to fight vendor lock in. Linux Foundation research found 79% of organizations now put sovereign AI first.</p>
+      <p>I find this exciting for a simple reason. When you own your stack, you can open it up and see how it works. You can audit it. You can fix it. A black box cannot give you that.</p>
+      <p>Loan level credit data is one of the last corners still stuck in closed tools and manual work. It belongs in the open too.</p>
+      <p>That is why we build deeploans in the open. Python, Apache 2.0. Raw loan tapes in, clean and standard data out, and you can read every line of how it transforms.</p>
+      <p>If your team is moving toward owning its stack, star or try it: <span class="link">github.com/Algoritmica-ai/deeploans</span></p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>OSFF Toronto 2026, open source as FSI infrastructure: <a href="https://www.finos.org/blog/the-agentic-shift-how-osff-toronto-2026-proved-open-source-is-the-future-of-fsi-infrastructure">FINOS blog</a></li>
+      <li>FINOS Common Controls for AI Services: <a href="https://www.finos.org/press/global-financial-institutions-and-technology-leaders-collaborate-under-finos-to-launch-open-source-common-controls-for-ai-services">FINOS press</a></li>
+      <li>Fluxnova with Fidelity, NatWest, Deutsche Bank, Capital One: <a href="https://www.finos.org/press/finos-launches-fluxnova-with-fidelity-investments-natwest-group-deutsche-bank-and-capital-one-an-open-source-orchestration-platform-to-scale-process-automation">FINOS press</a></li>
+      <li>79% prioritise sovereign AI (Linux Foundation Research): from Luca's OSFF keynote post (please confirm primary source).</li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a hand cutting a cord to a locked black box, next to an open glass box with visible code. Headline "own it, do not rent it."</div>
+  </div>
+
+  <!-- POST 10 -->
+  <div class="post">
+    <div class="post-head"><span class="num">10</span><span class="title">Forty percent. That is how much of a loan pool can be marked "not applicable" in fields that decide price.</span></div>
+    <div class="hookline"><b>News hook</b> &nbsp;ESMA's template review shows large counts of "no data" codes in core fields; ESMA is simplifying private securitisation disclosure in 2025 to 2026.</div>
+    <div class="body">
+      <p>Forty percent.</p>
+      <p>In a single loan pool, close to 40% of records can carry a "not applicable" code in fields that actually set the price. Things like the current interest rate margin.</p>
+      <p>Let that sink in. These are not side fields. They are core inputs for risk and pricing. And they arrive empty, hidden behind a tidy looking code.</p>
+      <p>This is not a fringe problem. ESMA has been reworking its disclosure templates, including a 2025 push to simplify private securitisation reporting, partly because the current data has so many of these gaps.</p>
+      <p>Here is the mistake teams make. They treat a "not applicable" code as if the value were truly zero or harmless. Then they train models and price deals on top of holes.</p>
+      <p>A model fed holes will sound confident and be wrong.</p>
+      <p>The honest fix is not to hide the gaps. It is to flag them, count them, and decide what to do about each one, on the record.</p>
+      <p>That is how we built our pipeline. It surfaces the gaps instead of papering over them. Because a gap you can see is a problem you can manage. A gap you cannot see is a loss waiting to happen.</p>
+      <p>If you model credit, how does your team handle the "not applicable" codes? I would genuinely like to know.</p>
+    </div>
+    <div class="src"><div class="lbl">Sources</div><ul>
+      <li>ESMA 2025 consultation to simplify private securitisation disclosure: <a href="https://www.esma.europa.eu/press-news/esma-news/esma-consults-revised-disclosure-requirements-private-securitisations">esma.europa.eu</a></li>
+      <li>~40% "not applicable" in core fields: deeploans internal (ESMA-reported, end 2023 snapshot, written as a general pattern).</li>
+    </ul></div>
+    <div class="vis"><b>Visual:</b> a pricing formula with one variable blacked out and stamped "N/A." Headline "you cannot price what you cannot see."</div>
+  </div>
+
+  <div class="foot">Prepared by Prospect Engine for Algoritmica · deeploans · 27 May 2026 · draft for review · posts for Farhan's profile</div>
+</div>
+</body>
+</html>
