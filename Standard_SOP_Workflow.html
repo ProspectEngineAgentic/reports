@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prospect Engine LLC — Standard SOP + Workflow</title>
+<style>
+:root{--ink:#1a2230;--muted:#5b6675;--line:#e3e7ee;--accent:#2563cc;--bg:#f6f8fb;--card:#fff;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:260px 1fr;gap:40px;}
+header.top{background:linear-gradient(135deg,#1c2a44,#243a63);color:#fff;padding:42px 0 36px;}
+header.top .wrap{display:block;}
+header.top h1{margin:0 0 8px;font-size:30px;letter-spacing:-.3px;}
+header.top p{margin:4px 0;color:#c7d3ea;font-size:14.5px;}
+header.top .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+ padding:3px 11px;border-radius:999px;font-size:12.5px;margin-top:10px;color:#eaf1ff;}
+nav.toc{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow:auto;
+ background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 16px;font-size:14px;}
+nav.toc h2{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 10px;}
+nav.toc ol{margin:0;padding-left:20px;}
+nav.toc li{margin:6px 0;}
+nav.toc a{color:var(--ink);text-decoration:none;}
+nav.toc a:hover{color:var(--accent);text-decoration:underline;}
+main{min-width:0;padding-bottom:60px;}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 30px;margin:0 0 22px;}
+h2.sec{font-size:21px;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--line);}
+h3{font-size:16px;margin:22px 0 6px;color:#243a63;}
+p,li{color:#26303f;}
+ul,ol{padding-left:22px;}
+li{margin:5px 0;}
+code{background:#eef2f8;padding:1px 6px;border-radius:5px;font-size:13.5px;
+ font-family:ui-monospace,"SF Mono",Consolas,monospace;color:#1f3354;}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+th{background:#f0f4fa;font-weight:600;color:#1f3354;}
+tr:nth-child(even) td{background:#fafbfd;}
+.callout{background:#fff7e6;border:1px solid #f0d99a;border-radius:8px;padding:12px 16px;margin:14px 0;font-size:14.5px;}
+.note{color:var(--muted);font-size:14px;}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:24px 0 50px;}
+@media(max-width:860px){.wrap{grid-template-columns:1fr;}nav.toc{position:static;max-height:none;}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <h1>Prospect Engine LLC — Standard SOP + Workflow</h1>
+  <p><strong>Company standard.</strong> Client-agnostic. Reusable for every project / client.</p>
+  <p>Per-client identity, credentials, account IDs, chat IDs and links live in <code>clients.json</code>,
+     each client's <code>OPERATING_PLAN.md</code>, and ops config / CLAUDE.md — never in this shared document.</p>
+  <span class="badge">Single source of truth: the _ops folder + per-client OPERATING_PLAN.md (live files win)</span>
+ </div>
+</header>
+
+<div class="wrap">
+<nav class="toc">
+ <h2>Contents</h2>
+ <ol>
+  <li><a href="#s1">The Standing Formula</a></li>
+  <li><a href="#s2">Orchestration Model</a></li>
+  <li><a href="#s3">Global Standing Rules / Guardrails</a></li>
+  <li><a href="#s4">Per-Client SOP Structure</a></li>
+  <li><a href="#s5">Outreach Sequence Pattern</a></li>
+  <li><a href="#s6">Content + Engagement Cycle</a></li>
+  <li><a href="#s7">Nurture Motion</a></li>
+  <li><a href="#s8">Monitoring</a></li>
+  <li><a href="#s9">Standard Scheduled Automation</a></li>
+  <li><a href="#s10">Escalation + Approval Flow</a></li>
+  <li><a href="#s11">New-Client Onboarding Checklist</a></li>
+  <li><a href="#s12">Per-Client Profile Template</a></li>
+ </ol>
+</nav>
+
+<main>
+
+<section id="s1">
+ <h2 class="sec">1. The Standing Formula</h2>
+ <p>The agency runs on ONE repeatable formula so the CEO does not re-instruct each session. On session
+ start: read <code>WORKFLOW.md</code> + <code>clients.json</code>, sync WhatsApp (the shared sync script),
+ then run <code>DAILY_ROUTINE.md</code> for every client whose work is due. For each active client, every
+ working day:</p>
+ <ol>
+  <li><strong>Listen.</strong> Sync WhatsApp and read the client's group. Read the latest messages BEFORE
+  drafting any outreach so we use the client's current situation, not stale facts.</li>
+  <li><strong>Reply in voice.</strong> 7th-grade English, NO dashes, human, warm, polite, like an expert
+  provider who owns the company. If a message needs a real decision you cannot make, draft it and flag the
+  CEO instead of sending.</li>
+  <li><strong>Refine on feedback.</strong> Update and perfect shared work, reconfirm before live. Treat
+  their edits as gold.</li>
+  <li><strong>Do the SOP.</strong> Run that client's daily SOP from their <code>OPERATING_PLAN.md</code>.
+  Respect quotas, live-inbox checks, single-instance rules. Never mix two clients.</li>
+  <li><strong>Content one batch ahead.</strong> Draft the next batch of posts + matching 4K visuals with a
+  FRESH structure each batch. Share review HTML for approval. On approval, schedule one per day at the
+  client's local 10:00.</li>
+  <li><strong>Engage.</strong> Check + reply to comments on published posts; run the post-publish boost +
+  engagement comment; run network engagement where defined.</li>
+  <li><strong>Update the client TODO</strong> (<code>[CLIENT_FOLDER]\reports\CLIENT_TODO.md</code>).</li>
+  <li><strong>Commit to git after every task. No exceptions.</strong> Add-only, never mix clients.</li>
+  <li><strong>Learn.</strong> Append to the client's <code>OPERATING_PLAN.md</code> Optimisation log.</li>
+ </ol>
+ <div class="callout"><strong>Timezone rule:</strong> publish at each client's LOCAL 10:00. The agency PC
+ clock differs from client local time, so each client's publish task fires at the <code>pc_fire_time</code>
+ in <code>clients.json</code>. Recheck PC fire times at every DST change.</div>
+</section>
+
+<section id="s2">
+ <h2 class="sec">2. Orchestration Model</h2>
+ <ul>
+  <li><strong>Main coordinator (Claude session):</strong> reads <code>WORKFLOW.md</code> +
+  <code>clients.json</code>, runs the daily routine for each due client, then summarizes per client.</li>
+  <li><strong>Subagents (Task tool):</strong> fan out independent per-client research/audits in parallel.
+  ONE agent per client so work never crosses. Subagents are read-only / draft-only; sends stay gated.</li>
+  <li><strong>STOP GATE on every send-capable subagent:</strong> killing the python child does NOT stop a
+  subagent's watch loop. Add an explicit STOP GATE, rename the drafts file aside on pause, use TaskStop +
+  SendMessage together.</li>
+  <li><strong>Windows Task Scheduler (always on):</strong> runs all script-only automation without a Claude
+  session — the backbone (see Section 9).</li>
+  <li><strong>Skills / hooks / cloud routines:</strong> <code>schedule</code> creates recurring routines;
+  <code>update-config</code> adds settings.json hooks/permissions. Cloud routines must use the API-fetch
+  pattern (embedded token from ops config), NOT <code>git_repository</code> sources, which auto-disable
+  when the work repo is not connected to the Claude Code GitHub app.</li>
+  <li><strong>Single sending instance per account.</strong> Never run two sending scripts against one
+  account at once (LinkedIn 429). Verify exactly one instance after launch. Never pipe a sending script to
+  Tee-Object via the Bash tool.</li>
+  <li><strong>Never mix clients.</strong> Each client has its own local folder, git folder, account, and
+  trackers.</li>
+ </ul>
+</section>
+
+<section id="s3">
+ <h2 class="sec">3. Global Standing Rules / Guardrails</h2>
+ <p class="note">Non-negotiable. Apply to every client.</p>
+
+ <h3>Messaging voice</h3>
+ <ul>
+  <li>7th-grade English. NO em dashes / hyphens in client-facing copy. Match the client's language variant.</li>
+  <li>Human, like texting a friend. Banned AI filler: "outbound", "GTM", "signal", "leverage", "happy to",
+  "I would love to", "trade notes", "if it is ever useful", "no agenda, just a good chat". Read aloud first.</li>
+  <li>Comment voice: no generic AI openers ("Spot on", "100%", "This rings true"); specific lived detail
+  per author; cover the whole argument; 7th grade; no dashes.</li>
+ </ul>
+
+ <h3>No-sell, convert to a call</h3>
+ <ul>
+  <li>Act as the client (first person). The goal of a prospect message is to BOOK A SHORT CALL, not sell.
+  Share the [client calendar link] and invite a short, no-pressure call. Never pitch service / packages /
+  price — the client closes live on the call.</li>
+  <li>Decline = door-open courtesy note, then stop. Skip any optional add-on offer for experts in that
+  domain.</li>
+ </ul>
+
+ <h3>Never contact anyone already in contact with the client</h3>
+ <ul>
+  <li>Never nurture/engage/DM/like/comment anyone already in contact on ANY channel, or whom the client
+  said to drop. Scan each contact's live thread; any inbound = "in contact" = remove. The "recent" check
+  is not enough.</li>
+  <li>Don't just delete — park them with full info in
+  <code>[CLIENT_FOLDER]\data\do_not_touch_contacts.json</code> +
+  <code>excluded_contacts_tracking.json</code> + a readable <code>&lt;Client&gt;_excluded_contacts.md</code>.
+  Replicate per client.</li>
+ </ul>
+
+ <h3>Do-not-contact lists (per client)</h3>
+ <p>Maintain a per-client DNC list (companies, subsidiaries, named people, red-marked profiles,
+ coordinate-first targets). Canonical <code>[CLIENT_FOLDER]\data\&lt;client&gt;_dnc.json</code>; enforce in
+ that client's invite + engagement scripts. Coordinate-first targets need CEO sign-off before any touch.</p>
+
+ <h3>BLOCKED accounts</h3>
+ <p>A global BLOCKED-accounts list is maintained in ops config (actual names / IDs live there, not in this
+ shared doc). No messaging, invites, comments, reactions, posting, or engagement of any kind from a blocked
+ account, for any client, ever. Check the list before assigning any sending account.</p>
+
+ <h3>Verify before send</h3>
+ <p>Strictly verify job title, company, persona on the LIVE profile before any outreach. Use a role-fit
+ filter that skips off-persona / career-drifted prospects at send time where accuracy beats volume.</p>
+
+ <h3>Live-inbox check + stop-on-reply (the #1 invariant)</h3>
+ <p>Before EVERY M1/M2/M3 (or any send), GET the live thread, read the full conversation, confirm the
+ newest message is theirs. Never trust the tracker alone. Any reply = stop that sequence FOREVER. "Send
+ all" does NOT override this.</p>
+
+ <h3>Only reply to campaign / target persona</h3>
+ <p>Inbox replies ONLY to people in the active campaign or matching the client's ICP. Investors,
+ recruiters, vendor pitches, off-target inbound go to the CEO as info only.</p>
+
+ <h3>Approval before anything client-facing</h3>
+ <ul>
+  <li>Never publish to a client's live profile without approval. Do all tasks in sequence (no "skip"
+  options), share the deliverable for CEO review first; he confirms + sends, then proceed.</li>
+  <li>Never name Claude/AI tooling to a client without CEO permission, even if the client raises it first.
+  Ask for "your ideas", not "Claude's ideas".</li>
+ </ul>
+
+ <h3>Browser-openable deliverables</h3>
+ <p>Share reports/content as HTML/links, NEVER a flat PNG. Flow: publish HTML to the reports/Pages repo
+ (named in ops config) &rarr; the public Pages URL &rarr; review in the Operations Team group &rarr; CEO
+ shares the link in the client group.</p>
+
+ <h3>Notify Operations Team after every publish</h3>
+ <p>After ANY LinkedIn post from a client profile, share the post link in the "Operations Team" WhatsApp
+ group and ask the team to interact. Use the shared notify helper; bake into each client's publisher.</p>
+
+ <h3>Commit to git after each task</h3>
+ <p>Add-only. Never mix clients. NEVER run <code>git sparse-checkout set &lt;new-folder&gt;</code> on the
+ work repo (destructively deletes files). Before committing, confirm
+ <code>git diff --cached --name-status</code> shows zero <code>D</code>. Use <code>git read-tree HEAD</code>
+ + <code>git add &lt;target&gt;</code>.</p>
+
+ <h3>Technical hygiene</h3>
+ <ul>
+  <li>Never use <code>python -c</code> inline on Windows — write a <code>.py</code> file and run
+  <code>python "path.py"</code>.</li>
+  <li>Never probe with real endpoints. <code>POST /posts</code> is permanent (no DELETE for self-posts).
+  Read docs or ask first. Correct repost field is <code>repost: &lt;post_id&gt;</code> +
+  <code>text: &lt;caption&gt;</code>.</li>
+  <li>Fix the command, not just the symptom: every error needs TWO fixes — recover the damage AND patch the
+  script/config so it cannot recur, then commit.</li>
+  <li>Don't pattern-match vendor API error names to causes; run the experiment that changes the suspected
+  variable first.</li>
+  <li>Research &rarr; weigh 3-4 options &rarr; pick best &rarr; self-check before delivering.</li>
+ </ul>
+
+ <h3>Unipile ID + invite rules (generic)</h3>
+ <ul>
+  <li>Resolve the real <code>provider_id</code> via <code>GET /users/{ACw}?account_id=SENDER_ID</code>
+  before invite/messaging. The ACw&rarr;ACo char-swap is unreliable; raw ACw returns a misleading
+  <code>403 feature_not_subscribed</code>.</li>
+  <li><code>cannot_resend_yet</code> = with-note weekly cap AND an account-wide burst cap (~25/day &rarr;
+  multi-day lock). Send invites WITHOUT a note; personalize via DM after accept.</li>
+  <li><code>already_connected</code> is ambiguous (fires for pending invites too) — use
+  <code>/users/relations</code> as truth.</li>
+  <li>Rate limits: LinkedIn caps ~80-100 invites/day/account; failed requests still count. On 429, stop for
+  the day, wait 2-3 hrs. <code>disconnected_account</code> = session expired &rarr; refresh cookies in the
+  Unipile dashboard.</li>
+ </ul>
+
+ <h3>Reactions / boost rules</h3>
+ <ul>
+  <li>Boost reactions are a CONTEXTUAL MIXED-TYPE set (like / insightful / support / celebrate / love),
+  never all-like. ~15 per post. Comment rotation: never repeat the same profile day-to-day; client
+  principals occasional (max 1/post, max 2 days/week); cleared local commenter accounts rotate LRU; 5-6
+  comments/post.</li>
+  <li>Every comment must also fire a like from the same account (comment alone reads transactional).</li>
+ </ul>
+
+ <h3>Prospect timezone rule</h3>
+ <p>All outbound activity sends in the PROSPECT'S local Mon-Fri 9-18. Use the shared timezone util.</p>
+
+ <h3>Shared credentials</h3>
+ <p>Unipile API key, base URL, GitHub token, and any other secret are <strong>stored in ops config /
+ CLAUDE.md, never in shared docs</strong>. Never paste a key, token, account ID, chat ID, or calendar link
+ into a hosted or shared file.</p>
+</section>
+
+<section id="s4">
+ <h2 class="sec">4. Per-Client SOP Structure</h2>
+ <p>Every client gets its own <code>OPERATING_PLAN.md</code> built from this standard. Do NOT keep client
+ identity in this shared doc. Each plan should cover:</p>
+ <ul>
+  <li><strong>Identity &amp; channels:</strong> company, contact, channel(s), timezone, local post time +
+  PC fire time, the client's account, WhatsApp chat, git folder, local folder (values in
+  <code>clients.json</code> / ops config).</li>
+  <li><strong>Voice &amp; content rules:</strong> language variant, tone, extra banned phrases, visual
+  style, comment-reply posture.</li>
+  <li><strong>ICP / personas + CTA rules:</strong> who to target, who NOT to, current campaign CTA.</li>
+  <li><strong>Workstreams:</strong> outreach, content, any specialised nurture/sourcing track. Keep
+  separate campaigns separate.</li>
+  <li><strong>Sequence + caps:</strong> weekly invite cap (week-to-date), daily volume, M1/M2/M3(/M4/M5).</li>
+  <li><strong>Do-not-contact notes, data files, watch scope, standing context + blockers.</strong></li>
+ </ul>
+ <div class="callout"><strong>Watch scope rule:</strong> autonomous action only for clients explicitly
+ cleared for it; all other active clients are monitor-only (act only on CEO command). Any client whose
+ account is on the global BLOCKED list is monitor-only and that account is never used.</div>
+</section>
+
+<section id="s5">
+ <h2 class="sec">5. Outreach Sequence Pattern</h2>
+ <p>Defaults for any new client (tune per client in <code>OPERATING_PLAN.md</code>):</p>
+ <table>
+  <tr><th>Stage</th><th>Default timing</th></tr>
+  <tr><td>Invite</td><td>Silent connect (no note) where with-note is unavailable; personalize via M1 after accept</td></tr>
+  <tr><td>M1</td><td>1 day after connect (or immediately on detecting a new connection)</td></tr>
+  <tr><td>M2</td><td>+4 days after M1 (if no reply)</td></tr>
+  <tr><td>M3</td><td>+10 days after M2 (if no reply)</td></tr>
+  <tr><td>M4 / M5</td><td>Only where a longer sequence is defined; widen gaps (e.g. +5d, +7d)</td></tr>
+ </table>
+ <ul>
+  <li><strong>Daily invite volume:</strong> typically ~26-30 per account, ~5 min apart.</li>
+  <li><strong>Weekly invite cap:</strong> set per account, typically ~150-205/week (Mon-Sun), NOT a hard
+  daily number. Always count week-to-date from that client's <code>invitation_log.json</code> at session
+  start and send only the remainder.</li>
+  <li><strong>No-connect-step personas</strong> (DM-first) use a different cadence (e.g. M1&rarr;M2 ≥3d,
+  M2&rarr;M3 ≥5d) — define per client.</li>
+ </ul>
+ <div class="callout"><strong>Universal (every send, every client):</strong> live-inbox check before EVERY
+ send; any reply = stop forever; single sending instance per account; prospect local Mon-Fri 9-18; verify
+ profile/persona on the live profile first; DNC + global BLOCKED list enforced.</div>
+</section>
+
+<section id="s6">
+ <h2 class="sec">6. Content + Engagement Cycle</h2>
+ <ul>
+  <li><strong>Batch-ahead drafting:</strong> keep every client one batch ahead. Posts are top-voice,
+  7th-grade, no dashes, strong standalone hook, one takeaway + one question, soft CTA, hashtags at end,
+  100% sourced. Default batch ~5 posts; company-page cadence set per client.</li>
+  <li><strong>Fresh visuals:</strong> 4K visuals built HTML &rarr; headless Chrome; vary structure every
+  batch; never the same template two posts running; carousels/data charts perform best; brand-safe photos
+  only. Some clients want TEXT-led visuals only — honour their preference.</li>
+  <li><strong>Approval gate:</strong> share the review HTML to the client's WhatsApp (after CEO review).
+  Publish only on client approval AND the queue gate (<code>enabled:true</code> + per-post
+  <code>approved:true</code> + due-today).</li>
+  <li><strong>Daily publish at local 10:00:</strong> each client's publisher fires at its
+  <code>pc_fire_time</code> from <code>clients.json</code>.</li>
+  <li><strong>Post-publish engagement (baked in):</strong> ~15 mixed-type boost reactions + exactly ONE
+  engagement comment from the cleared commenting account (auto-likes). Then notify the Operations Team
+  WhatsApp group with the post link. Dedup via the shared engaged-state file.</li>
+  <li><strong>Comment-watch + reply (STANDING, daily):</strong> check comments on every published post and
+  reply in voice (as the person on profile posts, as the page on company posts). Concede the point, restate
+  ours softly, no hard CTA to peers, no generic openers.</li>
+  <li><strong>Network-post engagement:</strong> each new post from any cleared (non-blocked) network
+  account gets ~15 boost reactions + 1 personal comment (not rotation). Comment non-negotiables: no phrase
+  lifting, identical operator voice, well-researched, no restating the thesis, cover the whole argument,
+  grade-7; if outside the lens with no honest parallel, like the post, don't comment. Dedupe before send
+  (fail-closed). Always like + comment, never comment alone.</li>
+  <li><strong>Company-page follow-invites:</strong> monthly per client via the raw passthrough
+  <code>POST /linkedin</code> &rarr; <code>voyagerRelationshipsDashInvitations</code> (~250/mo).</li>
+ </ul>
+</section>
+
+<section id="s7">
+ <h2 class="sec">7. Nurture Motion (cold dormant re-warm)</h2>
+ <p>Enable per client as the campaign matures. SOP at
+ <code>[CLIENT_FOLDER]\reports\&lt;Client&gt;_NURTURE_SOP.md</code>; tool runs DRY RUN by default,
+ <code>--send</code> only after CEO approval.</p>
+ <ol>
+  <li>Build the list from tracker + live inbox: OLD ghosted leads who once had a real conversation (sent
+  M1/M2/M3, never replied) tagged DORMANT_NURTURE.</li>
+  <li><strong>Exclude anyone already in contact</strong> on ANY channel (scan last-msg-inbound, not just
+  "recent"), plus anyone the client said to drop. Hard guard against the do-not-touch list; park excluded
+  contacts with full info.</li>
+  <li>Take the oldest 10-15, live-inbox check each, skip on any new reply or recent client activity.</li>
+  <li>Draft the re-open in the client's voice tailored to the angle. Acknowledge them + share the [client
+  calendar link] + invite a SHORT no-pressure call. <strong>Never sell.</strong> Like + comment on their
+  latest post the same day.</li>
+  <li>Drafts go to the CEO before sending. Cap ~12/day, ~5 min apart, prospect local working hours. The
+  client handles warm replies.</li>
+ </ol>
+ <p class="note">Runs automatically via the client's "Nurture" task. Nurture responders become live
+ threads &rarr; route to the client, never auto-touch.</p>
+</section>
+
+<section id="s8">
+ <h2 class="sec">8. Monitoring</h2>
+ <ul>
+  <li><strong>WhatsApp Watch (every 30 min, read-only):</strong> the shared watcher flags new/unanswered
+  client messages; never sends. Autonomous action only for cleared clients; all others monitor-only. Reply
+  only to genuine messages (skip reactions/OOO/thank-yous).</li>
+  <li><strong>WhatsApp Daily Sync:</strong> refreshes the local WhatsApp store; a client-tagged subset
+  mirrors to the work repo. <code>--summary</code> = read-only status.</li>
+  <li><strong>Session-start read-latest:</strong> read the latest group messages BEFORE drafting any
+  outreach.</li>
+  <li><strong>Routine failure watcher:</strong> a cloud routine alerts the Ops WA group on any routine
+  failure.</li>
+ </ul>
+</section>
+
+<section id="s9">
+ <h2 class="sec">9. Standard Scheduled Automation</h2>
+ <p>Every active client should have this standard set of Windows tasks (times = the client's
+ <code>pc_fire_time</code> band; one sending instance per account at a time):</p>
+ <table>
+  <tr><th>Task</th><th>When</th><th>Purpose</th></tr>
+  <tr><td>Daily Outreach</td><td>morning</td><td>New connections &rarr; M1; due M2/M3; new invites (weekly cap, week-to-date); update TODO</td></tr>
+  <tr><td>M1 Daily</td><td>mid-morning</td><td>M1 sends</td></tr>
+  <tr><td>M2 Overdue</td><td>midday</td><td>M2 catch-up</td></tr>
+  <tr><td>Daily Publish</td><td>local 10:00 (pc_fire_time)</td><td>Publish one approved+queued post/day &rarr; boost + engagement comment + Ops notify</td></tr>
+  <tr><td>Invites Catch-up</td><td>afternoon</td><td>Top up the day's invites to hit the weekly cap</td></tr>
+  <tr><td>Nurture</td><td>late afternoon</td><td>Re-engage dormant leads, ~12/day, 5 min apart, live-inbox check</td></tr>
+  <tr><td>Reply Check</td><td>evening</td><td>Inbox scan; any reply stops that sequence forever</td></tr>
+  <tr><td>Comment Watch</td><td>evening</td><td>Detect new comments on published posts &rarr; alert Ops</td></tr>
+  <tr><td>Page Follow Invites</td><td>monthly, day 1</td><td>Invite connections to follow the company page (~250/mo)</td></tr>
+ </table>
+ <p>Plus the shared, agency-wide tasks (one each, not per client):</p>
+ <table>
+  <tr><th>Task</th><th>When</th><th>Purpose</th></tr>
+  <tr><td>WhatsApp Daily Sync</td><td>once/day</td><td>Refresh the WhatsApp store + mirror the client subset to the work repo</td></tr>
+  <tr><td>WhatsApp Watch</td><td>every 30 min</td><td>Read-only watch; flag new/unanswered client messages</td></tr>
+ </table>
+ <div class="callout"><strong>Cloud routines:</strong> must use the API-fetch pattern (embedded token from
+ ops config), not <code>git_repository</code> sources (those auto-disable when the work repo is not
+ connected to the Claude Code GitHub app). A watcher routine alerts the Ops WA group on any routine
+ failure.</div>
+</section>
+
+<section id="s10">
+ <h2 class="sec">10. Escalation + Approval Flow</h2>
+ <ul>
+  <li><strong>Needs CEO approval before going live:</strong> any client-facing message/post/report; any
+  nurture <code>--send</code>; any new content batch; renew-or-churn decisions; touching coordinate-first
+  DNC targets; any send for AT-RISK / unconfirmed clients.</li>
+  <li><strong>Reports are shared as hosted HTML links</strong>, never flat PNGs: publish to the
+  reports/Pages repo &rarr; the public Pages URL &rarr; review in the Operations Team group &rarr; CEO
+  shares the link in the client group.</li>
+  <li><strong>Off-target inbound</strong> (investors, recruiters, vendor pitches) &rarr; CEO as info only;
+  never engaged by us.</li>
+  <li><strong>Warm replies</strong> are the client's to close; route them to the client, never
+  auto-touch.</li>
+  <li><strong>After any publish:</strong> post the link to the Operations Team group asking the team to
+  interact.</li>
+ </ul>
+</section>
+
+<section id="s11">
+ <h2 class="sec">11. New-Client Onboarding Checklist</h2>
+ <ol>
+  <li><strong>Create the folder structure</strong> under <code>[CLIENT_FOLDER]</code>: <code>data\</code>,
+  <code>scripts\core\</code>, <code>scripts\archive\</code>, <code>content\</code>, <code>logs\</code>,
+  <code>reports\</code>, <code>drafts\</code>, <code>creative\</code>. Add a <code>README.md</code>.</li>
+  <li><strong>Create the git folder</strong> in the work repo using <code>git read-tree HEAD</code> +
+  <code>git add &lt;target&gt;</code> (NEVER <code>git sparse-checkout set</code>).</li>
+  <li><strong>Add the client to <code>clients.json</code></strong>: name, company, contact, status,
+  channel, timezone, local_post_time, pc_fire_time, unipile_account, wa_chat_id, git_folder,
+  local_folder.</li>
+  <li><strong>Set operating values:</strong> unipile_account (confirm NOT on the BLOCKED list), wa_chat_id,
+  timezone, pc_fire_time (so local publish lands at 10:00; recheck at DST).</li>
+  <li><strong>Confirm with the CEO:</strong> ICP / personas, voice rules + language variant, scope
+  (autonomous vs monitor-only), commercials/term, and the approval flow.</li>
+  <li><strong>Build <code>OPERATING_PLAN.md</code></strong> from this standard (Section 4 structure).</li>
+  <li><strong>Set up lead DB + trackers:</strong> lead DB in <code>data\</code>, plus
+  <code>tracker.json</code>, <code>invitation_log.json</code>, <code>urn_map.json</code>,
+  <code>&lt;client&gt;_dnc.json</code>, and the do-not-touch / excluded-contacts pair.</li>
+  <li><strong>Set up the standard Windows tasks</strong> (Section 9) at the client's pc_fire_time; confirm
+  the shared WhatsApp Sync + 30-min Watch cover the new chat id.</li>
+  <li><strong>Confirm the approval flow is live:</strong> review HTML to Ops group &rarr; CEO &rarr; client
+  group; no client-facing action without approval.</li>
+  <li><strong>First batch:</strong> draft first content batch + visuals, share for approval, queue, then
+  enable the publisher. Commit everything to git.</li>
+ </ol>
+</section>
+
+<section id="s12">
+ <h2 class="sec">12. Per-Client Profile Template</h2>
+ <p>Copy this into the new client's <code>OPERATING_PLAN.md</code> and fill every field. Values mirror
+ <code>clients.json</code> and ops config (never hard-code secrets here).</p>
+ <table>
+  <tr><th>Field</th><th>Value</th></tr>
+  <tr><td>Company</td><td></td></tr>
+  <tr><td>Contact (name + role)</td><td></td></tr>
+  <tr><td>Channel(s)</td><td>LinkedIn / Cold Email / both</td></tr>
+  <tr><td>Timezone</td><td></td></tr>
+  <tr><td>Local post time</td><td>(default 10:00)</td></tr>
+  <tr><td>PC fire time</td><td>(computed from timezone + DST)</td></tr>
+  <tr><td>Unipile account</td><td>(id in clients.json; confirm NOT blocked)</td></tr>
+  <tr><td>WhatsApp chat</td><td>(chat id in clients.json)</td></tr>
+  <tr><td>Git folder</td><td>(e.g. &lt;Client&gt; Outreach)</td></tr>
+  <tr><td>Local folder</td><td>(e.g. Clients\&lt;Client&gt;\)</td></tr>
+  <tr><td>ICP / personas</td><td></td></tr>
+  <tr><td>Voice rules</td><td>language variant, tone, banned phrases, visual style</td></tr>
+  <tr><td>CTA</td><td>current campaign CTA + persona-specific rules</td></tr>
+  <tr><td>Invite weekly cap</td><td>(~150-205/wk; count week-to-date)</td></tr>
+  <tr><td>Daily invite volume</td><td>(~26-30, 5 min apart)</td></tr>
+  <tr><td>Sequence timing</td><td>M1 / M2 (+4d) / M3 (+10d) / M4 / M5</td></tr>
+  <tr><td>Do-not-contact notes</td><td>DNC file + coordinate-first targets</td></tr>
+  <tr><td>Watch scope</td><td>autonomous / monitor-only</td></tr>
+  <tr><td>Data files</td><td>tracker / invitation log / urn map / lead DB (paths in ops config)</td></tr>
+  <tr><td>Status</td><td>onboarding / active / monitor / at-risk</td></tr>
+  <tr><td>Commercials / term</td><td>invoice id, amount, installments, post count, term, renew date</td></tr>
+  <tr><td>Open items / blockers</td><td></td></tr>
+ </table>
+</section>
+
+<footer>
+ Company standard. Per-client identity, credentials, and IDs live in clients.json, each client's
+ OPERATING_PLAN.md, and ops config / CLAUDE.md — never in this shared document. Live files win on any conflict.
+</footer>
+
+</main>
+</div>
+</body>
+</html>
