@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prospect Engine LLC - Master SOPs + Workflow</title>
+<style>
+:root{--ink:#1a2230;--muted:#5b6675;--line:#e3e8ef;--bg:#f7f9fc;--accent:#2b5fd9;--accent2:#0f3d8c;--code:#eef2f8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.layout{display:flex;max-width:1280px;margin:0 auto;gap:0}
+nav.toc{position:sticky;top:0;align-self:flex-start;width:290px;height:100vh;overflow:auto;padding:28px 18px 60px;border-right:1px solid var(--line);background:#fff;flex:none}
+nav.toc h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc li{counter-increment:s;margin:2px 0}
+nav.toc a{display:block;text-decoration:none;color:var(--ink);font-size:13.5px;padding:6px 10px;border-radius:7px;line-height:1.35}
+nav.toc a:hover{background:var(--code);color:var(--accent2)}
+main{flex:1;min-width:0;padding:42px 52px 90px;background:#fff}
+header.hd{border-bottom:3px solid var(--accent);padding-bottom:18px;margin-bottom:8px}
+header.hd .kicker{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+h1{font-size:30px;line-height:1.2;margin:6px 0 4px}
+h2{font-size:22px;margin:42px 0 12px;padding-top:10px;border-top:1px solid var(--line);color:var(--accent2)}
+h3{font-size:17.5px;margin:28px 0 8px;color:var(--ink)}
+h4{font-size:15px;margin:20px 0 6px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+p{margin:10px 0}
+ul,ol{margin:10px 0 10px 4px;padding-left:22px}
+li{margin:4px 0}
+code{background:var(--code);padding:1.5px 6px;border-radius:5px;font:13.5px/1.5 "SF Mono",Consolas,"Roboto Mono",monospace;color:#264; word-break:break-word}
+pre{background:#0f1b2d;color:#dbe7ff;padding:16px 18px;border-radius:10px;overflow:auto;margin:14px 0}
+pre code{background:none;color:inherit;padding:0}
+.tablewrap{overflow:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eef3fb;color:var(--accent2);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#fafcff}
+blockquote{margin:14px 0;padding:10px 16px;border-left:4px solid var(--accent);background:var(--code);color:var(--muted);border-radius:0 8px 8px 0}
+hr{border:none;border-top:1px solid var(--line);margin:30px 0}
+a{color:var(--accent)}
+strong{color:var(--ink)}
+@media(max-width:920px){nav.toc{display:none}main{padding:28px 18px 60px}}
+</style></head>
+<body><div class="layout">
+<nav class="toc"><h2>Contents</h2><ol><li><a href="#1-the-standing-formula-daily-per-client-loop">1. The Standing Formula (daily per-client loop)</a></li>
+<li><a href="#2-orchestration-model">2. Orchestration Model</a></li>
+<li><a href="#3-global-standing-rules-guardrails-non-negotiable">3. Global Standing Rules / Guardrails (non-negotiable)</a></li>
+<li><a href="#4-per-client-sops">4. Per-Client SOPs</a></li>
+<li><a href="#5-outreach-sequences-caps-timing">5. Outreach Sequences (caps + timing)</a></li>
+<li><a href="#6-content-engagement-cycle">6. Content + Engagement Cycle</a></li>
+<li><a href="#7-nurture-motion-cold-dormant-re-warm">7. Nurture Motion (cold dormant re-warm)</a></li>
+<li><a href="#8-monitoring">8. Monitoring</a></li>
+<li><a href="#9-scheduled-automation-live-windows-tasks-agency-only">9. Scheduled Automation (live Windows tasks — agency only)</a></li>
+<li><a href="#10-escalation-approval-flow">10. Escalation + Approval Flow</a></li>
+<li><a href="#11-per-client-open-items-blockers-snapshot-2026-06-02">11. Per-Client Open Items / Blockers (snapshot 2026-06-02)</a></li></ol></nav>
+<main><h1 id="prospect-engine-llc-master-sops-workflow">Prospect Engine LLC — Master SOPs + Workflow</h1>
+<p><strong>Last compiled:</strong> 2026-06-02</p>
+<p><strong>Owner / operator:</strong> CEO, hello@prospectengine.com (rokib@prospectengine.com)</p>
+<p><strong>Repos:</strong> clients work <code>ProspectEngineAgentic/penclients</code> · reports/Pages <code>ProspectEngineAgentic/reports</code></p>
+<p><strong>Single source of truth for the formula:</strong> <code>C:\Users\PC\Clients\_ops\</code> (<code>WORKFLOW.md</code>, <code>DAILY_ROUTINE.md</code>, <code>clients.json</code>)</p>
+<p>This document captures the entire operation end to end: the standing formula, the orchestration model,</p>
+<p>every global guardrail, every per-client SOP, the outreach sequences and caps, the content + engagement</p>
+<p>cycle, the nurture motion, monitoring, every scheduled Windows task, the approval flow, and the open</p>
+<p>blockers. Read it with the live files above; those files win on any conflict.</p>
+<hr>
+<h2 id="1-the-standing-formula-daily-per-client-loop">1. The Standing Formula (daily per-client loop)</h2>
+<p>The agency runs on ONE repeatable formula so the CEO does not have to re-instruct each session.</p>
+<p>On session start: read <code>WORKFLOW.md</code> + <code>clients.json</code>, sync WhatsApp (<code>wa_daily.py</code>), then run</p>
+<p><code>DAILY_ROUTINE.md</code> for every client whose work is due. For each active client, every working day:</p>
+<ol>
+<li><strong>Listen.</strong> Sync WhatsApp and read the client&#x27;s group (chat_id in <code>clients.json</code>). Read the latest</li>
+</ol>
+<p>   messages BEFORE drafting any outreach so we use the client&#x27;s current situation, not stale facts.</p>
+<ol>
+<li><strong>Reply in voice.</strong> Answer the client on their WhatsApp group: 7th-grade English, NO dashes, human,</li>
+</ol>
+<p>   warm, polite, like an expert provider who owns the company. If a message needs a real decision I</p>
+<p>   cannot make, draft it and flag the CEO instead of sending.</p>
+<ol>
+<li><strong>Refine on feedback.</strong> If the client gave feedback on shared work, update and perfect it, then</li>
+</ol>
+<p>   reconfirm before it goes live. Treat their edits as gold.</p>
+<ol>
+<li><strong>Do the SOP.</strong> Run that client&#x27;s daily SOP from their <code>OPERATING_PLAN.md</code> (outreach sends, follow-ups,</li>
+</ol>
+<p>   content). Respect quotas, live-inbox checks, single-instance rules. Never mix two clients.</p>
+<ol>
+<li><strong>Content one batch ahead.</strong> Draft the next batch of posts (top-voice, 7th-grade, no dashes, strong</li>
+</ol>
+<p>   hook, one takeaway, soft CTA) + matching 4K visuals with a FRESH structure each batch. Share the review</p>
+<p>   HTML to the client&#x27;s WhatsApp group for approval. On approval, schedule one per day at the client&#x27;s</p>
+<p>   local 10:00 via their publisher + Windows task.</p>
+<ol>
+<li><strong>Engage.</strong> Check + reply to comments on published posts; run the post-publish boost + Saif comment;</li>
+</ol>
+<p>   run network/DV engagement where defined.</p>
+<ol>
+<li><strong>Update the client TODO</strong> (<code>Clients\&lt;Client&gt;\reports\CLIENT_TODO.md</code>) with a short personality read.</li>
+<li><strong>Commit to git after every task. No exceptions.</strong> Add-only, never mix clients.</li>
+<li><strong>Learn.</strong> Note what worked, append to the client&#x27;s <code>OPERATING_PLAN.md</code> Optimisation log, improve the</li>
+</ol>
+<p>   next batch and approach.</p>
+<p><strong>Timezone rule:</strong> publish at each client&#x27;s LOCAL 10:00. This PC is UTC+6 (Asia/Dhaka). During European</p>
+<p>summer (CEST) that local 10:00 is 14:00 PC. Each client&#x27;s publish task fires at the <code>pc_fire_time</code> in</p>
+<p><code>clients.json</code>. Recheck PC fire times at every DST change (CEST is UTC+2, CET is UTC+1).</p>
+<hr>
+<h2 id="2-orchestration-model">2. Orchestration Model</h2>
+<ul>
+<li><strong>Main coordinator (Claude session):</strong> when the CEO opens the PC, reads <code>WORKFLOW.md</code> + <code>clients.json</code>,</li>
+</ul>
+<p>  runs the daily routine for each due client, then summarizes the day per client for the CEO.</p>
+<ul>
+<li><strong>Subagents (Task tool):</strong> fan out independent per-client research/audits in parallel. ONE agent per</li>
+</ul>
+<p>  client so work never crosses between clients. Subagents draft / read-only; sends stay gated.</p>
+<ul>
+<li><strong>STOP GATE on every send-capable subagent:</strong> killing the python child does NOT stop a subagent&#x27;s watch</li>
+</ul>
+<p>  loop (it restarts from a filtered drafts file). Add an explicit STOP GATE, rename the drafts file aside</p>
+<p>  on pause, and use TaskStop + SendMessage together.</p>
+<ul>
+<li><strong>Windows Task Scheduler (always on):</strong> runs all script-only automation without a Claude session —</li>
+</ul>
+<p>  outreach sends, daily publish, WhatsApp sync, watchers. This is the backbone (see Section 9).</p>
+<ul>
+<li><strong>Skills / hooks / cloud routines:</strong> the <code>schedule</code> skill creates recurring remote routines;</li>
+</ul>
+<p>  <code>update-config</code> adds settings.json hooks/permissions for harness-executed automatic behaviours.</p>
+<p>  Cloud routines must use the API-fetch pattern (embedded GH token), NOT git_repository sources —</p>
+<p>  <code>penclients</code> is not connected to the Claude Code GitHub app, so git-source routines auto-disable.</p>
+<ul>
+<li><strong>Single sending instance per Unipile account.</strong> Never run two sending scripts against one account at</li>
+</ul>
+<p>  once (causes LinkedIn 429). Verify exactly one instance after launch. Never pipe a sending script to</p>
+<p>  Tee-Object via the Bash tool — the left side still launches and can double-fire.</p>
+<ul>
+<li><strong>Never mix clients.</strong> Each client has its own local folder, git folder, Unipile account, and trackers.</li>
+</ul>
+<hr>
+<h2 id="3-global-standing-rules-guardrails-non-negotiable">3. Global Standing Rules / Guardrails (non-negotiable)</h2>
+<h3 id="messaging-voice">Messaging voice</h3>
+<ul>
+<li>7th-grade English, NO em dashes / hyphens in client-facing copy (reads as AI). British English for PDCA.</li>
+<li>Human, like texting a friend. Banned AI filler: &quot;outbound&quot;, &quot;GTM&quot;, &quot;signal&quot;, &quot;leverage&quot;, &quot;happy to&quot;,</li>
+</ul>
+<p>  &quot;I would love to&quot;, &quot;trade notes&quot;, &quot;if it is ever useful&quot;, &quot;no agenda, just a good chat&quot;. Read aloud</p>
+<p>  before sending.</p>
+<ul>
+<li>Comment voice: no generic AI openers (&quot;Spot on&quot;, &quot;100%&quot;, &quot;This rings true&quot;); specific lived detail per</li>
+</ul>
+<p>  author; cover the whole argument; 7th grade; no dashes.</p>
+<h3 id="no-sell-convert-to-a-call-prospect-dms">No-sell, convert to a call (prospect DMs)</h3>
+<ul>
+<li>Act as the client (first person, their voice). The goal of a prospect message is to BOOK A SHORT CALL,</li>
+</ul>
+<p>  not to sell. Share the calendar link and invite a short, no-pressure knowledge-sharing call. Never pitch</p>
+<p>  the service / packages / price in the text — the client closes live on the call.</p>
+<ul>
+<li>PDCA/Robert calendar: <code><a href="https://calendly.com/robert-edward-pinnington-pdcaconsulting/30min">https://calendly.com/robert-edward-pinnington-pdcaconsulting/30min</a></code>.</li>
+<li>Decline = door-open courtesy note, then stop. Skip the AI-automation offer for AI experts (acknowledge</li>
+</ul>
+<p>  + courtesy only).</p>
+<h3 id="never-contact-anyone-already-in-contact-with-the-client">Never contact anyone already in contact with the client</h3>
+<ul>
+<li>Never nurture/engage/DM/like/comment anyone already in contact with the client on ANY channel, or whom</li>
+</ul>
+<p>  the client said to drop. Scan each contact&#x27;s live thread; if the newest message is INBOUND (or any</p>
+<p>  inbound exists) they are &quot;in contact&quot; — remove them. The live-inbox &quot;recent&quot; check is not enough.</p>
+<ul>
+<li>Don&#x27;t just delete — park them in a separate tracking list with full info (PDCA:</li>
+</ul>
+<p>  <code>data\do_not_touch_contacts.json</code> + <code>data\excluded_contacts_tracking.json</code> +</p>
+<p>  <code>reports\PDCA_excluded_contacts.md</code>). Replicate this pattern for every client.</p>
+<h3 id="do-not-contact-lists-per-client">Do-not-contact lists (per client)</h3>
+<ul>
+<li><strong>Opcom (Branko):</strong> never contact/follow/like/comment AMD, Xilinx (AMD subsidiary), Axpo, CKW, or Stefan</li>
+</ul>
+<p>  Sredojevic (person), plus red-marked profiles in his review sheet. Coordinate with CEO before touching</p>
+<p>  Infineon (Belgrade) or Microsoft hardware group (Belgrade). Canonical list</p>
+<p>  <code>Clients\Opcom\data\opcom_dnc.json</code>; enforced in <code>send_connection_requests.py</code> + <code>opcom_dv_engage.py</code>.</p>
+<h3 id="blocked-unipile-accounts-never-use-any-client-any-activity-ever">BLOCKED Unipile accounts (never use, any client, any activity, ever)</h3>
+<ul>
+<li>Glenn Lai (<code>upZ78U-FR42qgK7JloZxgw</code>), Kamryadi Arifin (<code>9jkKyiInTqKeVSR2SMY_Dg</code>),</li>
+</ul>
+<p>  Vicky Koh (<code>LCmKNbVjT3CbtSQxPlULIQ</code>), Thim Werner (<code>Ds7J_9hBRL-J9DCxisW5fg</code>).</p>
+<p>  No messaging, invites, comments, reactions, posting, or engagement of any kind.</p>
+<h3 id="verify-before-send">Verify before send</h3>
+<ul>
+<li>Strictly verify job title, company, persona on the LIVE profile before any outreach message. PDCA uses a</li>
+</ul>
+<p>  role-fit filter (<code>pdca_role_filter.py</code>) that skips off-persona/career-drifted prospects at send time.</p>
+<h3 id="live-inbox-check-stop-on-reply-the-1-invariant">Live-inbox check + stop-on-reply (the #1 invariant)</h3>
+<ul>
+<li>Before EVERY M1/M2/M3 (or any send), GET the live thread, read the full conversation, and confirm the</li>
+</ul>
+<p>  newest message is theirs. Never trust the tracker alone. Any reply = stop that sequence FOREVER. &quot;Send</p>
+<p>  all&quot; does NOT override this. Duplicate sends have been flagged repeatedly; treat as the top invariant.</p>
+<h3 id="only-reply-to-campaign-target-persona">Only reply to campaign / target persona</h3>
+<ul>
+<li>Inbox replies ONLY to people in the active campaign or matching the client&#x27;s ICP. Never engage</li>
+</ul>
+<p>  investors, recruiters, vendor pitches, or off-target inbound — those go to the CEO as info only.</p>
+<h3 id="approval-before-anything-client-facing">Approval before anything client-facing</h3>
+<ul>
+<li>Never publish to a client&#x27;s live profile without their approval. Do all assigned tasks in sequence (no</li>
+</ul>
+<p>  &quot;skip&quot; options), share the deliverable for CEO review first; he confirms + sends, then proceed.</p>
+<ul>
+<li>Never name Claude/AI tooling to a client without CEO permission, even if the client raises it first.</li>
+</ul>
+<p>  Ask for &quot;your ideas&quot;, not &quot;Claude&#x27;s ideas&quot;.</p>
+<h3 id="browser-openable-deliverables">Browser-openable deliverables</h3>
+<ul>
+<li>Share reports/content as HTML/links that open in a browser, NEVER a flat PNG. Hosting flow: publish HTML</li>
+</ul>
+<p>  to the GitHub Pages repo <code>ProspectEngineAgentic/reports</code> (main, root) → URL</p>
+<p>  <code><a href="https://prospectengineagentic.github.io/reports/&lt;file&gt;.html">https://prospectengineagentic.github.io/reports/&lt;file&gt;.html</a></code> → review in the Operations Team group →</p>
+<p>  share the link in the client group. Several clients (e.g. Luca) prefer links, never attachments.</p>
+<h3 id="notify-operations-team-after-every-publish">Notify Operations Team after every publish</h3>
+<ul>
+<li>After ANY LinkedIn post from a client profile, immediately share the post link in the &quot;Operations Team&quot;</li>
+</ul>
+<p>  WhatsApp group and ask the team to interact. Helper <code>_ops\notify_ops_post.py</code>; baked into the PDCA +</p>
+<p>  Opcom daily publishers.</p>
+<h3 id="commit-to-git-after-each-task">Commit to git after each task</h3>
+<ul>
+<li>Add-only. Never mix clients. NEVER run <code>git sparse-checkout set &lt;new-folder&gt;</code> on penclients (deleted</li>
+</ul>
+<p>  3,721 files on 2026-05-21). Before committing, confirm <code>git diff --cached --name-status</code> shows zero <code>D</code>.</p>
+<p>  Use <code>git read-tree HEAD</code> + <code>git add &lt;target&gt;</code> instead.</p>
+<h3 id="technical-hygiene">Technical hygiene</h3>
+<ul>
+<li>Never use <code>python -c</code> inline on Windows — write a <code>.py</code> file and run <code>python &quot;path.py&quot;</code>.</li>
+<li>Never probe with real endpoints. <code>POST /posts</code> is permanent (Unipile has no DELETE for self-posts); a</li>
+</ul>
+<p>  &quot;__probe_do_not_send__&quot; was once published. Read docs or ask first. Correct repost field is</p>
+<p>  <code>repost: &lt;post_id&gt;</code> + <code>text: &lt;caption&gt;</code>.</p>
+<ul>
+<li>Fix the command, not just the symptom: every error needs TWO fixes — recover the damage AND patch the</li>
+</ul>
+<p>  script/config so it cannot recur, then commit. Bake lessons into running code, not just memory.</p>
+<ul>
+<li>Don&#x27;t pattern-match vendor API error names to causes; run the experiment that changes the suspected</li>
+</ul>
+<p>  variable before recommending costly external action.</p>
+<ul>
+<li>Research → weigh 3-4 options → pick best → self-check before delivering, so work is not bounced back.</li>
+</ul>
+<h3 id="unipile-id-invite-rules">Unipile ID + invite rules</h3>
+<ul>
+<li>Resolve the real <code>provider_id</code> via <code>GET /users/{ACw}?account_id=SENDER_ID</code> before invite/messaging.</li>
+</ul>
+<p>  The <code>ACw→ACo</code> char-swap (index 2 w→o) is unreliable; raw <code>ACw</code> returns a misleading</p>
+<p>  <code>403 feature_not_subscribed</code>. (Opcom historically used the char-swap for <code>/chats</code>, but the GET-resolve</p>
+<p>  is the safe rule.)</p>
+<ul>
+<li><code>cannot_resend_yet</code> = with-note weekly cap (with-note unavailable on some accounts) AND an account-wide</li>
+</ul>
+<p>  burst cap (~25/day → multi-day lock). On those accounts send invites WITHOUT a note; personalize via DM</p>
+<p>  after they accept.</p>
+<ul>
+<li>Rate limits: LinkedIn caps ~80-100 invites/day/account; failed requests still count. On 429, stop for</li>
+</ul>
+<p>  the day and wait 2-3 hrs minimum. <code>disconnected_account</code> = Unipile session expired → refresh cookies in</p>
+<p>  the Unipile dashboard.</p>
+<h3 id="reactions-boost-rules">Reactions / boost rules</h3>
+<ul>
+<li>Boost reactions are a CONTEXTUAL MIXED-TYPE set (like / insightful / support / celebrate / love), never</li>
+</ul>
+<p>  all-like. ~15 per post. Comment rotation: never repeat the same profile day-to-day; Robert + Branko</p>
+<p>  occasional (max 1/post, max 2 days/week); 34 cleared local Bangladesh accounts rotate LRU; 5-6</p>
+<p>  comments/post. Engine: <code>saif_boost.py</code>, pool <code>Clients/_ops/local_commenter_pool.py</code>.</p>
+<ul>
+<li>Every comment must also fire a like from the same account (comment alone reads transactional).</li>
+</ul>
+<h3 id="prospect-timezone-rule">Prospect timezone rule</h3>
+<ul>
+<li>All outbound activity sends in the PROSPECT&#x27;S local Mon-Fri 9-18. Shared util <code>Clients\_ops\tz_utils.py</code>.</li>
+</ul>
+<h3 id="shared-credentials-reference">Shared credentials (reference)</h3>
+<ul>
+<li>Unipile API key: <code>9wYLtaYf.Ij192VSWQLQeP1rk+ilLhzoNnLwgZa6yFGNadLqYufE=</code></li>
+<li>Unipile base URL: <code><a href="https://api10.unipile.com:14091/api/v1">https://api10.unipile.com:14091/api/v1</a></code></li>
+</ul>
+<hr>
+<h2 id="4-per-client-sops">4. Per-Client SOPs</h2>
+<h3 id="client-roster-from-clients-json">Client roster (from <code>clients.json</code>)</h3>
+<div class="tablewrap"><table><thead><tr><th>Client</th><th>Company</th><th>Contact</th><th>Status</th><th>Channel</th><th>Timezone</th><th>Local post / PC fire</th><th>Unipile account</th><th>WA chat_id</th></tr></thead><tbody>
+<tr><td>PDCA</td><td>PDCA Consulting</td><td>Robert Edward Pinnington</td><td>active</td><td>LinkedIn</td><td>Europe/Berlin</td><td>10:00 / 14:00</td><td><code>f0hkEHB-R9eveBxx8AtFrA</code></td><td><code>mUJo_mYYXhSp56XOd05nGg</code></td></tr>
+<tr><td>Opcom</td><td>Opcom Digital GmbH</td><td>Branko Milivojevic</td><td>active</td><td>LinkedIn</td><td>Europe/Zurich</td><td>10:00 / 14:00</td><td><code>LTiWfkaOSR-EvdC3_G4Sgw</code></td><td><code>EYgsdAK4WRaHcaBP7n5I-w</code></td></tr>
+<tr><td>Algoritmica</td><td>Algoritmica / deeploans</td><td>Luca Borella</td><td>active</td><td>LinkedIn</td><td>Europe/Madrid</td><td>10:00 / 14:00</td><td><code>WxXPfRiIS66UyU3NmxfuJQ</code></td><td><code>-bEpeHLTURe2XfS4oiSnLw</code></td></tr>
+<tr><td>Get2world</td><td>Get2world Systems GmbH</td><td>Sirsendu Roy (founder)</td><td>active</td><td>LinkedIn</td><td>Europe/Berlin</td><td>10:00 / 14:00</td><td><code>BCc08KX2RvOGoBbYooVQIw</code></td><td><code>7GdAPwIYWHyw92m849DALA</code></td></tr>
+<tr><td></td><td></td><td></td><td>active</td><td>LinkedIn + Cold Email</td><td>Australia/Melbourne</td><td>10:00 / 06:00</td><td><code></code></td><td><code></code></td></tr>
+<tr><td>Inccrease</td><td>Inccrease solutions GmbH (Langdemy)</td><td>Steve Carden</td><td>active</td><td>LinkedIn + Cold Email (3 inboxes)</td><td>Europe/Berlin</td><td>10:00 / 14:00</td><td><code>SZTviEyIRzmRMzkUhfC-8w</code></td><td><code>gZ0-_eY7V06hUhVlmvaafA</code></td></tr>
+<tr><td>CodeCapsule</td><td>Code Capsule Sdn Bhd</td><td>Jason Tai</td><td>active</td><td>LinkedIn + Cold Email</td><td>Asia/Kuala_Lumpur</td><td>10:00 / 08:00</td><td><code>raGqmSm9TIOk-Ittl4PfXA</code></td><td><code>Ws4bFZbkU2Wwr4YfwmyEdw</code></td></tr>
+<tr><td>VectorShield</td><td>Vector Shield Cybersecurity LLC</td><td>Jerry Joel</td><td>active</td><td>LinkedIn + Cold Email</td><td>America/Chicago</td><td>10:00 / 21:00</td><td><code>eSwvrZ4VTlmbbYCxUfeDBQ</code></td><td><code>gw3qkQ4fVXKunbyktpaRaw</code></td></tr>
+<tr><td>TruGen</td><td>TruGen AI</td><td>Sunny Shah (CMO); LI acct = Hari Govind (CTO)</td><td>active (AT RISK)</td><td>LinkedIn</td><td>America/New_York</td><td>10:00 / 20:00</td><td><code>31-4vXtZRASOGuqR5MGs7w</code></td><td><code>qSSYFIYHUTeB_ceddMhJag</code></td></tr>
+<tr><td>CoNEXTion</td><td>CoNEXTion.online (Radius project)</td><td>Nikki Davies</td><td>active</td><td>LinkedIn</td><td>Asia/Hong_Kong</td><td>10:00 / 08:00</td><td><code>nR8DucpWRce0GkRFMv0N3Q</code></td><td><code>eFNiw4mSXA-aSyBUArrf3A</code></td></tr>
+<tr><td>BDG</td><td>BDG Consulting</td><td>Thim Werner</td><td><strong>monitor only</strong></td><td>(monitor)</td><td>Europe/Berlin</td><td>10:00 / 14:00</td><td>(none / acct blocked)</td><td><code>FTf7G1MEVwWN8vamPv4aSg</code></td></tr>
+</tbody></table></div>
+<p><strong>Watch scope:</strong> autonomous action only for <strong>PDCA / Opcom / Algoritmica</strong>. All other active clients are</p>
+<p><strong>monitor-only</strong> — act only on CEO command. BDG is monitor-only and Thim&#x27;s Unipile account is on the</p>
+<p>BLOCKED list (never use).</p>
+<hr>
+<h3 id="4-1-pdca-consulting-robert-edward-pinnington-fullest-treatment">4.1 PDCA Consulting — Robert Edward Pinnington (fullest treatment)</h3>
+<p>ITIL &amp; PRINCE2 trainer. Channel LinkedIn (<code>f0hkEHB-R9eveBxx8AtFrA</code>). Europe/Berlin, local 10:00 = 14:00 PC.</p>
+<p>WhatsApp <code>mUJo_mYYXhSp56XOd05nGg</code>. Git folder <code>PDCA Consulting Outreach</code>. Files <code>C:\Users\PC\Clients\PDCA\</code>.</p>
+<p><strong>Voice &amp; content rules (non-negotiable):</strong> British English, 7th-grade, no dashes, human, warm,</p>
+<p>owner-of-the-company. Comment replies concede the point first, restate ours softly, no hard CTA to peers,</p>
+<p>no generic AI openers. Robert is authority-conscious, hates duplicates and wrong-person outreach (accuracy</p>
+<p>beats volume). Treat his edits as gold and reconfirm before live. Never publish to his profile without</p>
+<p>approval. Never name any AI tool to him without CEO say-so.</p>
+<p><strong>A. Runs automatically (Windows Task Scheduler):</strong></p>
+<div class="tablewrap"><table><thead><tr><th>Time (PC)</th><th>Task</th><th>Script</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>08:00</td><td>PDCA Daily</td><td><code>scripts\core\pdca_daily.py</code></td><td>New connections → M1; due M2/M3; new invites (role-filtered, weekly cap 200); update TODO</td></tr>
+<tr><td>17:00*</td><td>PDCA Reply Check</td><td>reply scan</td><td>Scan inbox; any reply stops that sequence forever (*next run shows 17:00)</td></tr>
+<tr><td>17:00*</td><td>PDCA Comment Watch</td><td><code>scripts\core\pdca_comment_watch.py --notify</code></td><td>Detect new comments on published posts, alert Ops</td></tr>
+<tr><td>10:00</td><td>PDCA_M1_Daily</td><td><code>scripts\core\pdca_m1_only.py</code></td><td>M1 sends</td></tr>
+<tr><td>12:00</td><td>PDCA_M2_Overdue</td><td><code>scripts\core\pdca_m2_overdue.py</code></td><td>M2 catch-up</td></tr>
+<tr><td>14:00</td><td>PDCA Daily Publish</td><td><code>scripts\core\pdca_daily_publish.py</code></td><td>Publish ONE approved+queued post/day → Ops notify + 15-20 mixed boost reactions + 1 Saif comment</td></tr>
+<tr><td>14:00</td><td>PDCA_Invites_Catchup</td><td><code>scripts\core\pdca_invites_catchup.py</code></td><td>Top up the day&#x27;s invites</td></tr>
+<tr><td>16:00</td><td>PDCA Nurture</td><td><code>scripts\core\pdca_nurture.py --count 12 --send</code></td><td>Re-engage dormant leads, 12/day, 5 min apart, live-inbox check</td></tr>
+<tr><td>Monthly (day 1, 09:00)</td><td>PDCA Page Follow Invites</td><td><code>scripts\core\pdca_page_follow_invites.py</code></td><td>Invite connections to follow the company page (~250/mo)</td></tr>
+</tbody></table></div>
+<p><strong>B. Daily invitations:</strong> ~30 new connection requests/day, 5 min apart, from the lead DB. **Weekly cap =</p>
+<p>200 Mon-Sun** (NOT a hard 30/day) — count week-to-date from <code>3-Campaigns/invitation_log.json</code> and send</p>
+<p>only the remainder. Role-fit filter checks the LIVE headline and skips off-persona prospects. Personalize</p>
+<p>via M1 after they accept. Lead DB <code>C:\Users\PC\Downloads\ITIL &amp; PRINCE2 New Data.xlsx</code> (ITIL ~3,866 /</p>
+<p>Prince2 ~1,908 rows; columns Full Name, First Name, Last Name, Job Title, Company Name, Profile URL,</p>
+<p>Invitation date). Logged to <code>invitation_log.json</code>, mapped in <code>urn_map.json</code>.</p>
+<p><strong>C. Sequence timing (after accept):</strong> M1 = 1 day after connecting · M2 = 4 days after M1 (no reply) ·</p>
+<p>M3 = 10 days after M2 (no reply). Live-inbox check before EVERY send; any reply = stop forever; single</p>
+<p>sending instance per account.</p>
+<p><strong>D. Content:</strong> queue <code>scripts\core\pdca_publish_queue.json</code> (gate: <code>enabled:true</code> + per-post</p>
+<p><code>approved:true</code> + <code>status:queued</code> + <code>date==today Berlin</code>). Publisher posts at most ONE/run, only today&#x27;s</p>
+<p>item; each post carries a <code>saiful_comment</code> + boost reactions + Ops notify. Vary visual structure every</p>
+<p>batch. Content method: 5-post LinkedIn batches + 4K visuals (HTML → headless Chrome). Keep debate-hook</p>
+<p>posts (strong reach, senior comments) but frame standards as a trust signal, not &quot;you don&#x27;t know your</p>
+<p>craft.&quot;</p>
+<p><strong>E. Cold-lead nurture (PDCA only):</strong> see Section 7. SOP <code>reports\PDCA_NURTURE_SOP.md</code>; tool</p>
+<p><code>pdca_nurture.py</code> (DRY RUN default; <code>--send</code> only after CEO approval). Cap 12/day, 5 min apart, prospect</p>
+<p>local hours. Hard guard against do-not-touch list.</p>
+<p><strong>GitHub data files (<code>PDCA Consulting Outreach/3-Campaigns/</code>):</strong> <code>tracker.json</code> (all M1/M2/M3 sends,</p>
+<p>chat_ids, reply status), <code>invitation_log.json</code>, <code>urn_map.json</code>, <code>TODO.md</code>.</p>
+<p><strong>Standing context / open threads:</strong> website <code>pdcaconsulting.com</code> (WordPress + Elementor) top nav to</p>
+<p>Downloads/Blogs keeps dropping (cache + BETA perf plugins; need hosting/SSH/SFTP + WP admin from Robert).</p>
+<p>Monthly newsletter compiled from <code>content\Newsletter_June_2026\</code>. Warm replies (John Davidson, Ransford</p>
+<p>Annan, Neil Petford) are Robert&#x27;s to handle.</p>
+<hr>
+<h3 id="4-2-opcom-digital-gmbh-branko-milivojevic">4.2 Opcom Digital GmbH — Branko Milivojevic</h3>
+<p>Channel LinkedIn (<code>LTiWfkaOSR-EvdC3_G4Sgw</code>). Europe/Zurich, local 10:00 = 14:00 PC. WhatsApp</p>
+<p><code>EYgsdAK4WRaHcaBP7n5I-w</code>. Git folder <code>Opcom Digital Outreach</code>. Files <code>C:\Users\PC\Clients\Opcom\</code>.</p>
+<p>Voice: decisive, brief, business-first; lead content with first-person war-story format.</p>
+<p><strong>Core offer / positioning:</strong> ASIC/FPGA Design Verification (DV) engineers for semiconductor companies;</p>
+<p>all Branko content = DV thought-leadership to position him as an industry pioneer. Body leasing (Swiss</p>
+<p>staff augmentation) is ONE service, second track.</p>
+<p><strong>Two campaigns, never mix:</strong> (1) Body leasing — Procurement Excel, Swiss staff-aug copy (ACTIVE);</p>
+<p>(2) DV engineers — <code>dv_leads_clean.csv</code>, verification-capacity copy. Different DB + copy + value prop.</p>
+<p><strong>Four workstreams:</strong></p>
+<ol>
+<li><strong>Outreach (Branko&#x27;s account):</strong> invites + M1/M2/M3. Daily. SOP order: Step 0 env → 1 check_connections</li>
+</ol>
+<p>   → 1.5 retries → 2 send_connection_requests → 3 audit. Never run step 1 + 2 in parallel.</p>
+<ol>
+<li><strong>Content:</strong> Branko personal profile 5 posts/week; Opcom company page <strong>1/week</strong> (CEO 2026-06-02, was 2).</li>
+<li><strong>Body leasing:</strong> lead with pain + cost-of-pain + a number; do NOT pitch the solution; soft CTA in the</li>
+</ol>
+<p>   first comment, never the body; one pain per post by industry (banks/insurance/energy/logistics).</p>
+<ol>
+<li><strong>DV nurture + semiconductor sourcing:</strong> List 1 (57 warm EU DV/ASIC leaders, <code>data/dv_warm_final.csv</code>)</li>
+</ol>
+<p>   engaged daily via <code>opcom_dv_engage.py --daily</code> (like new posts, cap 50/day) then in-session</p>
+<p>   <code>--send &lt;file&gt;</code> for Branko-voice comments (cap 10/day, DNC enforced). List 2 (179 EU semis companies,</p>
+<p>   building toward 300-600 DV-title prospects in <code>data/dv_targets_strict.csv</code>). Full plan</p>
+<p>   <code>reports/DV_NURTURE_PLAN.md</code>.</p>
+<p><strong>Scripts:</strong> <code>C:\Users\PC\send_connection_requests.py</code> (30 invites/day, 5 min apart; INTERVAL=300s,</p>
+<p>ERROR_WAIT=30s; stops hard on 429/disconnect; tests up to 10 contacts first; tracks sent-today in</p>
+<p><code>sent_today_YYYY-MM-DD.txt</code>; log <code>conn_req_log.txt</code>), <code>C:\Users\PC\check_connections.py</code> (new connections</p>
+<p>+ M1/M2/M3; <code>M1_TO_M2_DAYS=4</code>, <code>M2_TO_M3_DAYS=10</code>). Content engine</p>
+<p><code>C:\Users\PC\Clients\Opcom\ContentEngine\</code> (publisher <code>daily_publish.py</code>).</p>
+<p><strong>Sequence timing:</strong> M1 immediately on detecting a new connection (scans last 6 days of accepts);</p>
+<p>M2 4 days after M1; M3 10 days after M2 (no reply). Weekly invite cap <strong>205 Mon-Sun</strong> (fill the remainder).</p>
+<p><strong>ID format:</strong> Excel <code>Profile URL</code> has <code>ACwAA...</code> after <code>/in/</code>. <code>users/invite</code> uses <code>ACwAA...</code> directly;</p>
+<p><code>/chats</code> historically converts <code>ACwAA...</code>→<code>ACoAA...</code> (index 2 w→o) — but prefer the GET-resolve rule</p>
+<p>(Section 3). <code>already_connected</code> is ambiguous (fires for pending invites too) — use <code>/users/relations</code></p>
+<p>as truth.</p>
+<p><strong>Publish engagement (every Branko post):</strong> 15+ mixed-type boost reactions + exactly ONE Saif-profile</p>
+<p>comment (<code>SnDBC5whStOUGdseKNJh8Q</code>, auto-likes). Baked into <code>daily_publish.py</code>; every queued post must</p>
+<p>carry a <code>saif_comment</code>. Carousels comment on the <code>social_id</code> ugcPost urn. Dedup via</p>
+<p><code>network_engaged_state.json</code>. Daily: <code>opcom_inbox.py</code> + WhatsApp triage (<code>reply_playbook.md</code>),</p>
+<p><code>opcom_comments.py</code> reply to every new comment (as Branko on profile, <code>--as-org</code> on company posts).</p>
+<p><strong>DB management:</strong> ~150 active leads (~1 week at 30/day); replenish when pending &lt; 60 (<code>db_check.py</code></p>
+<p>weekly). 968-row &quot;Dewx Campaihn PM_Energy&quot; sheet untapped (verify then add). DNC list <code>opcom_dnc.json</code>.</p>
+<hr>
+<h3 id="4-3-algoritmica-deeploans-luca-borella">4.3 Algoritmica / deeploans — Luca Borella</h3>
+<p>Channel LinkedIn, sender Farhan Sakib (<code>WxXPfRiIS66UyU3NmxfuJQ</code>). Europe/Madrid, local 10:00 = 14:00 PC.</p>
+<p>WhatsApp <code>-bEpeHLTURe2XfS4oiSnLw</code>. Git folder <code>Algoritmica Outreach</code>. Files</p>
+<p><code>C:\Users\PC\Clients\Algoritmica\</code> (<code>data\</code>, <code>scripts\core\</code>, <code>scripts\archive\</code>, <code>logs\</code>, <code>reports\</code>,</p>
+<p><code>drafts\</code>, <code>creative\</code>). Voice: hands-on, data-driven, busy; wants regular honest activity updates.</p>
+<p><strong>Daily workflow (never in parallel):</strong></p>
+<pre><code>
+python &quot;C:\Users\PC\Clients\Algoritmica\scripts\core\algoritmica_messages.py&quot;   # follow-ups + live inbox
+python &quot;C:\Users\PC\Clients\Algoritmica\scripts\core\algoritmica_invite.py&quot;     # new invites (silent connect)
+</code></pre>
+<p><code>algoritmica_messages.py N</code> = test mode. <code>algoritmica_sync.py</code> rebuilds state.</p>
+<p><strong>Personas + CTA (CURRENT, 2026-06-02):</strong> invites/outreach target <strong>Persona A developers ONLY</strong> now (CEO</p>
+<p>2026-06-02) — devs who star + contribute on GitHub are the top target; repoint the invite script, Persona A</p>
+<p>pool may need replenishing. Persona rules: Luca call = Persona C ONLY. <strong>Hackathon CTA was DROPPED</strong> (CEO</p>
+<p>2026-05-27) — never mention it. New CTAs: A = use/contribute on GitHub, B = build on top/share with devs,</p>
+<p>C = strategic Luca call. (The hackathon link in older CLAUDE.md is stale.)</p>
+<p><strong>Sequence gaps:</strong> A/B: invite→M2 ≥1d, M2→M3 ≥3d, M3→M4 ≥5d, M4→M5 ≥7d. C (no connect step): M1→M2 ≥3d,</p>
+<p>M2→M3 ≥5d. Short, grade-7, no em dashes. Verify live inbox before any send; any reply = stop forever.</p>
+<p><strong>Quota:</strong> <strong>175 invites/week</strong> Mon-Sun (NOT 25/day); effective daily throttle ~26 silent invites before</p>
+<p><code>cannot_resend_yet</code>. Count week-to-date from <code>data\algoritmica_invitation_log.json</code> at session start.</p>
+<p>Invites are sent WITHOUT a note; personalize via DM after accept. Always resolve real <code>provider_id</code> via</p>
+<p><code>GET /users/{ACw}</code> first.</p>
+<p><strong>Client posts (STANDING):</strong> daily watch Luca (<code>borellaluca</code>) + company (<code>algoritmicaai</code>); on any new</p>
+<p>deeploans/Algoritmica post, like + comment + repost from Farhan (multipart repost format). Ignore</p>
+<p>off-topic. GitHub KPI growth: Luca&#x27;s #1 ask is more deeploans stars + external contributors via 1-1 dev</p>
+<p>outreach; weekly KPI tool <code>gh_kpi_report.py</code>. Prospect DB pushed to repo</p>
+<p><code>Algoritmica Outreach/Prospect List deeploans.xlsx</code> automatically after a run. Inbox scan over-flags noise</p>
+<p>— filter to recent + personal.</p>
+<p><strong>State (2026-06-02):</strong> Luca call moved to Wed 6/03 10am CET; Luca thinks PR #34 is an &quot;AI flop&quot; and wants</p>
+<p>Deepak on a call (NOT a merge); email-fill on Luca&#x27;s Google Sheet owed EOD 6/02; Ahmed (HSBC, Persona C)</p>
+<p>warm, wants Luca + management call.</p>
+<hr>
+<h3 id="4-4-get2world-systems-gmbh-sirsendu-roy-active-monitor-only-for-autonomous-action">4.4 Get2world Systems GmbH — Sirsendu Roy (active, monitor-only for autonomous action)</h3>
+<p>LinkedIn (<code>BCc08KX2RvOGoBbYooVQIw</code>). Europe/Berlin, 10:00 / 14:00 PC. WhatsApp <code>7GdAPwIYWHyw92m849DALA</code>.</p>
+<p>Git <code>Get2world Systems GmbH Outreach</code>. ICP: German SMEs needing employee time-tracking/attendance; product</p>
+<p>ZFDM (zeiterfassung-fdm.de), buy-once, no-monthly-fee, DSGVO-compliant time-tracking hardware + software.</p>
+<p>Voice: warm, hands-on German founder, co-creative, emoji-friendly, wants us to drive and bring things to</p>
+<p>approve. Content workstream started 2026-05-26 (he sends topics, we propose too). <strong>FLAG:</strong> unread</p>
+<p>complaint from Dr. Isabelle Spielberger — route to him, do not auto-handle. Default sequence M1 on accept,</p>
+<p>M2 +4d, M3 +10d. Open: formalise message templates in <code>scripts/core</code> + first content batch.</p>
+<h3 id="4-5-essential-agentic-automations-dr--lemi-acay-active-monitor-only">4.5  —  (active, monitor-only)</h3>
+<p>LinkedIn + Cold Email (<code></code>). Australia/Melbourne, 10:00 / <strong>06:00 PC</strong>. WhatsApp</p>
+<p><code></code>. ICP: Finance, Australia, 10-100 employees, C-level (CEO office, Finance). USP:</p>
+<p>AI training + custom AI systems. Voice: academic AI founder; clean TEXT-led visuals only (rejects</p>
+<p>futuristic/abstract); grade-7, no dashes. Invoice  (2026-03-26, USD 650, 1-mo LinkedIn + Cold Email,</p>
+<p>4 posts). <strong>FLAG / blocker:</strong> 1-mo term ended ~2026-05-06;  joined V2.ai and signalled pausing his</p>
+<p>business — confirm active/renew before new pipeline. Also re-auth LinkedIn (OTP logouts) + apologise for</p>
+<p>the missed 05-25 meeting.</p>
+<h3 id="4-6-inccrease-solutions-gmbh-langdemy-steve-carden-active-monitor-only">4.6 Inccrease solutions GmbH (Langdemy) — Steve Carden (active, monitor-only)</h3>
+<p>LinkedIn + Cold Email (3 inboxes) (<code>SZTviEyIRzmRMzkUhfC-8w</code>). Europe/Berlin, 10:00 / 14:00 PC. WhatsApp</p>
+<p><code>gZ0-_eY7V06hUhVlmvaafA</code>. ICP: B2B corporate-communication training buyers (senior/CXO L&amp;D, HR). Entity</p>
+<p>Inccrease solutions GmbH (legal) = Langdemy (current brand, langdemy.net) = i-learn24.com (old, redirects).</p>
+<p>Keep his freelance-trainer community/LMS (suppliers) separate from the contracted B2B pitch. Voice: warm</p>
+<p>personally, commercially demanding; senior/CXO targeting; no em dashes; avoid generic GPT phrasing; German</p>
+<p>specifics. Invoice PNAJ04 (2026-01-15, USD 2,040 in 3 installments, 3-mo, 12 posts). Term at/near end</p>
+<p>(final installment ~2026-05-15) — renew-or-churn. Complaints: copy &quot;too GPT&quot;, leads too junior (wants</p>
+<p>senior/CXO), wants German-market data infographics.</p>
+<h3 id="4-7-code-capsule-sdn-bhd-jason-tai-active-monitor-only">4.7 Code Capsule Sdn Bhd — Jason Tai (active, monitor-only)</h3>
+<p>LinkedIn + Cold Email (<code>raGqmSm9TIOk-Ittl4PfXA</code>). Asia/Kuala_Lumpur, 10:00 / <strong>08:00 PC</strong>. WhatsApp</p>
+<p><code>Ws4bFZbkU2Wwr4YfwmyEdw</code>. ICP: pharma/healthcare ops + general software buyers in Singapore + Malaysia.</p>
+<p>Code Capsule = young (2023) Selangor custom-software house (web/mobile/ERP/IoT). Template currently sprays</p>
+<p>a &quot;pharma&quot; angle at all prospects — needs splitting by segment. Voice: founder Jason Tai (technical,</p>
+<p>marketing is his weakness), soft/consultative, grade-7. <strong>FLAG:</strong> 35 unread chats unattended; rescue Thomas</p>
+<p>Vargoczky (Herbaferm). Invoice PRPA03 (2026-04-10, USD 1,755 total / 1,170 upfront, 3-mo, 12 posts).</p>
+<p><strong>BLOCKED:</strong> Jason owes project list/case studies (blocks 12 posts) + 2 working Google Workspace inboxes</p>
+<p>(cold email not launched).</p>
+<h3 id="4-8-vector-shield-cybersecurity-llc-jerry-joel-active-monitor-only">4.8 Vector Shield Cybersecurity LLC — Jerry Joel (active, monitor-only)</h3>
+<p>LinkedIn + Cold Email (<code>eSwvrZ4VTlmbbYCxUfeDBQ</code>). America/Chicago, 10:00 / <strong>21:00 PC</strong>. WhatsApp</p>
+<p><code>gw3qkQ4fVXKunbyktpaRaw</code>. ICP: owners of 1-50 employee firms in IL/WI/IN — trucking/logistics, financial</p>
+<p>services, insurance, law, professional services. Vector Shield = Chicago managed cybersecurity + IT (Cynet</p>
+<p>MSSP, EDR-led); Jerry&#x27;s hook = 5+ yrs State of Illinois election-systems cyber analyst. <strong>STANDING RULES:</strong></p>
+<p>no em dashes; always write &quot;Vector Shield Cybersecurity&quot; in full. Invoice PRPA02 (2026-04-10, USD 1,755</p>
+<p>upfront, 3-mo, 24 posts). ~4 wks live: 191 invites, 48 accepted (25%), 5 replies, 0 meetings.</p>
+<p>Results-sensitive (churned 2 prior providers). Open: approve new law/pro-services copy; confirm the email</p>
+<p>channel is actually sending.</p>
+<h3 id="4-9-trugen-ai-sunny-shah-cmo-hari-govind-cto-li-account-active-at-risk">4.9 TruGen AI — Sunny Shah (CMO) / Hari Govind (CTO, LI account) (active, AT RISK)</h3>
+<p>LinkedIn (<code>31-4vXtZRASOGuqR5MGs7w</code>). America/New_York, 10:00 / <strong>20:00 PC</strong>. WhatsApp</p>
+<p><code>qSSYFIYHUTeB_ceddMhJag</code>. ICP: CROs/CMOs/VP Sales/Growth at SaaS/AI/fintech/healthcare-tech. TruGen AI =</p>
+<p>NYC startup building conversational video AI agents; GTM product &quot;Clara&quot; AI SDR (the campaign sells Clara).</p>
+<p>Voice: consultative, inbound-traffic angle. <strong>AT RISK / dormant:</strong> no invoice or agreement on file;</p>
+<p>WhatsApp client channel silent since 2026-03-19 (likely lapsed trial/POC) but LinkedIn automation kept</p>
+<p>running. <strong>CEO must confirm whether active before any sends.</strong></p>
+<h3 id="4-10-conextion-online-nikki-davies-active-monitor-only">4.10 CoNEXTion.online — Nikki Davies (active, monitor-only)</h3>
+<p>LinkedIn (<code>nR8DucpWRce0GkRFMv0N3Q</code>). Asia/Hong_Kong, 10:00 / <strong>08:00 PC</strong>. WhatsApp</p>
+<p><code>eFNiw4mSXA-aSyBUArrf3A</code>. Project <strong>Radius</strong> — promotes Radius Networks (global ERG/employee-network</p>
+<p>leader) via the 2026 Global ERG Impact Report + a 30-min insights session. Nikki = Radius&#x27;s</p>
+<p>commission-paid APAC Lead; &quot;Pixel Alchemy&quot; is a profile label only, not the client. ICP: senior</p>
+<p>D&amp;I/HR/Talent/ERG leaders at large APAC enterprises (banks/finance); markets India, Hong Kong, Singapore.</p>
+<p>Voice: warm senior D&amp;I expert; always include Toolbox newsletter links + Radius tags in posts;</p>
+<p>double-check dates (fixed a &quot;2028&quot; typo bug). LinkedIn only (email dropped). Fee NOT documented — invoice</p>
+<p>reportedly sent ~mid-May; CONFIRM amount/terms with CEO. Returning engagement (2024-25 → 2026). Strong</p>
+<p>~50% reply rate. Metric = report-share → booked-meeting (commission model).</p>
+<h3 id="4-11-bdg-consulting-thim-werner-monitor-only">4.11 BDG Consulting — Thim Werner (MONITOR ONLY)</h3>
+<p><code>status: monitor</code>. Europe/Berlin. WhatsApp <code>FTf7G1MEVwWN8vamPv4aSg</code>. Git <code>bdg Consulting Outreach</code>. Voice:</p>
+<p>collaborative, thorough, wants timelines and relevance over vanity. **Do not action unless explicitly</p>
+<p>asked.** Thim&#x27;s Unipile account is on the global BLOCKED list — never use it for any activity. Project:</p>
+<p>FDHG NRW LinkedIn outreach (Finland-NRW prospect pool researched; next step = NRW outreach for guild</p>
+<p>membership, only on CEO command).</p>
+<hr>
+<h2 id="5-outreach-sequences-caps-timing">5. Outreach Sequences (caps + timing)</h2>
+<div class="tablewrap"><table><thead><tr><th>Client</th><th>Invite weekly cap</th><th>Daily invites</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>M5</th><th>Note</th></tr></thead><tbody>
+<tr><td>PDCA</td><td>200 (Mon-Sun)</td><td>~30, 5 min apart</td><td>1d after connect</td><td>+4d</td><td>+10d</td><td>—</td><td>—</td><td>role-fit filter on live headline; standard connect, personalize via M1</td></tr>
+<tr><td>Opcom</td><td>205 (Mon-Sun)</td><td>30, 5 min apart</td><td>on detect connect (scans 6d)</td><td>+4d</td><td>+10d</td><td>—</td><td>—</td><td>two campaigns never mixed; DNC enforced</td></tr>
+<tr><td>Algoritmica</td><td>175 (Mon-Sun)</td><td>~26 silent before cap</td><td>A/B M1 then</td><td>invite→M2 ≥1d</td><td>M2→M3 ≥3d</td><td>M3→M4 ≥5d</td><td>M4→M5 ≥7d</td><td>Persona A only now; noteless invites; C: M1→M2 ≥3d, M2→M3 ≥5d</td></tr>
+<tr><td>Other active clients</td><td>within weekly quota (tune)</td><td>within quota</td><td>on accept</td><td>+4d</td><td>+10d</td><td>—</td><td>—</td><td>default gaps; templates being formalised in each <code>scripts/core</code></td></tr>
+</tbody></table></div>
+<p>Universal: **live-inbox check before EVERY send; any reply = stop forever; single sending instance per</p>
+<p>account; prospect local Mon-Fri 9-18; verify profile/persona on the live profile first.**</p>
+<hr>
+<h2 id="6-content-engagement-cycle">6. Content + Engagement Cycle</h2>
+<ul>
+<li><strong>Batch-ahead drafting:</strong> keep every client one batch ahead. Posts are top-voice, 7th-grade, no dashes,</li>
+</ul>
+<p>  strong standalone hook, one takeaway + one question, soft CTA, hashtags at end, 100% sourced (fact-check</p>
+<p>  every claim). PDCA = 5-post batches; Opcom = 5 Branko/wk + 1 company/wk.</p>
+<ul>
+<li><strong>Fresh visuals:</strong> 4K visuals built HTML → headless Chrome; vary the structure every batch (own bg/color/</li>
+</ul>
+<p>  layout, bigger text, depth), never the same template two posts running; carousels/data charts perform</p>
+<p>  best; brand-safe photos only (no third-party logos).  = clean TEXT-led visuals only.</p>
+<ul>
+<li><strong>Approval gate:</strong> share the review HTML to the client&#x27;s WhatsApp (after CEO review). Publish only on</li>
+</ul>
+<p>  client approval AND the queue gate (<code>enabled:true</code> + per-post <code>approved:true</code> + due-today).</p>
+<ul>
+<li><strong>Daily publish at local 10:00:</strong> each client&#x27;s publisher fires at its <code>pc_fire_time</code> (PDCA/Opcom/</li>
+</ul>
+<p>  Inccrease/Get2world 14:00; CodeCapsule/CoNEXTion 08:00;  06:00; VectorShield 21:00;</p>
+<p>  TruGen 20:00).</p>
+<ul>
+<li><strong>Post-publish engagement (baked in):</strong> ~15 mixed-type boost reactions (like/insightful/support/</li>
+</ul>
+<p>  celebrate/love, never all-like) + exactly ONE Saif-profile comment (<code>SnDBC5whStOUGdseKNJh8Q</code>) that</p>
+<p>  auto-likes. Then notify the Operations Team WhatsApp group with the post link. Dedup via</p>
+<p>  <code>network_engaged_state.json</code> so the network poller never double-engages.</p>
+<ul>
+<li><strong>Comment-watch + reply (STANDING, daily):</strong> check comments on every published post and reply in voice</li>
+</ul>
+<p>  (as the person on profile posts, as the page <code>--as-org</code> on company posts). Concede the point, restate</p>
+<p>  ours softly, no hard CTA to peers, no generic openers. PDCA <code>pdca_comment_watch.py</code>; Opcom</p>
+<p>  <code>opcom_comments.py</code> (list endpoint needs the <code>urn:li:activity:</code> form; carousels use <code>social_id</code>).</p>
+<ul>
+<li><strong>Network-post engagement:</strong> each new post from any of the 19 non-Bangladesh Unipile accounts (Robert,</li>
+</ul>
+<p>  Branko, Thim, , Farhan, etc.) gets 15 boost reactions + 1 personal Saif comment (not rotation).</p>
+<p>  Engine <code>saif_boost.py</code>; rotation pool <code>Clients/_ops/local_commenter_pool.py</code>. Saif comment</p>
+<p>  non-negotiables: no phrase lifting, identical Saif voice, well-researched, no restating the thesis,</p>
+<p>  cover the whole argument, grade-7; if outside Saif&#x27;s lens with no honest parallel, like the post, don&#x27;t</p>
+<p>  comment. Dedupe Saif comment before send (fail-closed). Always like + comment, never comment alone.</p>
+<ul>
+<li><strong>Company-page follow-invites:</strong> monthly per client (PDCA + Opcom tasks on day 1) — invite connections</li>
+</ul>
+<p>  to follow the company page via raw passthrough <code>POST /linkedin</code> →</p>
+<p>  <code>voyagerRelationshipsDashInvitations</code> (~250/mo).</p>
+<hr>
+<h2 id="7-nurture-motion-cold-dormant-re-warm">7. Nurture Motion (cold dormant re-warm)</h2>
+<p>Currently live for <strong>PDCA only</strong> (others inherit the pattern as they mature). SOP</p>
+<p><code>Clients\PDCA\reports\PDCA_NURTURE_SOP.md</code>. Tool <code>pdca_nurture.py</code> (DRY RUN default; <code>--send</code> only after</p>
+<p>CEO approval). Refresh the worklist when stale (<code>scripts\archive\_nurture_refresh_*.py</code>).</p>
+<p>Flow per cycle:</p>
+<ol>
+<li>Build the list from the tracker + live inbox: OLD ghosted leads who once had a real conversation</li>
+</ol>
+<p>   (sent M1/M2/M3, never replied) tagged DORMANT_NURTURE.</p>
+<ol>
+<li><strong>Exclude anyone already in contact with the client</strong> on ANY channel (scan last-msg-inbound, not just</li>
+</ol>
+<p>   &quot;recent&quot; activity), plus anyone the client said to drop. Hard guard against</p>
+<p>   <code>data\do_not_touch_contacts.json</code>; park excluded contacts in <code>data\excluded_contacts_tracking.json</code> +</p>
+<p>   <code>reports\PDCA_excluded_contacts.md</code> with full info.</p>
+<ol>
+<li>Take the oldest 10-15, live-inbox check each, skip on any new reply or recent Robert activity.</li>
+<li>Draft the re-open in Robert&#x27;s voice tailored to the angle (partner / peer / buyer). The message =</li>
+</ol>
+<p>   acknowledge them + share his calendar + invite a SHORT no-pressure knowledge-sharing call. **Never</p>
+<p>   sell.** Like + comment on their latest post the same day.</p>
+<ol>
+<li>Drafts go to the CEO before sending. Cap 12/day, 5 min apart, prospect local working hours. Robert</li>
+</ol>
+<p>   handles warm replies himself.</p>
+<p>Runs automatically via the &quot;PDCA Nurture&quot; task (16:00 PC). Those who reply to a nurture become live</p>
+<p>threads → route to the client, never auto-touch.</p>
+<hr>
+<h2 id="8-monitoring">8. Monitoring</h2>
+<ul>
+<li><strong>WhatsApp Watch (every 30 min, read-only):</strong> <code>Clients\_ops\wa_watch.py</code> flags new/unanswered client</li>
+</ul>
+<p>  messages; never sends. Log <code>wa_watch.log</code>; state <code>wa_watch_state.json</code>. Autonomous action only for</p>
+<p>  PDCA/Opcom/Algoritmica; all other active clients monitor-only. Reply only to genuine messages (skip</p>
+<p>  reactions/OOO/thank-yous).</p>
+<ul>
+<li><strong>WhatsApp Daily Sync (13:00 PC):</strong> <code>wa_daily.py</code> refreshes <code>C:\Users\PC\whatsapp_store.json</code>; a</li>
+</ul>
+<p>  client-tagged subset mirrors to GitHub <code>WhatsApp/store_clients.json</code>. <code>--summary</code> = read-only status.</p>
+<ul>
+<li><strong>Session-start read-latest:</strong> at every session start read the latest group messages BEFORE drafting any</li>
+</ul>
+<p>  outreach, so messages/comments use the freshest facts.</p>
+<ul>
+<li><strong>Routine failure watcher:</strong> cloud routine alerts the Ops WA group on any future routine failure.</li>
+</ul>
+<hr>
+<h2 id="9-scheduled-automation-live-windows-tasks-agency-only">9. Scheduled Automation (live Windows tasks — agency only)</h2>
+<p>Snapshot 2026-06-02 (NextRunTime in PC time, UTC+6). Times below are the recurring fire times.</p>
+<div class="tablewrap"><table><thead><tr><th>Task</th><th>Fire (PC)</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>PDCA Daily</td><td>08:00 daily</td><td>New connections → M1; due M2/M3; new invites (cap 200/wk); update TODO</td></tr>
+<tr><td>PDCA_M1_Daily</td><td>10:00</td><td>M1 sends</td></tr>
+<tr><td>PDCA_M2_Overdue</td><td>12:00</td><td>M2 catch-up</td></tr>
+<tr><td>PDCA Daily Publish</td><td>14:00</td><td>Publish one approved post/day + boost + Saif comment + Ops notify</td></tr>
+<tr><td>PDCA_Invites_Catchup</td><td>14:00</td><td>Top up the day&#x27;s invites</td></tr>
+<tr><td>PDCA Nurture</td><td>16:00</td><td>Re-engage dormant leads, 12/day, 5 min apart, live-inbox check</td></tr>
+<tr><td>PDCA Reply Check</td><td>17:00</td><td>Inbox scan; reply stops the sequence</td></tr>
+<tr><td>PDCA Comment Watch</td><td>17:00</td><td>New comments on published posts → alert Ops</td></tr>
+<tr><td>PDCA Page Follow Invites</td><td>monthly, day 1 09:00</td><td>Invite connections to follow the company page</td></tr>
+<tr><td>Opcom Daily Publish</td><td>14:00</td><td>Branko post → publish + 15 mixed reactions + Saif comment + Ops notify</td></tr>
+<tr><td>Opcom Company Publish</td><td>15:00</td><td>Company-page post (1/week cadence)</td></tr>
+<tr><td>Opcom DV Engage Daily</td><td>08:00 weekdays</td><td>DV List-1 likes (auto) + drafts comments for in-session send</td></tr>
+<tr><td>Opcom Page Follow Invites</td><td>monthly, day 1 09:00</td><td>Company-page follow invites</td></tr>
+<tr><td>Algoritmica GH KPI Report</td><td>weekly (next 6/08 09:00)</td><td>deeploans stars/contributors KPI report</td></tr>
+<tr><td>Algoritmica Natacha Invite Retry</td><td>one-off (6/03 09:15)</td><td>Retry a specific invite</td></tr>
+<tr><td>WhatsApp Daily Sync</td><td>13:00</td><td>Refresh <code>whatsapp_store.json</code> + mirror client subset to GitHub</td></tr>
+<tr><td>WhatsApp Watch</td><td>every 30 min</td><td>Read-only watch; flag new/unanswered client messages</td></tr>
+<tr><td>Saif Daily Outbound</td><td>10:00</td><td>Saif inside-sales invites (priority #1) + outbound</td></tr>
+<tr><td>Saif PM Outbound</td><td>13:30</td><td>Afternoon Saif outbound window</td></tr>
+<tr><td>Saif 2h Cycle</td><td>every 2h</td><td>Auto-send Saif drafts (wipe stale drafts after each run)</td></tr>
+<tr><td>Saif Inbox Capture AM</td><td>09:00</td><td>Capture Saif inbox</td></tr>
+<tr><td>Saif Inbox Capture PM</td><td>18:00</td><td>Capture Saif inbox</td></tr>
+<tr><td>Saif Alvaro Watch</td><td>hourly</td><td>Watch Saif-Alvaro chat; drop flag on his reply</td></tr>
+<tr><td>Saif Weekly Report</td><td>weekly (next 6/08 09:30)</td><td>Saif inside-sales weekly report</td></tr>
+</tbody></table></div>
+<p>Notes: &quot;Opcom Send OneOff 1830 20260528&quot; and &quot;PDCA_Invites_Catchup&quot; also appear without a scheduled next</p>
+<p>run (event/one-off triggers). Saif tasks belong to the PE inside-sales project (selling PE via Saiful</p>
+<p>Islam&#x27;s LinkedIn, account <code>SnDBC5whStOUGdseKNJh8Q</code>), which also supplies the standing post-comment voice.</p>
+<p><strong>Cloud routines:</strong> must use the API-fetch pattern (embedded GH token), not <code>git_repository</code> sources</p>
+<p>(those auto-disable because penclients is not connected to the Claude Code GitHub app). A watcher routine</p>
+<p>alerts the Ops WA group on any routine failure.</p>
+<hr>
+<h2 id="10-escalation-approval-flow">10. Escalation + Approval Flow</h2>
+<ul>
+<li><strong>Needs CEO approval before going live:</strong> any client-facing message/post/report; any nurture <code>--send</code>;</li>
+</ul>
+<p>  any new content batch; renew-or-churn decisions; touching coordinate-first targets (Opcom Infineon/</p>
+<p>  Microsoft Belgrade); any send for AT-RISK/unconfirmed clients (TruGen, ).</p>
+<ul>
+<li><strong>Reports are shared as hosted HTML links</strong>, never flat PNGs: publish to <code>ProspectEngineAgentic/reports</code></li>
+</ul>
+<p>  (main, root) → <code><a href="https://prospectengineagentic.github.io/reports/&lt;file&gt;.html">https://prospectengineagentic.github.io/reports/&lt;file&gt;.html</a></code> → review in the Operations</p>
+<p>  Team WhatsApp group → CEO shares the link in the client group.</p>
+<ul>
+<li><strong>Off-target inbound</strong> (investors, recruiters, vendor pitches) → CEO as info only; never engaged by us.</li>
+<li><strong>Warm replies</strong> are the client&#x27;s to close (PDCA: Robert handles John Davidson, Ransford Annan, Neil</li>
+</ul>
+<p>  Petford and any nurture responder; Opcom: Branko closes; Algoritmica: Luca closes Persona C calls).</p>
+<ul>
+<li><strong>After any publish:</strong> post link to the Operations Team group asking the team to interact.</li>
+</ul>
+<hr>
+<h2 id="11-per-client-open-items-blockers-snapshot-2026-06-02">11. Per-Client Open Items / Blockers (snapshot 2026-06-02)</h2>
+<ul>
+<li><strong>PDCA:</strong> website nav drop recurs (need hosting/SSH/SFTP + WP admin from Robert). Lesson logged: queue an</li>
+</ul>
+<p>  approved batch the same day so the publisher never goes idle (Batch 2 posts 6-10 had stalled). Monthly</p>
+<p>  newsletter compile pending.</p>
+<ul>
+<li><strong>Opcom:</strong> company-page cadence now 1/week; DV List 2 build ongoing toward 300-600 prospects; lead DB</li>
+</ul>
+<p>  ~1 week of runway (replenish &lt; 60); verify/add the 968-row PM_Energy sheet; reaction engine now</p>
+<p>  mixed-type + carousel comments on <code>social_id</code>.</p>
+<ul>
+<li><strong>Algoritmica:</strong> Persona A only now (pool may need replenishing); Luca call Wed 6/03 10am CET; PR #34</li>
+</ul>
+<p>  Deepak call (not merge); email-fill on Luca&#x27;s Google Sheet owed EOD 6/02; Ahmed (HSBC) wants Luca + mgmt</p>
+<p>  call.</p>
+<ul>
+<li><strong>Get2world:</strong> unread complaint from Dr. Isabelle Spielberger → route to founder; formalise message</li>
+</ul>
+<p>  templates + first content batch.</p>
+<ul>
+<li><strong>:</strong> confirm active/renew ( joined V2.ai, signalled pausing); re-auth LinkedIn</li>
+</ul>
+<p>  (OTP logouts); apologise for missed 05-25 meeting.</p>
+<ul>
+<li><strong>Inccrease:</strong> renew-or-churn (term ending); fix &quot;too GPT&quot; copy; target senior/CXO not junior; German</li>
+</ul>
+<p>  data infographics.</p>
+<ul>
+<li><strong>CodeCapsule:</strong> BLOCKED — Jason owes project list/case studies (blocks 12 posts) + 2 Google Workspace</li>
+</ul>
+<p>  inboxes (cold email not launched); 35 unread chats; rescue Thomas Vargoczky.</p>
+<ul>
+<li><strong>VectorShield:</strong> approve new law/pro-services copy; confirm cold-email channel is actually sending;</li>
+</ul>
+<p>  results-sensitive (0 meetings so far).</p>
+<ul>
+<li><strong>TruGen:</strong> AT RISK — confirm engagement is active (silent since 2026-03-19, no invoice/agreement on</li>
+</ul>
+<p>  file) before any sends.</p>
+<ul>
+<li><strong>CoNEXTion:</strong> confirm fee/terms with CEO (invoice reportedly sent mid-May, not in folder).</li>
+<li><strong>BDG:</strong> monitor only; act only on CEO command; Thim&#x27;s Unipile account blocked.</li>
+</ul>
+<hr>
+<p>*Compiled by the documentation agent on 2026-06-02 from CLAUDE.md, <code>_ops\WORKFLOW.md</code>, <code>DAILY_ROUTINE.md</code>,</p>
+<p><code>clients.json</code>, each client <code>OPERATING_PLAN.md</code>, the memory index + key standing-rule memory files, and the</p>
+<p>live Windows Task Scheduler. Live files win on any conflict.*</p></main>
+</div></body></html>
