@@ -150,7 +150,7 @@
   <li><b>Create the client folder.</b> <code>[LOCAL_FOLDER]</code> with subfolders <code>data\</code> (lead DB + state/logs JSON), <code>scripts\core\</code> (live scripts + .bat launchers), <code>scripts\archive\</code>, <code>content\</code>, <code>creative\</code> (visuals), <code>drafts\</code>, <code>logs\</code>, <code>reports\</code>. Root holds <code>CLIENT.md</code> + credentials only. Never put working files at the root. <b>Never mix two clients in one folder.</b></li>
   <li><b>Write <code>CLIENT.md</code>.</b> Fill every placeholder from Section 0: the Unipile account, WhatsApp group, email account if any, lead DB path, weekly invite cap, timezone + PC fire time, git folder, and a short "client read" (personality, what they value, sensitivities, voice).</li>
   <li><b>Confirm credentials.</b> Shared Unipile API key + base URL are in the workspace <code>CLAUDE.md</code>. Confirm the client's specific <code>[UNIPILE_ACCOUNT_ID]</code> is connected and healthy: <code>GET /accounts/{id}</code> shows each feature <code>status: OK</code>. A <code>disconnected_account</code> error means the Unipile session expired and cookies must be refreshed in the dashboard.</li>
-  <li><b>Confirm the account is NOT on the blocklist.</b> Never use Glenn Lai, Kamryadi Arifin, Vicky Koh, or Thim Werner accounts for any activity (see Section 14).</li>
+  <li><b>Confirm the account is NOT on the blocklist.</b> Never use Glenn Lai, Kamryadi Arifin, or Vicky Koh accounts for any activity (see Section 14).</li>
   <li><b>Register the client in <code>clients.json</code>.</b> Add the full record (name, company, status active/monitor, timezone, post_time_local, pc_fire_time, wa_chat_id, unipile_account, channel, local_folder, git_folder, content publisher, voice). A new client inherits the whole formula automatically once registered.</li>
   <li><b>Create the git folder</b> under the penclients repo (<code>[GIT_FOLDER]</code>). All artifacts commit here. Add-only, never cross clients.</li>
   <li><b>Define the strategy docs</b> (the per-client SOP shape, modeled on the Saiful inside-sales docs 00&ndash;10): ICP + personas (Section 2), research/scoring plan (Section 3), outreach plan + copy per persona (Section 7), positioning + profile + content plan (Sections 4, 10). Set the offer, the proof points (real numbers only), the quotas, and the timezone.</li>
@@ -275,7 +275,7 @@ live_signal, personal_hook, last_touch, next_action, status</code></pre>
 <p class="lead">Connect requests go out noteless, paced, within the prospect's local working hours, under a weekly cap, on a healthy account, with a real provider_id resolved first.</p>
 
 <h3>5.1 Noteless invites &mdash; standing rule</h3>
-<div class="box rule"><span class="tag">Hard rule</span> Send LinkedIn invites <b>without a note</b>. The with-note quota is roughly 5/week on non-Premium accounts and is effectively unusable. Personalize via DM <em>after</em> they accept. The connect-note copy becomes the first post-accept message (M1). (LinkedIn connection-note hard limit is ~200 chars; with-note invites over 200 chars return 400 <code>too_many_characters</code>.)</div>
+<div class="box rule"><span class="tag">Hard rule</span> Send LinkedIn invites <b>without a note</b>. The with-note quota is effectively unusable on these accounts (it is unavailable even manually and trips <code>cannot_resend_yet</code>). Personalize via DM <em>after</em> they accept. The connect-note copy becomes the first post-accept message (M1). (LinkedIn connection-note hard limit is ~200 chars; with-note invites over 200 chars return 400 <code>too_many_characters</code>.)</div>
 
 <h3>5.2 Weekly cap, daily throttle, pacing</h3>
 <table>
@@ -473,7 +473,7 @@ live_signal, personal_hook, last_touch, next_action, status</code></pre>
   <li><b>Never mix clients</b> &mdash; separate folders, separate git, no overlap.</li>
   <li><b>Never publish to a client's live profile without their approval.</b></li>
   <li><b>Never mention Claude / AI tooling to a client</b> without explicit CEO permission &mdash; even if the client raises it first.</li>
-  <li><b>Honour the DNC lists + the blocked-account list.</b> Never use Glenn Lai, Kamryadi Arifin, Vicky Koh, or Thim Werner accounts for any activity.</li>
+  <li><b>Honour the DNC lists + the blocked-account list.</b> Never use Glenn Lai, Kamryadi Arifin, or Vicky Koh accounts for any activity.</li>
   <li><b>Send invites noteless</b> and resolve the real provider_id before any send.</li>
   <li><b>Send in the prospect's local working hours</b> (Mon&ndash;Fri 9&ndash;18).</li>
   <li><b>Only reply to in-campaign / ICP-matching senders.</b> Off-target = info to CEO only.</li>
