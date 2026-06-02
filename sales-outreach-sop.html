@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prospect Engine — Master Sales Outreach SOP &amp; Workflow</title>
+<style>
+  :root{
+    --ink:#11161d; --muted:#5b6675; --line:#e4e8ee; --bg:#ffffff; --soft:#f6f8fb;
+    --brand:#1b46c2; --brand-d:#13327d; --accent:#0c8f6e;
+    --rule:#b91c1c; --rule-bg:#fdf1f0; --rule-line:#f3c7c2;
+    --gotcha:#92560a; --gotcha-bg:#fdf6ea; --gotcha-line:#f0dcb4;
+    --good:#0c6b48; --good-bg:#eefaf4; --good-line:#bfe6d4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); background:var(--bg);
+    font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{display:grid; grid-template-columns:288px 1fr; max-width:1320px; margin:0 auto;}
+  /* ---- TOC ---- */
+  nav.toc{
+    position:sticky; top:0; align-self:start; height:100vh; overflow:auto;
+    border-right:1px solid var(--line); padding:26px 20px 60px; background:var(--soft);
+  }
+  nav.toc .brand{font-weight:800; font-size:15px; letter-spacing:.2px; color:var(--brand-d); margin-bottom:4px}
+  nav.toc .sub{font-size:12px; color:var(--muted); margin-bottom:18px}
+  nav.toc a{display:block; text-decoration:none; color:var(--ink); padding:5px 9px; border-radius:7px; font-size:13.5px; margin:1px 0}
+  nav.toc a:hover{background:#e9eef6}
+  nav.toc a .n{display:inline-block; width:22px; color:var(--brand); font-weight:700}
+  /* ---- Main ---- */
+  main{padding:46px 54px 120px; min-width:0}
+  header.head{border-bottom:3px solid var(--brand); padding-bottom:22px; margin-bottom:34px}
+  header.head h1{font-size:31px; line-height:1.18; margin:0 0 8px; letter-spacing:-.4px}
+  header.head .subtitle{font-size:17px; color:var(--brand-d); font-weight:600; margin:0 0 6px}
+  header.head .meta{font-size:13px; color:var(--muted)}
+  header.head .formula{
+    margin-top:18px; background:var(--brand-d); color:#fff; padding:15px 18px; border-radius:10px;
+    font-size:14.5px; line-height:1.55;
+  }
+  header.head .formula b{color:#ffd86b}
+  h2{font-size:23px; margin:54px 0 6px; padding-top:14px; letter-spacing:-.3px; border-top:1px solid var(--line)}
+  h2:first-of-type{border-top:0}
+  h2 .sec{color:var(--brand); font-weight:800; margin-right:8px}
+  h3{font-size:17.5px; margin:26px 0 6px; color:var(--brand-d)}
+  h4{font-size:15px; margin:18px 0 4px; color:var(--ink)}
+  p{margin:9px 0}
+  .lead{color:var(--muted); font-size:15px; margin-top:2px}
+  ol,ul{margin:9px 0 9px 4px; padding-left:24px}
+  li{margin:5px 0}
+  ol.steps>li{margin:9px 0}
+  code{background:#eef1f6; padding:1.5px 6px; border-radius:5px; font-size:13px; font-family:"SF Mono",Consolas,Menlo,monospace}
+  pre{background:#0f1722; color:#e6edf6; padding:14px 16px; border-radius:9px; overflow:auto; font-size:13px; line-height:1.5}
+  pre code{background:none; padding:0; color:inherit}
+  /* callouts */
+  .box{border-radius:10px; padding:13px 16px 13px 16px; margin:16px 0; border:1px solid; font-size:14.5px}
+  .box .tag{display:inline-block; font-weight:800; font-size:11.5px; letter-spacing:.7px; text-transform:uppercase; margin-bottom:4px}
+  .rule{background:var(--rule-bg); border-color:var(--rule-line)} .rule .tag{color:var(--rule)}
+  .gotcha{background:var(--gotcha-bg); border-color:var(--gotcha-line)} .gotcha .tag{color:var(--gotcha)}
+  .good{background:var(--good-bg); border-color:var(--good-line)} .good .tag{color:var(--good)}
+  /* tables */
+  table{border-collapse:collapse; width:100%; margin:16px 0; font-size:13.5px}
+  th,td{border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top}
+  th{background:var(--soft); font-weight:700; color:var(--brand-d)}
+  tbody tr:nth-child(even){background:#fbfcfe}
+  .ph{background:#fff4d6; border-radius:4px; padding:0 5px; font-family:"SF Mono",Consolas,monospace; font-size:12.5px; color:#7a5b00; white-space:nowrap}
+  .pill{display:inline-block; background:#eef1f6; color:var(--brand-d); border-radius:999px; padding:2px 10px; font-size:12px; font-weight:600; margin:2px 4px 2px 0}
+  .chk{list-style:none; padding-left:2px}
+  .chk li{padding-left:30px; position:relative; margin:6px 0}
+  .chk li:before{content:"\2610"; position:absolute; left:0; top:-1px; font-size:19px; color:var(--brand)}
+  .twocol{column-count:2; column-gap:34px}
+  .twocol li{break-inside:avoid}
+  hr{border:0; border-top:1px solid var(--line); margin:30px 0}
+  .small{font-size:12.5px; color:var(--muted)}
+  @media print{
+    .wrap{display:block} nav.toc{display:none} main{padding:0}
+    h2{page-break-after:avoid} .box,table,pre{page-break-inside:avoid}
+    header.head .formula{background:#eee; color:#000}
+  }
+  @media (max-width:880px){
+    .wrap{grid-template-columns:1fr} nav.toc{position:static; height:auto; border-right:0; border-bottom:1px solid var(--line)}
+    main{padding:28px 20px 80px} .twocol{column-count:1}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="toc">
+  <div class="brand">Prospect Engine</div>
+  <div class="sub">Master Sales Outreach SOP</div>
+  <a href="#s0"><span class="n">0</span>How to use this SOP</a>
+  <a href="#s1"><span class="n">1</span>Project onboarding &amp; setup</a>
+  <a href="#s2"><span class="n">2</span>ICP &amp; persona definition</a>
+  <a href="#s3"><span class="n">3</span>Research &amp; lead sourcing</a>
+  <a href="#s4"><span class="n">4</span>Warm-up &amp; profile</a>
+  <a href="#s5"><span class="n">5</span>Connection / invite strategy</a>
+  <a href="#s6"><span class="n">6</span>Nurture &amp; engagement</a>
+  <a href="#s7"><span class="n">7</span>Message sequence</a>
+  <a href="#s8"><span class="n">8</span>Inbox triage &amp; replies</a>
+  <a href="#s9"><span class="n">9</span>Conversion</a>
+  <a href="#s10"><span class="n">10</span>Content &amp; thought leadership</a>
+  <a href="#s11"><span class="n">11</span>Tracking, reporting, delivery</a>
+  <a href="#s12"><span class="n">12</span>Automation &amp; scheduling</a>
+  <a href="#s13"><span class="n">13</span>Voice &amp; copy rules</a>
+  <a href="#s14"><span class="n">14</span>Hard invariants</a>
+  <a href="#s15"><span class="n">15</span>Cadence checklists</a>
+  <a href="#s16"><span class="n">16</span>New-project quick-start</a>
+</nav>
+
+<main>
+<header class="head">
+  <h1>Prospect Engine — Master Sales Outreach SOP &amp; Workflow</h1>
+  <p class="subtitle">Reusable across every sales project</p>
+  <p class="meta">Last updated 2026-06-02 &nbsp;&middot;&nbsp; Prospect Engine LLC &nbsp;&middot;&nbsp; LinkedIn-first B2B outreach, fully personalized, human voice, nothing templated</p>
+  <div class="formula">
+    <b>The one-line formula (same for every client):</b><br>
+    <b>Listen</b> &rarr; <b>reply in voice</b> &rarr; <b>refine on feedback</b> &rarr; <b>source &amp; score leads</b> (fit gate, then intent) &rarr; <b>warm</b> &rarr; <b>noteless connect</b> &rarr; <b>M1 to M4 personalized DMs</b> (any reply stops it forever) &rarr; <b>triage inbox &amp; reply same day</b> &rarr; <b>book the call</b> &rarr; <b>keep content one batch ahead</b> &rarr; <b>track, report, commit to git</b>. Live-check before every send. Never mix clients. Never publish without client approval.
+  </div>
+</header>
+
+<!-- ============ 0 ============ -->
+<h2 id="s0"><span class="sec">0.</span>How to use this SOP</h2>
+<p class="lead">This is the canonical playbook for every Prospect Engine sales project, any client, any market. The engine is identical client to client. Only the values in the placeholders change. Fill them in once per project (in that client's <code>CLIENT.md</code>) and run the rest of the document as written.</p>
+
+<h3>0.1 Placeholders to fill per project</h3>
+<table>
+  <tr><th>Placeholder</th><th>What it is</th><th>Example</th></tr>
+  <tr><td><span class="ph">[CLIENT]</span></td><td>Client name + company</td><td>Robert Pinnington / PDCA Consulting</td></tr>
+  <tr><td><span class="ph">[UNIPILE_ACCOUNT_ID]</span></td><td>The Unipile LinkedIn account that sends</td><td><code>f0hkEHB-R9eveBxx8AtFrA</code></td></tr>
+  <tr><td><span class="ph">[WHATSAPP_CHAT_ID]</span></td><td>Client WhatsApp group for listen/reply</td><td><code>mUJo_mYYXhSp56XOd05nGg</code></td></tr>
+  <tr><td><span class="ph">[CLIENT_TIMEZONE]</span></td><td>Client local TZ (sets the 10:00 publish slot)</td><td>Europe/Berlin</td></tr>
+  <tr><td><span class="ph">[PC_FIRE_TIME]</span></td><td>This PC's clock time = client local 10:00</td><td>14:00 (PC is UTC+6)</td></tr>
+  <tr><td><span class="ph">[WEEKLY_INVITE_CAP]</span></td><td>Invites per week, Mon&ndash;Sun (NOT per day)</td><td>200 / 205 / 175</td></tr>
+  <tr><td><span class="ph">[LEAD_DB_PATH]</span></td><td>Master lead list / tracker location</td><td>Clients\[CLIENT]\data\...</td></tr>
+  <tr><td><span class="ph">[GIT_FOLDER]</span></td><td>Client's folder in the penclients repo</td><td>PDCA Consulting Outreach</td></tr>
+  <tr><td><span class="ph">[LOCAL_FOLDER]</span></td><td>Local workspace root</td><td>C:\Users\PC\Clients\[CLIENT]</td></tr>
+  <tr><td><span class="ph">[BOOKING_LINK]</span></td><td>Calendar link used in reply&rarr;call CTA</td><td>https://calendly.com/prospect_engine/30min</td></tr>
+  <tr><td><span class="ph">[PERSONAS]</span> <span class="ph">[OFFER]</span> <span class="ph">[PROOF_POINTS]</span></td><td>Who we message, what we sell, evidence</td><td>Defined in Section 2</td></tr>
+</table>
+
+<div class="box gotcha"><span class="tag">Gotcha</span> The registry of every client (TZ, account id, WhatsApp id, folders, voice read) lives in <code>C:\Users\PC\Clients\_ops\clients.json</code>. Read it plus <code>WORKFLOW.md</code> and <code>DAILY_ROUTINE.md</code> at the start of every session before touching any client.</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="s1"><span class="sec">1.</span>Project onboarding &amp; setup</h2>
+<p class="lead">Do these once when a client comes on. Nothing sends until every item here exists.</p>
+<ol class="steps">
+  <li><b>Create the client folder.</b> <code>[LOCAL_FOLDER]</code> with subfolders <code>data\</code> (lead DB + state/logs JSON), <code>scripts\core\</code> (live scripts + .bat launchers), <code>scripts\archive\</code>, <code>content\</code>, <code>creative\</code> (visuals), <code>drafts\</code>, <code>logs\</code>, <code>reports\</code>. Root holds <code>CLIENT.md</code> + credentials only. Never put working files at the root. <b>Never mix two clients in one folder.</b></li>
+  <li><b>Write <code>CLIENT.md</code>.</b> Fill every placeholder from Section 0: the Unipile account, WhatsApp group, email account if any, lead DB path, weekly invite cap, timezone + PC fire time, git folder, and a short "client read" (personality, what they value, sensitivities, voice).</li>
+  <li><b>Confirm credentials.</b> Shared Unipile API key + base URL are in the workspace <code>CLAUDE.md</code>. Confirm the client's specific <code>[UNIPILE_ACCOUNT_ID]</code> is connected and healthy: <code>GET /accounts/{id}</code> shows each feature <code>status: OK</code>. A <code>disconnected_account</code> error means the Unipile session expired and cookies must be refreshed in the dashboard.</li>
+  <li><b>Confirm the account is NOT on the blocklist.</b> Never use Glenn Lai, Kamryadi Arifin, Vicky Koh, or Thim Werner accounts for any activity (see Section 14).</li>
+  <li><b>Register the client in <code>clients.json</code>.</b> Add the full record (name, company, status active/monitor, timezone, post_time_local, pc_fire_time, wa_chat_id, unipile_account, channel, local_folder, git_folder, content publisher, voice). A new client inherits the whole formula automatically once registered.</li>
+  <li><b>Create the git folder</b> under the penclients repo (<code>[GIT_FOLDER]</code>). All artifacts commit here. Add-only, never cross clients.</li>
+  <li><b>Define the strategy docs</b> (the per-client SOP shape, modeled on the Saiful inside-sales docs 00&ndash;10): ICP + personas (Section 2), research/scoring plan (Section 3), outreach plan + copy per persona (Section 7), positioning + profile + content plan (Sections 4, 10). Set the offer, the proof points (real numbers only), the quotas, and the timezone.</li>
+  <li><b>Set the quotas + timezone.</b> Weekly invite cap (Mon&ndash;Sun), prospect-local sending window (Mon&ndash;Fri 9&ndash;18), publish slot (client local 10:00 = <code>[PC_FIRE_TIME]</code> on this PC).</li>
+  <li><b>Capture the client's voice.</b> Read their WhatsApp group history and last 7 approved posts. The client read drives every reply and every draft.</li>
+</ol>
+
+<!-- ============ 2 ============ -->
+<h2 id="s2"><span class="sec">2.</span>ICP &amp; persona definition</h2>
+<p class="lead">Fit is the gate. A prospect must pass firmographic fit before intent is even checked. If they fail fit, they never enter the list, no matter how strong the signal.</p>
+
+<h3>2.1 The fit gate (firmographic)</h3>
+<p>Define per project: business type (B2B that sells to businesses), primary segments, company size (sweet spot is usually 11&ndash;50 employees), stage/funding, geography (the priority markets), and the one-line "why us fits" test. Write the one-line test for the project, e.g.:</p>
+<div class="box good"><span class="tag">One-line test</span> "Does this person own a revenue or growth number, and would what we sell obviously help them in the next 90 days?" If yes &rarr; candidate. If no &rarr; drop.</div>
+
+<h3>2.2 Decision-maker personas (who we message)</h3>
+<p>Most projects map to four personas. Tune titles + pains + the service to lead with per client.</p>
+<table>
+  <tr><th>Persona</th><th>Titles</th><th>Core pain</th><th>Lead with</th></tr>
+  <tr><td><b>A &mdash; Founder / CEO</b> (primary)</td><td>Founder, Co-Founder, CEO, MD</td><td>"I am the bottleneck, pipeline is inconsistent."</td><td>Revenue + GTM strategy</td></tr>
+  <tr><td><b>B &mdash; Revenue / Growth leader</b></td><td>Head/VP/Dir Sales, Revenue, Growth, Marketing; CRO; CMO</td><td>"Reps do admin not selling, reply rates dropping."</td><td>Revenue + AI automation</td></tr>
+  <tr><td><b>C &mdash; Agency owner / Partner</b></td><td>Founder/CEO/Partner of agencies</td><td>"We fill clients' funnels, our own is feast or famine."</td><td>Done-for-you outbound + Operations</td></tr>
+  <tr><td><b>D &mdash; Ops / COO</b> (automation entry)</td><td>COO, Head of Ops, founder wearing ops hat</td><td>"Manual reporting, spreadsheet chaos, founder is the system."</td><td>AI automation + Software + Ops</td></tr>
+</table>
+<p>A and C convert best for a founder-led pitch and should be the bulk of the list. B and D widen the funnel.</p>
+
+<h3>2.3 Per-market notes &amp; disqualifiers</h3>
+<p>Record tone per market (e.g. direct/numbers-first; plain/no-hype; precision/proof/GDPR-aware; warm/relationship-led). <b>Hard-stop exclusions (never add):</b> direct competitors, existing clients or anyone already in another PE campaign (dedupe against all client folders), obvious "no budget" signals (student, intern, between roles, solopreneur with no team), and enterprise with a mature in-house SDR org.</p>
+
+<!-- ============ 3 ============ -->
+<h2 id="s3"><span class="sec">3.</span>Research &amp; lead sourcing</h2>
+<p class="lead">We do not "find names." We run pools through a pipeline until we have scored, verified, tiered prospects. Fit is the gate, intent is the ranker, and nothing is random.</p>
+
+<h3>3.1 Sources, in priority order</h3>
+<ol class="steps">
+  <li><b>Existing PE / client data first</b> (free and warm). Re-qualify; treat as candidates, not verified (titles drift).</li>
+  <li><b>Accelerator cohorts &amp; VC portfolios</b> (named, fresh, ICP-dense). Recent cohorts = founders 0&ndash;18 months post-raise = peak intent.</li>
+  <li><b>Directories &amp; curated lists</b> (Crunchbase filtered, Tracxn, e27, Wellfound) for breadth + funding/stage.</li>
+  <li><b>LinkedIn search on the client's own account</b> &mdash; Sales Navigator for precision filters; classic search when SN is unavailable.</li>
+  <li><b>Apollo for URLs only.</b> Use it purely to discover ICP people and their LinkedIn URL. Ignore any emails (LinkedIn-only channel).</li>
+  <li><b>Third-party intent</b> (G2, hiring scrapes, news) &mdash; tie-breaker / ranker only, never a trigger on its own.</li>
+</ol>
+
+<h3>3.2 The three mandatory research quality gates</h3>
+<p>Every prospect must pass <b>all three</b>, in this order, before being shortlisted. Drop after the first failure. No filler rows.</p>
+<div class="box rule"><span class="tag">Hard rule</span>
+<b>Gate 1 &mdash; Account is ACTIVE.</b> Posted/commented/reacted in the last 30 days (ideally 14). Check via <code>GET /users/{provider_id}/posts?account_id=[ACCT]&amp;limit=8</code>. 0 posts in 30 days &rarr; drop. An inactive account ignores invites and burns the weekly cap.<br><br>
+<b>Gate 2 &mdash; Every ICP indication satisfied.</b> Persona match (no near-miss), size in range, industry in scope (reject pure B2C), geography in the priority markets, and commercial autonomy (owns the number or can buy).<br><br>
+<b>Gate 3 &mdash; Verified buying intent in the last 60 days.</b> One real, sourced trigger (funding, hiring SDR/AE/CMO/CRO, new launch, new market, leadership change, public GTM-pain post, award). "Verified" means a public URL or LinkedIn post with a date. "Sweet-spot industry" or "no-signal but fits" is filler &mdash; drop, do not just rank lower.</div>
+<p class="small">25 verified leads beat 50 mixed-quality leads. Never pad a shortlist to hit a number. Never infer a signal ("likely active because the market is hot") &mdash; verify or drop.</p>
+
+<h3>3.3 Live verification checklist (per row, before it can be contacted)</h3>
+<ul class="chk twocol">
+  <li>Title + company still match (titles drift &mdash; verify live)</li>
+  <li>Headcount still in range</li>
+  <li>Last 3 posts/comments read &mdash; capture the live signal + a personal hook</li>
+  <li>Company page checked (recent posts, hiring tab, About for stage/size)</li>
+  <li>Funding / news confirmed with a dated source</li>
+  <li>Persona confirmed (A/B/C/D) + the right service pillar chosen</li>
+  <li>Dedupe against all PE client folders + active campaigns</li>
+  <li>Exclusion sweep (competitor / B2C / enterprise-SDR)</li>
+  <li>Not on any do-not-contact (DNC) list for this client</li>
+  <li>Sending account not on the blocked-account list</li>
+</ul>
+
+<h3>3.4 Scoring /100 and tiering</h3>
+<p><b>Final = Intent score (0&ndash;100) &times; Fit multiplier.</b> Fit multiplier: A bullseye &times;1.0, B strong &times;0.85, C edge &times;0.7, Fail &times;0 (not added). Score the 8 intent parameters, weighted so stated pain and trigger events count most:</p>
+<table>
+  <tr><th>#</th><th>Parameter</th><th>Max pts</th></tr>
+  <tr><td>1</td><td>Pipeline pain (stated)</td><td>20</td></tr>
+  <tr><td>2</td><td>Growth pressure / funded</td><td>18</td></tr>
+  <tr><td>3</td><td>Trigger event</td><td>16</td></tr>
+  <tr><td>4</td><td>Founder-led sales</td><td>12</td></tr>
+  <tr><td>5</td><td>Hiring signal (sales/growth)</td><td>12</td></tr>
+  <tr><td>6</td><td>Manual-ops / lean team</td><td>8</td></tr>
+  <tr><td>7</td><td>Channel-presence gap</td><td>8</td></tr>
+  <tr><td>8</td><td>Engagement reachability</td><td>6</td></tr>
+</table>
+<table>
+  <tr><th>Tier</th><th>Final score</th><th>Action</th></tr>
+  <tr><td><b>Tier 1 &mdash; Hot</b></td><td>70&ndash;100</td><td>Front of queue. Warm 3&ndash;5 days on their content, then personalized connect.</td></tr>
+  <tr><td><b>Tier 2 &mdash; Warm</b></td><td>45&ndash;69</td><td>Standard queue. Personalized connect after a quick warm-up.</td></tr>
+  <tr><td><b>Tier 3 &mdash; Watch</b></td><td>25&ndash;44</td><td>Nurture only: follow + engage + wait for a trigger. Do not pitch.</td></tr>
+  <tr><td><b>Drop</b></td><td>&lt;25</td><td>Park. Re-score if a trigger appears.</td></tr>
+</table>
+<p>No prospect enters an outreach sequence below Tier 2 unless a fresh trigger lifts them.</p>
+
+<h3>3.5 Master row schema</h3>
+<pre><code>market, company, company_type, employees_est, stage_or_funding,
+person_name, person_title, persona, linkedin_url, company_website,
+why_fit, suggested_angle, case_study_to_lead, source,
+verification_status, intent_score, fit_grade, final_score, tier,
+live_signal, personal_hook, last_touch, next_action, status</code></pre>
+<p><code>status</code> lifecycle: <code>draft &rarr; verified &rarr; queued &rarr; connect_sent &rarr; connected &rarr; m1_sent &rarr; m2 &rarr; m3 &rarr; m4 &rarr; replied(stop) / meeting / not_now(nurture) / disqualified</code>.</p>
+
+<h3>3.6 Sourcing rhythm + re-scoring</h3>
+<p>Run a steady cadence, not one giant scrape. <b>Daily:</b> process one source slice through the fit gate + quick intent pass (~15&ndash;25 candidates); live-verify + score yesterday's candidates. <b>Weekly:</b> re-score Tier 1/2 uncontacted (intent decays fast) and the nurture pool, dedupe, and replenish whenever the verified queue drops below one week of outreach volume so the list never runs dry. Re-read intent before every follow-up.</p>
+
+<!-- ============ 4 ============ -->
+<h2 id="s4"><span class="sec">4.</span>Account warm-up &amp; profile optimization</h2>
+<p class="lead">Every invite recipient looks at the profile before accepting, so the profile is the single biggest lever on acceptance, reply rate, and inbound.</p>
+
+<h3>4.1 Warm-up-first ramp</h3>
+<p>On a fresh or low-volume account, do not blast. Ramp invite volume gradually <b>10 &rarr; 20/day over the first 1&ndash;2 weeks</b> while the profile and content warm the audience. Bursts trip account-wide invite caps that can lock the account for days (see Section 5).</p>
+
+<h3>4.2 Profile build (client applies these on their own profile, in their voice)</h3>
+<ol class="steps">
+  <li><b>Headline</b> &mdash; who they help + the operator edge + proof. Keep search keywords (their core service terms). Biggest, fastest lift on acceptance.</li>
+  <li><b>About / summary</b> &mdash; story + proof (real numbers) + a soft CTA ("send me a message, I will give you an honest read, no pitch").</li>
+  <li><b>Featured</b> &mdash; pin 3&ndash;4 proof items (case-study graphics with the numbers, one strong post, a how-we-work or booking link). Turns a visit into a warm lead.</li>
+  <li><b>Banner</b> &mdash; positioning in one glance: the line, the proof numbers, a truthful scarcity cue. Big readable text, brand-safe (no third-party logos).</li>
+  <li><b>Photo</b> &mdash; clear, friendly, senior, eye contact.</li>
+  <li><b>Experience</b> &mdash; lead each line with an outcome, not a duty.</li>
+  <li><b>Skills + recommendations</b> &mdash; relevant skills; actively request 5&ndash;8 recommendations from past clients. Social proof lifts acceptance.</li>
+  <li><b>Creator Mode ON</b> + 5 topics matching the content pillars (unlocks the Top Voice path).</li>
+  <li><b>Services / Open-to</b> section listing what the client offers (searchable).</li>
+</ol>
+<div class="box gotcha"><span class="tag">Gotcha</span> Profile edits are the client's to make on their own profile. We draft them and produce the visuals; we do not automate profile changes. Apply the headline + About + Featured <b>before</b> invite volume builds, so invites convert.</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="s5"><span class="sec">5.</span>Connection / invite strategy</h2>
+<p class="lead">Connect requests go out noteless, paced, within the prospect's local working hours, under a weekly cap, on a healthy account, with a real provider_id resolved first.</p>
+
+<h3>5.1 Noteless invites &mdash; standing rule</h3>
+<div class="box rule"><span class="tag">Hard rule</span> Send LinkedIn invites <b>without a note</b>. The with-note quota is roughly 5/week on non-Premium accounts and is effectively unusable. Personalize via DM <em>after</em> they accept. The connect-note copy becomes the first post-accept message (M1). (LinkedIn connection-note hard limit is ~200 chars; with-note invites over 200 chars return 400 <code>too_many_characters</code>.)</div>
+
+<h3>5.2 Weekly cap, daily throttle, pacing</h3>
+<table>
+  <tr><th>Control</th><th>Rule</th></tr>
+  <tr><td>Weekly cap</td><td><span class="ph">[WEEKLY_INVITE_CAP]</span> per week, <b>Mon&ndash;Sun</b> &mdash; NOT a per-day cap. Count week-to-date from the invite log at session start, then send only the remainder spread across the days left.</td></tr>
+  <tr><td>Daily throttle</td><td>Effective ceiling is ~25&ndash;26 silent invites/day before the account starts returning <code>cannot_resend_yet</code>. Do not burst.</td></tr>
+  <tr><td>Pacing</td><td>~5 minutes between successful sends (so 30 invites takes ~2.5 hrs). 30s wait after any failed attempt.</td></tr>
+  <tr><td>LinkedIn ceiling</td><td>~80&ndash;100 invites/day per account is the absolute platform cap; the weekly quota and ~25/day throttle bite first.</td></tr>
+  <tr><td>Timezone gate</td><td>Send only in the <b>prospect's</b> local Mon&ndash;Fri 9&ndash;18 (shared util <code>Clients\_ops\tz_utils.py</code>), not the sender's.</td></tr>
+</table>
+
+<h3>5.3 ID-format rules &mdash; CRITICAL</h3>
+<div class="box rule"><span class="tag">Hard rule</span> <b>Always resolve the real <code>provider_id</code> first:</b> <code>GET /users/{ACwAA...}?account_id=[ACCT]</code> returns the real <code>provider_id</code> (<code>ACoAA...</code>) and <code>network_distance</code>. Use that for both <code>/users/invite</code> and <code>/chats</code>/messaging. The "swap index 2 w&rarr;o" char-swap shortcut is <b>unreliable</b> &mdash; the tails differ and it returns 422 <code>invalid_recipient</code> or a misleading 403. Cache the ACw&rarr;ACo map to JSON. Only <code>FIRST_DEGREE</code> connections can be DM'd from a non-Premium account.</div>
+
+<h3>5.4 Rate-limit handling</h3>
+<ul>
+  <li><b>429 / disconnected_account</b> &rarr; stop hard for the day. Wait 2&ndash;3 hours minimum before any retry; refresh cookies if disconnected.</li>
+  <li><b><code>cannot_resend_yet</code> on every attempt</b> &rarr; this is an account-wide cap, not a per-recipient cooldown. Stop the run immediately. A single 25-invite burst can lock the account 3&ndash;4+ days. Do not retry &mdash; each failed call wastes the budget and can extend the lock. Resume the following Monday or after the window rolls.</li>
+  <li><b><code>already_connected</code> / <code>invalid_recipient</code></b> &rarr; clean skip (already_connected also fires for pending sent invites; use <code>/users/relations</code> as truth).</li>
+</ul>
+
+<h3>5.5 Logging</h3>
+<p>Log every request in the invite log (date, name, id, status). <b>Mark the tracker row <code>connect_sent</code> / <code>invited</code> at the moment of the send</b>, and persist to git before moving to the next contact, so a crash can't lose state and a re-run can't double-send.</p>
+
+<!-- ============ 6 ============ -->
+<h2 id="s6"><span class="sec">6.</span>Nurture &amp; engagement</h2>
+<p class="lead">Warm before you ask, and keep engaging after you connect. This is the single biggest lift to acceptance and reply rates, and it builds the client's authority.</p>
+
+<h3>6.1 Pre-touch warming (Tier 1 always)</h3>
+<p>For 3&ndash;5 days before a Tier-1 connect: <b>follow</b> them and their company page, <b>comment</b> on 1&ndash;2 recent posts (a sharp add or question, never "great post"), and react to a genuine win. Let the client's name register as a useful peer before the request. The day before a cold message, like or comment on one of their posts.</p>
+
+<h3>6.2 Follow the company page before EVERY message</h3>
+<div class="box rule"><span class="tag">Hard rule</span> Follow the prospect's LinkedIn company page <b>before sending any message</b>, every client, every time (trust-building). Helper: <code>Clients\_ops\follow_company.py</code> (idempotent, never blocks the message if it fails). There is no native Unipile endpoint &mdash; resolve the company via <code>GET /linkedin/company/{slug}</code> then follow via the raw voyager <code>feed/dash/followingStates</code> passthrough.</div>
+
+<h3>6.3 Daily engagement (client + network posts)</h3>
+<ul>
+  <li><b>Comment on 5&ndash;10 in-lane posts/day</b> (prospects + key creators) with a real add (5+ words). Reply to comments on the client's own posts inside the first 60 minutes (the first 60&ndash;90 min drive ~70% of reach).</li>
+  <li><b>Reactions must be a contextual MIX of types</b> (like / insightful / support / celebrate / love), never all "like" &mdash; 49 identical likes reads botty. Auto-pick the profile from the post tone.</li>
+  <li><b>Always like + comment together.</b> A comment without a like reads transactional. Fire the like on the same post after a successful comment.</li>
+  <li><b>Dedupe before any comment, fail-closed.</b> Live-check the post's comments for our own provider_id first; if we already commented, skip (a double-comment is worse than none). If the comments GET errors (non-retryable), skip the comment to be safe.</li>
+  <li><b>If the post is outside the client's real lane and there's no honest parallel, like it &mdash; do not comment.</b></li>
+</ul>
+
+<h3>6.4 Comment style &mdash; the six non-negotiables</h3>
+<ol>
+  <li><b>No phrase lifting</b> from the post (no quoting their wording back at them).</li>
+  <li><b>Identical voice</b> &mdash; unmistakably the client/operator, never a generic engagement tool.</li>
+  <li><b>Well researched</b> &mdash; read the WHOLE post first; if you can't summarize its thesis, you haven't read it.</li>
+  <li><b>No repetition</b> &mdash; do not restate what they already said.</li>
+  <li><b>Cover the WHOLE post</b> &mdash; land against the shape of the full argument, not one bullet.</li>
+  <li><b>7th-grade English, human</b> &mdash; short sentences, no vendor tone, no em dashes, no emojis.</li>
+</ol>
+
+<!-- ============ 7 ============ -->
+<h2 id="s7"><span class="sec">7.</span>Message sequence</h2>
+<p class="lead">Connect &rarr; M1 &rarr; M2 &rarr; M3 &rarr; M4. The structure is fixed; the words are hand-fit to the person every time. Any reply ends the sequence forever.</p>
+
+<h3>7.1 The sequence &amp; timing</h3>
+<table>
+  <tr><th>Step</th><th>When (no reply)</th><th>What</th></tr>
+  <tr><td>Warm-up</td><td>Days -5 to 0</td><td>Follow + 1&ndash;2 genuine comments (Tier 1 always)</td></tr>
+  <tr><td><b>Connect</b></td><td>Day 0</td><td>Noteless invite (copy reserved for M1)</td></tr>
+  <tr><td><b>M1</b></td><td>1&ndash;2 days after accept</td><td>Insight-led DM, one idea, soft or no ask. Follow their company page first.</td></tr>
+  <tr><td><b>M2</b></td><td>+4 days</td><td>Value add: case study matched to their industry/region, or a sharp question</td></tr>
+  <tr><td><b>M3</b></td><td>+7 days</td><td>Soft, low-pressure ask for a short call</td></tr>
+  <tr><td><b>M4 (break-up)</b></td><td>+10 days</td><td>Graceful close, door left open &rarr; move to nurture</td></tr>
+</table>
+<p class="small">Older sequence variants run on day-gaps (M1&rarr;M2 ~4d, M2&rarr;M3 ~6&ndash;10d) &mdash; align the exact gaps to the client's configured script. Match the structure above and keep gaps consistent within a client.</p>
+
+<h3>7.2 M1 doctrines</h3>
+<table>
+  <tr><th>Doctrine</th><th>When</th><th>Length</th><th>Anchor</th></tr>
+  <tr><td><b>M1 v3 &mdash; qualified</b></td><td>Passed 3 gates + verified buying-intent signal in last 60d</td><td>35&ndash;50 words</td><td>The specific funded/launched/won event (name + date + magnitude) + one operator insight + one sharp question. Lead with THEIR story, not our case study.</td></tr>
+  <tr><td><b>M1 v2 &mdash; standard (default Persona A)</b></td><td>Generic accept, ICP fit, one recent profile signal</td><td>40&ndash;70 words</td><td>One specific profile signal + one soft question. No company/product/numbers/agency mention &mdash; save those for M2.</td></tr>
+  <tr><td>M1 v1 &mdash; results-led (fallback)</td><td>No recent signal to anchor on</td><td>~90 words</td><td>The case-study angle (matched proof point). Use only when v2/v3 can't be built.</td></tr>
+</table>
+<div class="box good"><span class="tag">v3 test</span> If the same message could go to 5 different founders with the variables swapped, it is not v3 yet. Show what you understood, not what you observed. Self-review: would you be flattered to receive this, or roll your eyes?</div>
+
+<h3>7.3 Per-persona angle &amp; service map</h3>
+<table>
+  <tr><th>Persona</th><th>Lead service</th><th>Opening angle</th></tr>
+  <tr><td>A &mdash; Founder/CEO</td><td>Revenue + GTM</td><td>Founder-to-founder, "the one thing I'd change about your top of funnel"</td></tr>
+  <tr><td>B &mdash; Revenue/Growth</td><td>Revenue + AI automation</td><td>A reply-rate / meeting-rate benchmark from a comparable team</td></tr>
+  <tr><td>C &mdash; Agency owner</td><td>DFY outbound + Operations</td><td>"You fill your clients' funnels. Who fills yours?"</td></tr>
+  <tr><td>D &mdash; Ops/COO</td><td>AI automation + Software + Ops</td><td>"The parts of your business you don't have a team for"</td></tr>
+</table>
+
+<h3>7.4 The value / soft-ask / break-up logic</h3>
+<p>One idea per message, one soft ask, never pitch in the first touch. M2 gives value with no ask. M3 makes a low-pressure call ask ("worth a quick 15 minutes?"). M4 closes gracefully and leaves the door open, then the prospect moves to nurture and only re-enters on a fresh trigger. Match the case study to the prospect's industry/region. Use real scarcity truthfully (e.g. "we cap at 10 clients").</p>
+
+<h3>7.5 Verify live before EVERY send</h3>
+<div class="box rule"><span class="tag">Hard rule</span> Before M1/M2/M3/M4, <code>GET /chats/{chat_id}/messages</code> and read the FULL thread oldest&rarr;newest. Confirm the expected pre-send state: M1 needs 0 prior messages either way; M2 needs <code>outbound==1, has_reply==False</code>; M3 needs <code>outbound==2, has_reply==False</code>. The newest message must NOT be ours. <b>Any reply, any message from them, anything beyond our own sequence &rarr; mark replied, stop forever, no further sends.</b> Never trust the tracker alone; if you can't read the live inbox, skip the send. A "send all" instruction does not override this. Also verify the profile (name, company, title, persona) before each send and adapt or skip on a mismatch.</div>
+
+<!-- ============ 8 ============ -->
+<h2 id="s8"><span class="sec">8.</span>Inbox triage &amp; reply handling</h2>
+<p class="lead">Listen first, every working day. The inbox is the truth and a content/intelligence stream. Reply only to people who belong in our campaign or match the client's ICP.</p>
+
+<h3>8.1 Pull &amp; classify</h3>
+<p>Pull the client's LinkedIn inbox. For every new message log: <code>who</code>, <code>from (origin)</code>, <code>what they want</code>, <code>intent class</code>, <code>ICP fit</code> (Y/N + persona + tier), <code>action</code>, <code>status</code>. Classes: prospect reply &middot; warm inbound &middot; networking &middot; vendor pitch &middot; recruiter/HR &middot; client &middot; personal &middot; system &middot; decline.</p>
+
+<h3>8.2 Routing rules</h3>
+<table>
+  <tr><th>Class</th><th>Action</th></tr>
+  <tr><td><b>Prospect reply (from our outreach)</b></td><td>Highest priority. Stop the sequence. Reply human, in voice, same working day. Aim for a call.</td></tr>
+  <tr><td><b>Warm inbound / networking</b></td><td>Reply light + curious, qualify gently. If an ICP-fit founder/owner, flag as a prospect and add to the list.</td></tr>
+  <tr><td><b>Decline ("no thanks")</b></td><td>Send a short courteous door-open note in voice, personalize one detail, then STOP forever. The AI-automation offer is CONDITIONAL &mdash; skip it for AI/automation experts (just acknowledge + courtesy).</td></tr>
+  <tr><td><b>Vendor pitch / recruiter / investor / off-target / system</b></td><td>Do NOT reply. Not even a polite close. Flag to the CEO as info only.</td></tr>
+  <tr><td><b>Existing client</b></td><td>Route to that client's workstream. Never mix clients.</td></tr>
+  <tr><td><b>Personal</b></td><td>Leave to the client. Log only.</td></tr>
+</table>
+<div class="box rule"><span class="tag">Hard rule</span> Only draft or send a reply if the person is in our active campaign OR clearly matches the client's ICP. Never touch investors, recruiters, vendor pitches, or off-target inbound &mdash; silence is correct. ICP-score the sender with the same /100 index before deciding.</div>
+
+<!-- ============ 9 ============ -->
+<h2 id="s9"><span class="sec">9.</span>Conversion</h2>
+<p class="lead">The goal of the conversation, not the message, is a short discovery call.</p>
+<ol class="steps">
+  <li><b>Reply &rarr; call CTA.</b> On a positive reply, steer to a short call and offer the booking link <span class="ph">[BOOKING_LINK]</span> (example: <code>https://calendly.com/prospect_engine/30min</code>). Frame it as an honest read, not a pitch.</li>
+  <li><b>Discovery call.</b> The founder takes every first call (boutique, founder-led). Honest audit framing.</li>
+  <li><b>Same-day proposal.</b> A PE differentiator &mdash; send the proposal the same day.</li>
+  <li><b>Retainer.</b> Close to a retainer. Use real scarcity truthfully ("2 of 10 slots open"), never as a fake tactic.</li>
+</ol>
+
+<!-- ============ 10 ============ -->
+<h2 id="s10"><span class="sec">10.</span>Content &amp; thought leadership</h2>
+<p class="lead">Keep one approved batch ahead, always. Content warms the audience so outreach lands, and pulls inbound.</p>
+
+<h3>10.1 The content loop</h3>
+<ol class="steps">
+  <li><b>Draft the next batch</b> in the client's voice: 7th-grade English, no dashes, a strong standalone hook (first 150 chars before "see more"), one idea, one takeaway, a question at the end, a soft CTA. Target 1,250&ndash;3,000 chars. Mix 4 TOFU / 2 MOFU / 1 BOFU per week of 7. Always a real number, name where it came from, show a loss not just a win.</li>
+  <li><b>Build matching 4K visuals.</b> Vary the visual structure every batch so it never looks templated. Bigger text, brand-safe images only (no third-party logos).</li>
+  <li><b>Approval gate.</b> Share the batch as a browser-openable HTML review (never a flat PNG) in the client's WhatsApp group. Refine on their feedback and reconfirm before anything goes live. <b>Never publish without client approval.</b></li>
+  <li><b>Schedule one per day at client local 10:00</b> via the publisher + Windows task (<span class="ph">[PC_FIRE_TIME]</span> on this PC). The publisher is gated: enabled + approved + date == today client-local.</li>
+  <li><b>Auto-boost after publish.</b> Reactions from the rotation pool (mixed types, blocked accounts excluded, LRU rotation, no self-react) + one in-voice comment. Keep CTAs/links in the FIRST COMMENT, never the body.</li>
+  <li><b>Notify the Operations Team.</b> Immediately share the post link in the "Operations Team" WhatsApp group and ask the team to interact (like, comment, repost). Helper: <code>_ops\notify_ops_post.py</code>. This is a daily, never-skipped step.</li>
+  <li><b>Check + reply to comments</b> on the post in voice (concede the point, restate ours softly, no hard CTA to peers; threaded reply; skip own + already-handled).</li>
+</ol>
+<div class="box gotcha"><span class="tag">Gotcha</span> Publishing a feed post is <code>POST /posts</code> (multipart, image under form field <code>attachments</code>); first comment is <code>POST /posts/{id}/comments</code>. To post as a company page add <code>as_organization</code>; to reshare from a profile use <code>repost: &lt;post_id&gt;</code>. Never probe with a real post body (there is no delete for self-posts).</div>
+
+<!-- ============ 11 ============ -->
+<h2 id="s11"><span class="sec">11.</span>Tracking, reporting &amp; delivery</h2>
+
+<h3>11.1 Trackers (source of truth)</h3>
+<ul>
+  <li><b>Master prospect tracker</b> &mdash; one row per prospect, the full schema from 3.5, every touch logged with date + outcome, lifecycle stage from <code>sourced</code> &rarr; ... &rarr; <code>closed</code>.</li>
+  <li><b>Invite log</b> &mdash; every connection request (used for the week-to-date cap math).</li>
+  <li><b>Inbox triage log</b> &mdash; every inbound message (who, origin, intent, ICP, action, status).</li>
+  <li><b>CLIENT_TODO.md</b> &mdash; open items + a short client personality read, updated as things move.</li>
+</ul>
+
+<h3>11.2 Reports</h3>
+<p>Weekly funnel report vs benchmarks (sourced &rarr; invited &rarr; connected &rarr; M1..M4 &rarr; replied &rarr; meetings &rarr; closed). Monthly pipeline report. CEO reviews before any client-facing summary.</p>
+
+<h3>11.3 Delivery flow</h3>
+<div class="box rule"><span class="tag">Hard rule</span> Deliver client reports as a browser-openable GitHub Pages LINK, never a file or image. (1) Publish the self-contained HTML to <code>ProspectEngineAgentic/reports</code> (Pages, branch main, root) &rarr; URL <code>https://prospectengineagentic.github.io/reports/&lt;file&gt;.html</code>; poll until HTTP 200 (deploy takes ~30&ndash;90s). (2) Share the link in the "Operations Team" group first so the CEO verifies it. (3) After CEO confirms, share in the client group with a short confident note &mdash; no "open in browser", no format talk. Clients prefer links, never attachments.</div>
+
+<!-- ============ 12 ============ -->
+<h2 id="s12"><span class="sec">12.</span>Automation &amp; scheduling</h2>
+<p class="lead">Windows Task Scheduler is the backbone &mdash; outreach sends, daily publish, and WhatsApp sync run unattended even with no session open.</p>
+
+<h3>12.1 Daily script order per account</h3>
+<div class="box rule"><span class="tag">Hard rule</span> <b>Invites are priority #1 every day.</b> Run them FIRST on the client's account, before publish/boost/engage/M1, because Unipile shares one rate budget per account &mdash; engagement noise can burn the whole week's invite cap before any invite goes out. Order: (1) detect new accepts, (2) invites, (3) M1 to new accepts + due M2&ndash;M4, (4) publish + boost reactions/comments (boost uses ROTATION pool accounts, safe to run later or in parallel), (5) inbox + engagement replies last.</div>
+
+<h3>12.2 Single-instance rule</h3>
+<div class="box rule"><span class="tag">Hard rule</span> One sending instance at a time per account. Two senders on one account = LinkedIn 429 rate limit. Run in a visible window, verify with a process check after launch, and check the log before restarting a crashed script (it may have partially completed).</div>
+
+<h3>12.3 Task resilience (must be configured)</h3>
+<ul>
+  <li>Run on battery + don't stop on battery.</li>
+  <li>Wake the computer to run; Start when available (catch up a missed run).</li>
+  <li>Use the full <code>python.exe</code> path, never bare <code>python</code>.</li>
+  <li>"Run whether the user is logged on or not" requires the account password.</li>
+  <li>Recheck the PC fire time at each DST change (client local 10:00 shifts).</li>
+</ul>
+<p>WhatsApp sync runs daily so the store is always fresh. <b>Commit to git after every task</b> &mdash; never skip.</p>
+<div class="box gotcha"><span class="tag">Gotcha</span> The penclients repo is NOT connected to the Claude Code GitHub app, so cloud routines with <code>git_repository</code> sources auto-disable. Use the API-fetch pattern (embedded token) for any remote routine. Do not write <code>python -c</code> inline on Windows &mdash; write a <code>.py</code> file and run it. A subagent "stop" must kill the loop, not just the child process &mdash; rename the drafts file aside and use an explicit stop gate.</div>
+
+<!-- ============ 13 ============ -->
+<h2 id="s13"><span class="sec">13.</span>Voice &amp; copy rules</h2>
+<p class="lead">People reply to people, not to consultants. Write like the client is texting someone they respect.</p>
+<ul>
+  <li><b>7th-grade English.</b> Short sentences, simple words, contractions (it's, you're). Read it out loud &mdash; if you wouldn't say it to a friend at a cafe, rewrite it.</li>
+  <li><b>No dashes, no em dashes</b> &mdash; ever, in any client-facing copy. British English for UK clients. Match the prospect's language (match the first line of their last post).</li>
+  <li><b>One real thing</b> per message: a genuine reaction or a plain question, not three polished thoughts.</li>
+  <li><b>Insight-led</b> &mdash; open with a specific observation about THEIR business. Proof by specifics (real numbers), never adjectives. Never fabricate figures.</li>
+</ul>
+<div class="box gotcha"><span class="tag">Banned words / tells</span> outbound, GTM, pipeline, ICP, signal / signal-driven, intent data, leverage, motion, cadence, framework, at scale, activation, value prop, "lines up with", "trade notes", "happy to&hellip;", "curious how&hellip;", "great connecting", "reaching out to business leaders like yourself", "hope this finds you well", "just checking in", "quick question". No abstract noun stacks. No balanced "X is the easy part, Y is the work" parallels. No emojis, no ALL CAPS, no "!!!".</div>
+<p><b>Pre-send polish check (every message AND comment):</b> single spaces, clean line breaks, no stray spaces before punctuation; varied sentence length that flows like talk; no typos, names spelled right; not spammy. If it looks even slightly robotic, rewrite before sending.</p>
+
+<!-- ============ 14 ============ -->
+<h2 id="s14"><span class="sec">14.</span>Hard invariants (never break)</h2>
+<ol class="steps">
+  <li><b>Verify the live inbox + full thread before ANY send</b> (message, post, repost, comment). The thread is the truth; the tracker can lie. A "send all" does not override.</li>
+  <li><b>Any reply stops the sequence forever.</b> No further sends, ever.</li>
+  <li><b>One sender instance per account</b> &mdash; never two (= 429).</li>
+  <li><b>Never mix clients</b> &mdash; separate folders, separate git, no overlap.</li>
+  <li><b>Never publish to a client's live profile without their approval.</b></li>
+  <li><b>Never mention Claude / AI tooling to a client</b> without explicit CEO permission &mdash; even if the client raises it first.</li>
+  <li><b>Honour the DNC lists + the blocked-account list.</b> Never use Glenn Lai, Kamryadi Arifin, Vicky Koh, or Thim Werner accounts for any activity.</li>
+  <li><b>Send invites noteless</b> and resolve the real provider_id before any send.</li>
+  <li><b>Send in the prospect's local working hours</b> (Mon&ndash;Fri 9&ndash;18).</li>
+  <li><b>Only reply to in-campaign / ICP-matching senders.</b> Off-target = info to CEO only.</li>
+  <li><b>Real numbers only</b> &mdash; never fabricate proof or claims.</li>
+  <li><b>Commit to git after every task.</b></li>
+  <li><b>Fix the command, not just the symptom</b> &mdash; on any error, recover the damage AND patch the script/config so it can't recur, then commit.</li>
+  <li><b>Share deliverables for CEO review before sending anything client-facing</b> (except the Saiful inside-sales project, which the CEO has authorized to act autonomously &mdash; see note below).</li>
+</ol>
+<div class="box gotcha"><span class="tag">Autonomy exception</span> The Saiful Inside-Sales project is the one place the CEO removed the approval gate: act as Saiful, draft &rarr; self-review strictly &rarr; act, north-star 10 booked meetings/week. The four protective invariants still hold (accurate claims only, verify before message, respect rate limits, stop on reply). For all other clients, the approval gate stands.</div>
+
+<!-- ============ 15 ============ -->
+<h2 id="s15"><span class="sec">15.</span>Cadence checklists</h2>
+
+<h3>15.1 Daily (per active client)</h3>
+<ul class="chk">
+  <li>Read <code>WORKFLOW.md</code> + <code>clients.json</code> + this client's <code>OPERATING_PLAN.md</code></li>
+  <li>Sync WhatsApp; read the client group; reply in voice or draft + flag CEO</li>
+  <li>Refine any shared work the client gave feedback on; reconfirm</li>
+  <li>LISTEN: pull the inbox, classify + log every message; stop any sequence that got a reply</li>
+  <li>RESPOND: draft replies for prospect replies first, then warm inbound; route the rest</li>
+  <li>Detect new accepts; send invites FIRST (within weekly cap, prospect-local hours)</li>
+  <li>Send due M1&ndash;M4 after a fresh live-thread check; follow the company page first</li>
+  <li>ENGAGE: comment on 5&ndash;10 in-lane posts (mix reactions + like), reply to comments on own posts</li>
+  <li>SOURCE: process one slice toward the target; verify + score yesterday's candidates</li>
+  <li>Publish the day's approved post at client local 10:00; boost; notify Ops group; reply to its comments</li>
+  <li>Update master tracker + CLIENT_TODO; commit to git</li>
+</ul>
+
+<h3>15.2 Weekly</h3>
+<ul class="chk">
+  <li>Count week-to-date invites; plan the remainder of <span class="ph">[WEEKLY_INVITE_CAP]</span></li>
+  <li>Re-score uncontacted Tier 1/2 + the nurture pool; dedupe</li>
+  <li>Replenish the verified queue if below one week of volume</li>
+  <li>Build + share the next content batch for approval (one batch ahead)</li>
+  <li>Funnel report vs benchmarks; short progress note to CEO</li>
+  <li>Verify all scheduled tasks are Ready/healthy</li>
+</ul>
+
+<h3>15.3 Monthly</h3>
+<ul class="chk">
+  <li>Pipeline report (CEO reviews before any client-facing summary); deliver via GitHub Pages link</li>
+  <li>Re-score the Tier-3 nurture pool</li>
+  <li>Refresh ICP / market notes / proof points if anything changed</li>
+  <li>Profile + Top Voice metrics review (followers, impressions, saves, search appearances)</li>
+  <li>Reactivate cold/ghosted leads with a light re-touch (CEO-approved before send)</li>
+  <li>Recheck PC fire times at DST changes</li>
+</ul>
+
+<!-- ============ 16 ============ -->
+<h2 id="s16"><span class="sec">16.</span>New-project quick-start runbook</h2>
+
+<h3>Day 1</h3>
+<ol class="steps">
+  <li>Onboarding (Section 1): folder, <code>CLIENT.md</code>, credentials check + account health, blocklist check, register in <code>clients.json</code>, git folder.</li>
+  <li>Define ICP + personas + offer + proof points + disqualifiers (Section 2). Set the weekly cap + timezone.</li>
+  <li>Draft profile optimization (Section 4) and hand to the client to apply.</li>
+</ol>
+<h3>Week 1</h3>
+<ol class="steps">
+  <li>Source + run the first pool through the three quality gates; live-verify + score + tier (Section 3). Aim ~20 verified/day.</li>
+  <li>Warm-up-first: engage on Tier-1 prospects' content; ramp invites 10 &rarr; 20/day, noteless, prospect-local hours, paced (Section 5).</li>
+  <li>Stand up content: draft the first approved batch (Section 10), set the publisher + Windows publish task at client local 10:00.</li>
+  <li>Begin daily inbox triage (Section 8) and the daily engagement hour (Section 6).</li>
+</ol>
+<h3>Steady state</h3>
+<ol class="steps">
+  <li>Run the daily checklist (15.1) every working day on the invites-first order (Section 12), committing to git after each task.</li>
+  <li>M1&rarr;M4 sequence on new accepts with a live-thread check before every send (Section 7); any reply &rarr; stop &rarr; convert (Section 9).</li>
+  <li>Keep content one batch ahead; weekly re-score + replenish + funnel report; monthly pipeline report via Pages link.</li>
+  <li>On any error: recover + patch the script + commit. Learn and improve the next batch.</li>
+</ol>
+
+<hr>
+<p class="small">Prospect Engine LLC &middot; Master Sales Outreach SOP &amp; Workflow &middot; Reusable across every sales project &middot; Last updated 2026-06-02. Source of truth for placeholders + per-client values: <code>C:\Users\PC\Clients\_ops\clients.json</code>, <code>WORKFLOW.md</code>, <code>DAILY_ROUTINE.md</code>, and each client's <code>CLIENT.md</code> / <code>OPERATING_PLAN.md</code>.</p>
+
+</main>
+</div>
+</body>
+</html>
