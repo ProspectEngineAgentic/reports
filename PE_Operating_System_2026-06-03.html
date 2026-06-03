@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProspectEngine — How We Run the Agency (Operating System)</title>
+<style>
+  :root{--ink:#1a1d23;--muted:#5b6470;--line:#e6e8ec;--bg:#fbfbfc;--accent:#c8612f;--accent2:#2f6cc8;--soft:#f4f1ec;--good:#1f8a4c;--warn:#b8860b;--bad:#c0392b;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 90px;}
+  header{background:linear-gradient(180deg,#fff,#f6f3ee);border-bottom:1px solid var(--line);padding:48px 0 34px;margin-bottom:8px;}
+  header .wrap{padding-bottom:0;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--accent);margin:0 0 10px;}
+  h1{font-size:2.1rem;line-height:1.15;margin:0 0 12px;letter-spacing:-.02em;}
+  h2{font-size:1.45rem;margin:46px 0 12px;padding-top:14px;border-top:2px solid var(--line);letter-spacing:-.01em;}
+  h3{font-size:1.08rem;margin:26px 0 8px;}
+  p{margin:10px 0;}
+  .lead{font-size:1.12rem;color:var(--muted);max-width:62ch;}
+  .muted{color:var(--muted);}
+  a{color:var(--accent2);}
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:#f0ece5;padding:1px 6px;border-radius:5px;}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.93rem;}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;}
+  tr:last-child td{border-bottom:none;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:680px){.grid{grid-template-columns:1fr;}}
+  .pill{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:20px;}
+  .g{background:#e7f4ec;color:var(--good);} .y{background:#faf3df;color:var(--warn);} .r{background:#fbeae8;color:var(--bad);}
+  .flow{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;white-space:pre;background:#21242b;color:#e8e6e1;padding:16px 18px;border-radius:10px;overflow-x:auto;line-height:1.5;}
+  ul,ol{margin:10px 0;padding-left:22px;} li{margin:5px 0;}
+  .toc{background:var(--soft);border-radius:12px;padding:16px 22px;margin:22px 0;}
+  .toc a{display:inline-block;margin:3px 14px 3px 0;color:var(--ink);text-decoration:none;font-size:.92rem;border-bottom:1px solid transparent;}
+  .toc a:hover{border-color:var(--accent);}
+  .gate{background:#fbeae8;border-left:3px solid var(--bad);padding:4px 12px;border-radius:0 6px 6px 0;}
+  .note{background:#eef3fa;border-left:3px solid var(--accent2);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.95rem;}
+  footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;}
+  .big{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <p class="eyebrow">ProspectEngine · Internal · For team feedback</p>
+  <h1>How we run the agency</h1>
+  <p class="lead">One operating system, two seats, a team of AI agents, and a human who steers. This is the whole picture — please read and tell us where it's wrong, thin, or risky.</p>
+  <p class="muted" style="margin-top:14px;font-size:.85rem;">Draft · 2026-06-03 · status: architecture complete, going live next</p>
+</div></header>
+<div class="wrap">
+
+<div class="toc">
+  <strong style="display:block;margin-bottom:6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)">Contents</strong>
+  <a href="#goal">The goal</a><a href="#shape">The shape</a><a href="#chars">Human + Claude</a><a href="#team">The AI team</a>
+  <a href="#sop">Who does what</a><a href="#runtime">How it runs (loops)</a><a href="#heal">Self-healing</a><a href="#improve">Learning &amp; improvement</a>
+  <a href="#board">The board</a><a href="#seatA">Clients (Seat A)</a><a href="#seatB">InsideSales (Seat B)</a><a href="#geo">Geo strategy</a>
+  <a href="#state">Where we are</a><a href="#feedback">What we need from you</a>
+</div>
+
+<h2 id="goal">1 · The goal</h2>
+<p>Turn ProspectEngine into a <strong>productized agency that two people can run.</strong> One person + Claude runs the <strong>entire client-delivery operation</strong>; one person + Claude runs the <strong>entire InsideSales</strong> (our own outbound). We are an <strong>agency</strong> — <em>we</em> do the work; it is <strong>AI-powered</strong> (we research every lead with AI, personalize every message with Claude). Not "AI does it for you." We are accountable for results.</p>
+
+<h2 id="shape">2 · The shape — one system, two seats</h2>
+<p>The whole business is a single operating system stamped into two seats:</p>
+<div class="grid">
+  <div class="card"><span class="pill y">Seat A</span><h3 style="margin-top:8px">Client Delivery</h3><p class="muted" style="margin:0">The retainer book (10 clients). Each client = its own workspace. We deliver results: booked meetings for the client.</p></div>
+  <div class="card"><span class="pill y">Seat B</span><h3 style="margin-top:8px">InsideSales</h3><p class="muted" style="margin:0">PE's own outbound — 20–30 SDR LinkedIn IDs. We win PE its own retainers.</p></div>
+</div>
+<div class="flow">  HUMAN (steers · approves · decides)        — a few minutes a day
+       │  one daily batch (chat) + weekly review
+  CLAUDE = a COO per seat
+       ├── runs the daily loop, coordinates the team
+       ├── directs the agent-employees
+       └── rides the safety rails (enforced automatically)
+            │
+       runs on always-on LOOPS — with or without a human</div>
+
+<h2 id="chars">3 · The two characters</h2>
+<p>The system protects the human's attention. Claude absorbs all execution; the human touches only what genuinely needs a person — in batches.</p>
+<table>
+<tr><th>The human does (a few min/day)</th><th>Claude + the agents do (continuously)</th></tr>
+<tr><td>Drop a Sales Nav link when a queue is low</td><td>Research, score, build the lead list</td></tr>
+<tr><td>Approve content before it goes live</td><td>Draft posts + visuals, schedule, publish</td></tr>
+<tr><td>Decide replies that need a real call</td><td>Triage inbox, draft replies, book meetings</td></tr>
+<tr><td>Money — renewals, invoices</td><td>Send invites + the M1/M2/M3 cadence safely</td></tr>
+<tr><td>Auth — connect an account / token</td><td>Report, track, commit, and learn</td></tr>
+</table>
+<p class="big">The human approves, decides, and steers. Claude runs the entire engine.</p>
+
+<h2 id="team">4 · The AI team (agent-employees)</h2>
+<p>The COO (the main Claude session) directs a team of specialist agents, each conditioned per client by a short brief — so the same copywriter writes Robert's British voice for one client and another founder's voice for the next.</p>
+<table>
+<tr><th>Agent</th><th>Job</th></tr>
+<tr><td><strong>COO</strong></td><td>Runs the book, coordinates the team, owns the client relationship, hands the human the daily batch</td></tr>
+<tr><td>lead-researcher</td><td>Sales Nav link → scrape → dedup → enrich → match to ICP → ranked list</td></tr>
+<tr><td>copywriter</td><td>Invites, M1/M2/M3, content — in the client's voice (drafts)</td></tr>
+<tr><td>designer</td><td>4K post visuals, a fresh structure each batch</td></tr>
+<tr><td>outreach-operator</td><td>Runs the sends — caps, live-inbox check, stop-on-reply, single-instance</td></tr>
+<tr><td>inbox-manager</td><td>Triage replies → draft → book the meeting → escalate</td></tr>
+<tr><td>client-reporter</td><td>Weekly / monthly client reports</td></tr>
+<tr><td>analyst</td><td>Per-client trainer — tunes the briefs from what's working</td></tr>
+<tr><td><strong>client-persona</strong></td><td>The client's <em>digital twin</em> — argues the client's side before work ships</td></tr>
+<tr><td><strong>head-of-ld</strong></td><td>Learning &amp; Development — learns from mistakes across all clients and teaches the team</td></tr>
+</table>
+
+<h2 id="sop">5 · Who does what (the daily SOP)</h2>
+<p>Same SOP we already run — mapped to the two characters. Quotas are enforced automatically and never exceeded: ~26–30 invites/account/day, M1 +1d / M2 +4d / M3 +10d, publish at the client's local 10:00, stop-on-reply forever, prospect-hours only.</p>
+<table>
+<tr><th>Step</th><th>Claude</th><th>Human</th></tr>
+<tr><td>Listen</td><td>sync inbox + WhatsApp, read latest first</td><td>—</td></tr>
+<tr><td>Reply</td><td>draft in voice</td><td>approve real-decision replies</td></tr>
+<tr><td>Data</td><td>research → dedup → enrich → enroll</td><td>drop the Sales Nav link</td></tr>
+<tr><td>Outreach</td><td>invites + cadence, safely</td><td>approve at-risk/DNC sends</td></tr>
+<tr><td>Content</td><td>draft posts + visuals</td><td>approve the batch</td></tr>
+<tr><td>Engage</td><td>comment-watch + boost</td><td>—</td></tr>
+<tr><td>Track + learn</td><td>report, commit, propose improvements</td><td>merge improvements</td></tr>
+</table>
+
+<h2 id="runtime">6 · How it actually runs — one command + loops</h2>
+<p>The operator types one command:</p>
+<div class="flow">coo PDCA      →  review everything  →  ask (one batch)  →  start + run on loops</div>
+<p>From there it self-drives on a set of always-on loops (different jobs, different intervals):</p>
+<table>
+<tr><th>Loop</th><th>Every</th><th>"Asks itself…"</th></tr>
+<tr><td>Replies</td><td>~10 min</td><td>any new replies? → triage, draft/book, stop the sequence on a reply</td></tr>
+<tr><td>Task-watch</td><td>~30 min</td><td>this task we started — finished? → advance or retry</td></tr>
+<tr><td>Cadence</td><td>~30 min</td><td>anyone due for M1/M2/M3? → live-check, send</td></tr>
+<tr><td>Invites</td><td>hourly</td><td>queue full + cap left? → send; if low, ask for a Sales Nav link</td></tr>
+<tr><td>Content</td><td>daily</td><td>next batch ready + approved? → publish at local 10:00</td></tr>
+<tr><td>Engagement</td><td>~30 min</td><td>new comments? → reply + boost</td></tr>
+<tr><td>Daily batch</td><td>1×/day</td><td>assemble "your 5 minutes"</td></tr>
+</table>
+<div class="note"><strong>The core rule:</strong> a missing human answer parks <em>one</em> item — it never stalls the engine. No Sales Nav link yet? Only invites pause; replies, cadence, content and engagement keep running. With zero human input the system still answers replies, advances tasks, runs cadence, engages, reports, and learns — indefinitely.</div>
+
+<h2 id="heal">7 · Self-healing (behaves like a human team)</h2>
+<p>The system detects, contains, and recovers from its own failures:</p>
+<table>
+<tr><th>Loop</th><th>Detects</th><th>Does automatically</th></tr>
+<tr><td>Watchdog</td><td>stuck tasks, silent loops, failed sends</td><td>retry with backoff → pause the lane + alert</td></tr>
+<tr><td>Account-health</td><td>LinkedIn checkpoint/disconnect, accept-rate crash</td><td>pause that account's lane to protect it, flag re-auth, log it</td></tr>
+</table>
+<p><strong>The recovery chain:</strong> detect → contain → log the mistake → L&amp;D teaches the team → the board merges the lesson. <em>Every failure makes the system more reliable, not less.</em></p>
+
+<h2 id="improve">8 · Learning &amp; improvement (it gets better every cycle)</h2>
+<div class="flow">RUN → MEASURE → ANALYZE → SIMULATE → DECIDE → UPDATE → (RUN better)</div>
+<ul>
+<li><strong>The flywheel:</strong> we measure every outcome → the <code>analyst</code> finds what works → the <code>client-persona</code> twin pressure-tests it from the client's side → the board decides → the briefs update → the next cycle runs sharper.</li>
+<li><strong>ICP keeps tightening:</strong> we correlate <em>who actually replied and booked</em> against the ICP and sharpen the targeting each cycle. "These leads are too junior" becomes a concrete ICP edit, not a recurring complaint.</li>
+<li><strong>Learning &amp; Development (L&amp;D):</strong> like a human team that never repeats a mistake — every mistake is logged blamelessly, root-caused, turned into a lesson, and <em>taught</em> to the whole team (shared playbooks + agent instructions). On a loop, with or without anyone watching.</li>
+</ul>
+
+<h2 id="board">9 · The standing board (always deliberating)</h2>
+<p>A multi-lens decision ritual that convenes every cycle and on triggers (a metric drop, a complaint, new client info, a renewal). Nine lenses — CEO, COO, Growth, CMO, Design, CTO, AI Architect, CFO, and the <strong>Customer lens</strong> (voiced by the client's digital twin, so every decision is tested against "what would the client say?"). It logs a brief and flags what needs the CEO.</p>
+
+<h2 id="seatA">10 · Seat A — the clients</h2>
+<p>10 active retainers, each on the identical standardized structure (a master file + numbered folders + per-role briefs). Adding a client = clone the template, fill the briefs, connect the account — then it runs on the same loop as everyone else.</p>
+<p class="muted">Active: PDCA · Opcom · Algoritmica · Get2world ·  · Inccrease · CodeCapsule · VectorShield · TruGen · CoNEXTion. Four are at a renewal-edge and get driven in the weekly review.</p>
+
+<h2 id="seatB">11 · Seat B — InsideSales (the 20–30 IDs)</h2>
+<p>One operator runs many SDR LinkedIn IDs without it becoming many jobs. <strong>The trick: don't manage 30 strategies — manage 5 country playbooks × per-ID personalization.</strong> Each ID is a mini-persona that inherits its country pod's ICP and content pillars; the agents personalize underneath; the operator approves at the <strong>pod</strong> level (~5 decisions), not per ID.</p>
+<ul>
+<li><strong>Content for each ID:</strong> the pod sets 4–5 content pillars; the copywriter + designer produce each ID's posts from {pillars × that ID's angle}, with structure varied so the IDs never look like clones (authenticity <em>and</em> safety).</li>
+<li><strong>Sales Nav links by pod, not by ID:</strong> the operator drops ~5 links; the researcher splits + dedups across each pod's IDs.</li>
+<li><strong>Safety is the #1 risk at 30 accounts:</strong> warmup ramp per ID, accept-rate auto-throttle, account-health auto-pause, never identical copy.</li>
+</ul>
+
+<h2 id="geo">12 · Geo strategy — data + our timezone</h2>
+<p>Picked on two axes: <strong>4 years of PE proof</strong> and <strong>good overlap with a Bangladesh team (UTC+6)</strong>. The US is deprioritized for live staffing (their workday is our night) — automate it if at all.</p>
+<table>
+<tr><th>Pod</th><th>Region</th><th>Proof (our case data)</th><th>Team overlap</th></tr>
+<tr><td>🇸🇬 SEA</td><td>Singapore + Malaysia</td><td><strong>strongest</strong> — Decube 129 SQLs, Fr8Labs 178/60 mtgs, Nodeflair, Brandripe 6 deals</td><td>2 hrs</td></tr>
+<tr><td>🇦🇪 MENA</td><td>UAE / Gulf</td><td>Zoftware 3,000+ decision-makers</td><td>2 hrs</td></tr>
+<tr><td>🇩🇪 DACH</td><td>Germany +AT/CH</td><td>AnyHelpNow 469 SQLs, QIAGEN 200+, 4 current clients</td><td>afternoon</td></tr>
+<tr><td>🇦🇺 ANZ</td><td>Australia</td><td></td><td>morning</td></tr>
+<tr><td>🇬🇧 UK</td><td>United Kingdom</td><td>PDCA, broad case base</td><td>afternoon</td></tr>
+</table>
+
+<h2 id="state">13 · Where we are</h2>
+<table>
+<tr><th>Area</th><th>Status</th></tr>
+<tr><td>The whole operating system (this doc)</td><td><span class="pill g">designed + documented</span></td></tr>
+<tr><td>Standardized structure on all 10 clients</td><td><span class="pill g">done</span></td></tr>
+<tr><td>The AI team (10 agents) + safety + L&amp;D + board</td><td><span class="pill g">done</span></td></tr>
+<tr><td>InsideSales 5-pod plan + ID allocation</td><td><span class="pill g">done</span></td></tr>
+<tr><td>Website reposition (AI-powered outreach)</td><td><span class="pill y">homepage build-verified, deploy pending</span></td></tr>
+<tr><td>Per-client + per-ID briefs filled</td><td><span class="pill y">PDCA done (template); rest in progress</span></td></tr>
+<tr><td>Live engine (sends firing on loops)</td><td><span class="pill r">gated — see below</span></td></tr>
+</table>
+<p class="gate"><strong>What's blocking "live":</strong> (1) per-workspace access tokens, (2) the single-instance hand-off from the current scheduled tasks (so we never double-message). Both are quick, deliberate steps — then the loops switch on safely, client by client.</p>
+
+<h2 id="feedback">14 · What we need from you (feedback)</h2>
+<p>This is a draft for the team. Please tell us:</p>
+<ul>
+<li>Where is this <strong>wrong or unrealistic</strong> for how outreach actually works on the ground?</li>
+<li>The <strong>geo pick</strong> — are SEA / MENA / DACH / ANZ / UK the right five for us to sell into?</li>
+<li><strong>LinkedIn safety</strong> — is the warmup + throttle conservative enough at 20–30 accounts? What have we missed?</li>
+<li>The <strong>per-ID content</strong> model — will 5 pods × personalization actually hold up, or do IDs need more uniqueness?</li>
+<li>What would <strong>you</strong>, as the COO or Head of Sales, need on day one that isn't here?</li>
+</ul>
+
+<footer>
+ProspectEngine · internal operating-system draft · 2026-06-03 · prepared for team review.<br>
+Source of truth: the org brain (<code>CLAUDE.md</code>) + the operating docs in <code>_Ops/</code> and <code>_executive/</code>.
+</footer>
+</div>
+</body>
+</html>
