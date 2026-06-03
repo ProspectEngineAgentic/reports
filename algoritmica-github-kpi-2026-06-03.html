@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deeploans GitHub KPI Report - Week of June 3, 2026</title>
+<style>
+  :root{
+    --ink:#0f1b2d;
+    --slate:#475569;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --brand:#1f6feb;
+    --brand-dark:#0b3d91;
+    --green:#16794c;
+    --amber:#b45309;
+    --amber-bg:#fef6e7;
+    --amber-line:#f3d28a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+    font-size:16px;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 64px;}
+  .header{
+    background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+    color:#fff;border-radius:14px;padding:30px 32px;margin-bottom:26px;
+    box-shadow:0 6px 24px rgba(11,61,145,.18);
+  }
+  .header .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.85;margin:0 0 6px;}
+  .header h1{margin:0 0 4px;font-size:26px;font-weight:700;}
+  .header .sub{margin:0;font-size:15px;opacity:.92;}
+  .header .meta{margin-top:14px;font-size:13px;opacity:.85;border-top:1px solid rgba(255,255,255,.25);padding-top:12px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:24px 26px;margin-bottom:22px;box-shadow:0 1px 3px rgba(15,27,45,.04);
+  }
+  h2{font-size:19px;margin:0 0 14px;color:var(--ink);display:flex;align-items:center;gap:10px;}
+  h2 .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:7px;background:var(--brand);color:#fff;
+    font-size:14px;font-weight:700;flex:none;
+  }
+  p{margin:0 0 12px;color:var(--slate);}
+  table{width:100%;border-collapse:collapse;margin:4px 0 6px;font-size:15px;}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);}
+  th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  td.kpi-name{font-weight:600;color:var(--ink);}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
+  .delta{font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;}
+  .delta.flat{color:var(--muted);}
+  .delta.up{color:var(--green);}
+  .pill{
+    display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;
+    background:#eef2ff;color:var(--brand-dark);
+  }
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 4px;}
+  .stat{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-align:center;}
+  .stat .big{font-size:30px;font-weight:700;color:var(--ink);line-height:1.1;}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:4px;}
+  .persona-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+  .persona{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff;}
+  .persona .p-h{font-weight:700;font-size:14px;color:var(--brand-dark);}
+  .persona .p-c{font-size:24px;font-weight:700;margin-top:2px;}
+  .persona .p-s{font-size:12px;color:var(--muted);}
+  .access{
+    background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:12px;
+    padding:22px 26px;margin-bottom:22px;
+  }
+  .access h2 .num{background:var(--amber);}
+  .access .badge{
+    display:inline-block;background:#fff;border:1px solid var(--amber-line);color:var(--amber);
+    font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:10px;
+  }
+  .access .action{
+    background:#fff;border:1px solid var(--amber-line);border-radius:10px;padding:14px 16px;margin-top:14px;
+  }
+  .access .action strong{color:var(--ink);}
+  ul{margin:6px 0 4px;padding-left:22px;color:var(--slate);}
+  li{margin-bottom:9px;}
+  li strong{color:var(--ink);}
+  code{background:#eef2f7;padding:2px 6px;border-radius:5px;font-size:14px;color:var(--brand-dark);}
+  .empty{color:var(--muted);font-style:italic;}
+  .footer{font-size:13px;color:var(--muted);text-align:center;margin-top:8px;padding-top:18px;border-top:1px solid var(--line);}
+  .note{font-size:13px;color:var(--muted);margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <p class="eyebrow">deeploans · Weekly GitHub Report</p>
+    <h1>GitHub KPI Report</h1>
+    <p class="sub">Repository: Algoritmica-ai/deeploans · For Luca Borella</p>
+    <div class="meta">Week of June 3, 2026 &nbsp;·&nbsp; Compared to baseline of May 27, 2026 &nbsp;·&nbsp; Prepared by Prospect Engine</div>
+  </div>
+
+  <!-- 1. KPI TABLE -->
+  <div class="card">
+    <h2><span class="num">1</span>Public KPIs</h2>
+    <p>These are the numbers we can read from the public repo right now. The change column compares today to our last snapshot on May 27.</p>
+    <table>
+      <thead>
+        <tr><th>KPI</th><th style="text-align:right;">Now</th><th style="text-align:right;">Change vs last week</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="kpi-name">Stars</td><td class="num">13</td><td class="delta flat">no change</td></tr>
+        <tr><td class="kpi-name">Forks</td><td class="num">9</td><td class="delta flat">no change</td></tr>
+        <tr><td class="kpi-name">Watchers</td><td class="num">2</td><td class="delta flat">no change</td></tr>
+        <tr><td class="kpi-name">External contributors</td><td class="num">0</td><td class="delta flat">no change</td></tr>
+        <tr><td class="kpi-name">Open PRs <span class="pill">1 external</span></td><td class="num">16</td><td class="delta flat">no change</td></tr>
+      </tbody>
+    </table>
+    <p class="note">External contributors means people outside the team who have a merged change. That number is still the one Luca cares about most, and it is the hardest to move. Our plan for it is in section 5.</p>
+  </div>
+
+  <!-- 2. NEW THIS PERIOD -->
+  <div class="card">
+    <h2><span class="num">2</span>New this week</h2>
+    <div class="grid">
+      <div class="stat"><div class="big">0</div><div class="lbl">new stars</div></div>
+      <div class="stat"><div class="big">0</div><div class="lbl">new forks</div></div>
+      <div class="stat"><div class="big">0</div><div class="lbl">new external contributors</div></div>
+    </div>
+    <p style="margin-top:14px;">No new stars, forks, or contributors landed this week. <span class="empty">None to name.</span> This is normal for a small niche repo in a single week, and it lines up with what we expected. The work this week was the outreach below, plus the access fix in section 4 that lets us measure real adoption (clones and referrers) starting next week.</p>
+    <p class="note">One open external PR is from Deepak (#34). We are not treating this as a quick win to merge. Luca prefers a short call with the author before any decision, so we are holding it for that.</p>
+  </div>
+
+  <!-- 3. OUTREACH -->
+  <div class="card">
+    <h2><span class="num">3</span>Our 1-to-1 developer outreach this week</h2>
+    <p>This is the work behind the numbers. We reached real developers one at a time, matched to the deeploans audience.</p>
+    <div class="grid">
+      <div class="stat"><div class="big">92</div><div class="lbl">personal messages sent</div></div>
+      <div class="stat"><div class="big">30</div><div class="lbl">new connection invites</div></div>
+      <div class="stat"><div class="big">122</div><div class="lbl">total developer touches</div></div>
+    </div>
+    <div class="persona-row">
+      <div class="persona"><div class="p-h">Persona A</div><div class="p-c">34</div><div class="p-s">Data Engineers (builders)</div></div>
+      <div class="persona"><div class="p-h">Persona B</div><div class="p-c">38</div><div class="p-s">Credit Risk Analysts</div></div>
+      <div class="persona"><div class="p-h">Persona C</div><div class="p-c">20</div><div class="p-s">Heads of Data / AI</div></div>
+    </div>
+    <p class="note" style="margin-top:14px;">Messages by persona shown above. The 30 invites this week were almost all Persona C (28), plus 2 others. Stars and contributors take time to follow this kind of steady, targeted touch, so the count here is the leading signal while the public KPIs catch up.</p>
+  </div>
+
+  <!-- 4. ACCESS STATUS -->
+  <div class="access">
+    <h2><span class="num">4</span>Repo access status - one action needed</h2>
+    <span class="badge">Current access: READ ONLY</span>
+    <p>You asked on June 2 if our account has the maintainer role, since that is stronger than read. We checked it directly, and here is the honest answer.</p>
+    <p>Our GitHub account is <code>saif-pen</code>. On <code>Algoritmica-ai/deeploans</code> it has read access only. It is <strong>not</strong> a maintainer. In plain terms, the access flags are: admin no, maintain no, push no, triage no, read yes.</p>
+    <p>Why this matters for your report: GitHub keeps the real adoption data (how many people clone the code, and which websites send them to the repo) behind a higher access level. With read only, those three endpoints all come back blocked. We tested clones, referrers, and views this week and all three returned a permission error. So today the report can only show public KPIs like stars, forks, contributors, and PRs.</p>
+    <div class="action">
+      <strong>The one thing to do to unlock it:</strong> in the repo, go to Settings, then Collaborators and teams, find <code>saif-pen</code>, and change the role from Read to <strong>Maintain</strong>. That is all. Once that is set, next week's report can include clones (the truest sign that developers are actually trying deeploans) and referrers (which channels are sending people to the repo). One note: GitHub only keeps 14 days of this traffic data, so the sooner the access is set, the sooner we start saving it each week so none is lost.
+    </div>
+  </div>
+
+  <!-- 5. WHAT WE ARE DOING -->
+  <div class="card">
+    <h2><span class="num">5</span>What we are doing to grow these</h2>
+    <p>Our plan is built on your direction: grow real usefulness, recruit one or two genuine maintainers, and go where developers already are. Not stars for the sake of stars.</p>
+    <ul>
+      <li><strong>One-to-one curated dev outreach.</strong> We reach developers one at a time, matched to their work, and we give before we ask. We follow them on GitHub first and open on shared technical ground, not a sales pitch. Small targeted batches get far better replies than blasts.</li>
+      <li><strong>Convert the warm leads we already have.</strong> The 9 forkers and 13 stargazers already raised their hand. We reach each of them directly to learn what they are building and point them to a clean first task.</li>
+      <li><strong>Go where the right developers are.</strong> We are sourcing from the communities around AbsBox, optbinning, and scorecard tools, since those people self-selected into our exact niche. Note: FINOS is off our list because it is your client.</li>
+      <li><strong>Keep the contribution loop clean.</strong> A new developer who clicks through sees the repo, not just a message. We prep PR cleanup and a few well-scoped first issues for you, and we own the follow-up, so every touch has somewhere good to land.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    Prospect Engine LLC · Weekly KPI report for deeploans · Generated June 3, 2026<br>
+    Public KPIs pulled live from the GitHub API. Outreach counts from our send and invite logs for May 27 to June 3.
+  </div>
+
+</div>
+</body>
+</html>
