@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bravo Advisors / TalentBSA Onboarding Brief</title>
+  <style>
+    :root {
+      --ink: #0d141a;
+      --muted: #5f6b76;
+      --green: #408991;
+      --green-dark: #2f6e75;
+      --mint: #d4e5dc;
+      --mint-soft: #f0f7f8;
+      --paper: #fbfaf7;
+      --line: #d8e4de;
+      --dark: #111111;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0d141a 0%, #183438 55%, #408991 100%);
+      color: var(--white);
+      padding: 42px 34px 34px;
+    }
+    .hero-inner, main { max-width: 1180px; margin: 0 auto; }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 36px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .logo-box {
+      width: 88px;
+      height: 58px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .logo-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+    .brand-title { font-weight: 700; font-size: 15px; letter-spacing: .02em; }
+    .brand-sub { color: rgba(255,255,255,.74); font-size: 12px; margin-top: 2px; }
+    .date-pill {
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    h1 {
+      font-size: 44px;
+      line-height: 1.08;
+      margin: 0 0 16px;
+      max-width: 850px;
+      letter-spacing: 0;
+    }
+    .hero p {
+      max-width: 830px;
+      margin: 0;
+      color: rgba(255,255,255,.84);
+      font-size: 18px;
+    }
+    main { padding: 28px 22px 60px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+      margin: 18px 0;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(13,20,26,.05);
+    }
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .span-4 { grid-column: span 4; }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 16px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 10px 0 0; padding-left: 20px; }
+    li { margin: 7px 0; }
+    .kicker {
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .metric {
+      background: var(--mint-soft);
+      border: 1px solid #c8e6e8;
+      border-radius: 7px;
+      padding: 14px;
+    }
+    .metric strong { display: block; font-size: 20px; margin-bottom: 2px; }
+    .metric span { color: var(--muted); font-size: 12px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag {
+      background: var(--mint-soft);
+      border: 1px solid #c8e6e8;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      color: #285d63;
+      font-weight: 600;
+    }
+    .warn {
+      background: #fff7e6;
+      border-color: #f2dca8;
+    }
+    .yes {
+      background: #edf8f0;
+      border-color: #cae9d2;
+    }
+    .no {
+      background: #fff1f1;
+      border-color: #f2c5c5;
+    }
+    .quote {
+      border-left: 4px solid var(--green);
+      padding: 12px 0 12px 16px;
+      color: #2c3a42;
+      background: linear-gradient(90deg, var(--mint-soft), rgba(240,247,248,0));
+      margin: 12px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 8px;
+    }
+    th { color: var(--green-dark); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+    .source {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .callout {
+      background: var(--dark);
+      color: var(--white);
+      border-color: var(--dark);
+    }
+    .callout .kicker { color: #9bd0d5; }
+    .callout p, .callout li { color: rgba(255,255,255,.84); }
+    .footer {
+      margin-top: 24px;
+      padding: 24px;
+      background: var(--dark);
+      color: rgba(255,255,255,.76);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+    .pe { font-weight: 700; color: var(--white); }
+    a { color: var(--green-dark); }
+    @media (max-width: 860px) {
+      .span-8, .span-7, .span-6, .span-5, .span-4 { grid-column: span 12; }
+      h1 { font-size: 34px; }
+      .brand-row { align-items: flex-start; flex-direction: column; }
+      .metric-row { grid-template-columns: repeat(2, 1fr); }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .hero { padding: 30px 18px; }
+      main { padding: 18px 12px 42px; }
+      .metric-row { grid-template-columns: 1fr; }
+      h1 { font-size: 29px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="brand-row">
+        <div class="brand">
+          <div class="logo-box"><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/dJo5MwGWVrH2Z82R/logon-fAIY2pSaflnGy3tZ.png" alt="TalentLab by BSA"></div>
+          <div>
+            <div class="brand-title">TalentBSA / TalentLab by BSA</div>
+            <div class="brand-sub">A Bravo Advisors campaign brief for Prospect Engine</div>
+          </div>
+        </div>
+        <div class="date-pill">Onboarding call brief • 18 Jun 2026</div>
+      </div>
+      <h1>Founder bottleneck is the campaign. HR is only the category.</h1>
+      <p>TalentBSA helps founder led companies install hiring, feedback, performance, and leadership systems before informal people processes start slowing the business.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="grid">
+      <section class="card span-8">
+        <div class="kicker">Fast read before the call</div>
+        <h2>What we need to understand today</h2>
+        <p>Jerrell has given a clear ICP and pain map. The call should not rediscover basics. It should lock the final execution rules: brand name, offer CTA, qualification standard, first market, DNC, proof we can cite, and sender setup.</p>
+        <div class="metric-row">
+          <div class="metric"><strong>15 to 80</strong><span>Target employee range</span></div>
+          <div class="metric"><strong>APAC</strong><span>Primary market</span></div>
+          <div class="metric"><strong>$15k</strong><span>Average target client value</span></div>
+          <div class="metric"><strong>1 in 3</strong><span>Current post meeting close rate stated</span></div>
+        </div>
+      </section>
+      <section class="card span-4 callout">
+        <div class="kicker">Core offer</div>
+        <h2>Free 30 minute Scale Diagnosis</h2>
+        <p>No pitch. Map the single highest leverage people move for the founder’s current growth stage.</p>
+      </section>
+
+      <section class="card span-6">
+        <div class="kicker">Who Jerrell is in this deal</div>
+        <h2>Commercially careful, outcome sensitive, practical</h2>
+        <p>Jerrell rejected the earlier high upfront structure because he has already tried several lead generation companies. He only moved forward after the commercial model became lower setup plus performance fee.</p>
+        <div class="quote">He wants certainty in the plan before execution. The fastest way to build trust is to show strong ICP discipline and reject bad fit meetings.</div>
+        <p class="source">Source: email thread and Fathom transcript in Bravo client folder.</p>
+      </section>
+
+      <section class="card span-6">
+        <div class="kicker">Company architecture</div>
+        <h2>Bravo Advisors is the authority. TalentBSA is the scalable product.</h2>
+        <table>
+          <tr><th>Layer</th><th>What it means</th></tr>
+          <tr><td>Bravo Advisors</td><td>Enterprise talent strategy and consulting credibility. Public positioning is “Fix Your Talent Strategy. Build Teams That Perform.”</td></tr>
+          <tr><td>TalentBSA / TalentLab</td><td>Digital and done with you leadership systems for scaling businesses. Public positioning is “Build Leadership Systems that Scale.”</td></tr>
+          <tr><td>Campaign offer</td><td>Scale Diagnosis call, then convert to the TalentBSA programme.</td></tr>
+        </table>
+      </section>
+
+      <section class="card span-12">
+        <div class="kicker">ICP from query form</div>
+        <h2>Founder led, post product market fit, growing faster than process</h2>
+        <div class="grid" style="margin:0">
+          <div class="span-4">
+            <h3>Target companies</h3>
+            <ul>
+              <li>Founder led businesses.</li>
+              <li>Post product market fit.</li>
+              <li>15 to 80 employees preferred.</li>
+              <li>10 to 100 employee hard range.</li>
+              <li>Roughly USD 5M to 20M revenue if needed.</li>
+              <li>Actively adding headcount.</li>
+            </ul>
+          </div>
+          <div class="span-4">
+            <h3>Best sectors</h3>
+            <ul>
+              <li>Tech and SaaS scaleups.</li>
+              <li>Digital and creative agencies.</li>
+              <li>Professional services firms.</li>
+              <li>E-commerce and D2C brands.</li>
+              <li>Sector flexible if the founder bottleneck is visible.</li>
+            </ul>
+          </div>
+          <div class="span-4">
+            <h3>Markets</h3>
+            <ul>
+              <li>Singapore.</li>
+              <li>Hong Kong.</li>
+              <li>Malaysia.</li>
+              <li>Broader English speaking APAC.</li>
+              <li>UK and Europe as secondary.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Founder</span><span class="tag">Co-founder</span><span class="tag">CEO</span><span class="tag">Managing Director</span><span class="tag">Owner</span><span class="tag">Founder adjacent COO</span>
+        </div>
+      </section>
+
+      <section class="card span-7">
+        <div class="kicker">Pain map</div>
+        <h2>The founder is the ceiling</h2>
+        <ul>
+          <li>Hiring with no real process.</li>
+          <li>Bad fits causing early churn.</li>
+          <li>No performance or feedback framework.</li>
+          <li>No leadership layer beneath the founder.</li>
+          <li>Every people problem routes back to the founder.</li>
+          <li>The company stalls around predictable thresholds such as 30, 50, and 150 people.</li>
+        </ul>
+      </section>
+      <section class="card span-5">
+        <div class="kicker">Solution map</div>
+        <h2>Playbooks plus judgment plus momentum</h2>
+        <ul>
+          <li>Expert built HR and leadership playbooks.</li>
+          <li>One to one coaching.</li>
+          <li>Group coaching.</li>
+          <li>Weekly check ins.</li>
+          <li>Lower cost than a full HR hire or classic consultancy.</li>
+        </ul>
+      </section>
+
+      <section class="card span-12">
+        <div class="kicker">Proof and credibility</div>
+        <h2>Use enterprise proof, but translate it for founders</h2>
+        <table>
+          <tr><th>Proof point</th><th>How to use it</th><th>Caution</th></tr>
+          <tr><td>Enterprise clients listed in query form</td><td>“Built from talent advisory work across major global firms.”</td><td>Do not over-index on enterprise if targeting 15 to 80 person founders.</td></tr>
+          <tr><td>15 plus years experience and 9 years at SThree</td><td>Strong founder credibility line for Jerrell.</td><td>Confirm exact public wording before prospect copy.</td></tr>
+          <tr><td>28 percent early churn reduction</td><td>Potential strong outcome proof.</td><td>Must confirm it is live and attributable before using.</td></tr>
+          <tr><td>65 staff scaling case</td><td>Very relevant because target founders care about growth stage.</td><td>TalentBSA site has a similar testimonial. Confirm if we can cite it in outreach.</td></tr>
+        </table>
+      </section>
+
+      <section class="card span-6">
+        <div class="kicker">What to avoid</div>
+        <h2>Bad fit meetings will damage trust</h2>
+        <ul>
+          <li>Do not book HR managers.</li>
+          <li>Do not book People Ops or Talent Acquisition titles.</li>
+          <li>Do not position this as HR software.</li>
+          <li>Do not position this as recruitment.</li>
+          <li>Do not pitch a template library.</li>
+          <li>Do not chase enterprise HR departments for this product.</li>
+        </ul>
+      </section>
+      <section class="card span-6">
+        <div class="kicker">Objection handling</div>
+        <h2>Expected founder pushback</h2>
+        <table>
+          <tr><th>Objection</th><th>Best response idea</th></tr>
+          <tr><td>I will just hire HR</td><td>A hire costs far more and still needs founder direction.</td></tr>
+          <tr><td>We are too small</td><td>This is built for the in between stage before a full HR function makes sense.</td></tr>
+          <tr><td>I do not have time</td><td>Weekly check ins create momentum without a heavy consulting project.</td></tr>
+          <tr><td>Can I buy templates?</td><td>Templates without coaching do not change founder habits.</td></tr>
+        </table>
+      </section>
+
+      <section class="card span-12 callout">
+        <div class="kicker">Campaign thesis</div>
+        <h2>Do not lead with “HR consulting.” Lead with “your people process is still in your head.”</h2>
+        <p>At 15 people, the founder can still hold the people process together. Around 30 to 50 people, that starts breaking. TalentBSA installs the hiring, feedback, performance, and leadership rhythms before churn and management debt get expensive.</p>
+      </section>
+
+      <section class="card span-6">
+        <div class="kicker">Lead sourcing signals</div>
+        <h2>What a good prospect should show</h2>
+        <ul>
+          <li>Hiring multiple roles.</li>
+          <li>Founder posting about hiring, culture, delegation, leadership, team growth, or churn.</li>
+          <li>Funding, expansion, new market, or new office signal.</li>
+          <li>Team moved past 15, 30, or 50 employees.</li>
+          <li>No visible senior HR leader.</li>
+          <li>Founder still visibly involved in people decisions.</li>
+        </ul>
+      </section>
+      <section class="card span-6">
+        <div class="kicker">First database recommendation</div>
+        <h2>Start narrow, then expand</h2>
+        <ol>
+          <li>Singapore SaaS and agency founders, 15 to 80 staff.</li>
+          <li>Hong Kong founder led professional services and digital firms.</li>
+          <li>Malaysia e-commerce, D2C, tech, and agency founders.</li>
+          <li>Broader APAC English speaking founder led companies.</li>
+          <li>UK and Europe reserve list after APAC signal is clear.</li>
+        </ol>
+      </section>
+
+      <section class="card span-12">
+        <div class="kicker">Fathom note</div>
+        <h2>The found meeting was not the real onboarding</h2>
+        <p>The 2026-06-10 Fathom call was short and operationally incomplete. Jerrell wanted to discuss the plan, what the campaign should do and not do, and ICP details. Ops was not available, so the team moved to the query form and a rescheduled onboarding.</p>
+        <p><strong>Implication:</strong> today’s call must be treated as the real alignment call.</p>
+      </section>
+
+      <section class="card span-12">
+        <div class="kicker">Questions to ask today</div>
+        <h2>Use these to close gaps before launch</h2>
+        <table>
+          <tr><th>Area</th><th>Question</th></tr>
+          <tr><td>Brand</td><td>Should outbound lead with TalentBSA, TalentLab by BSA, or Bravo Advisors?</td></tr>
+          <tr><td>CTA</td><td>Is the CTA “Scale Diagnosis,” “Book a Demo,” or “Strategy Call”?</td></tr>
+          <tr><td>Qualification</td><td>What exactly counts as a qualified lead for the USD 70 performance fee?</td></tr>
+          <tr><td>Buyer</td><td>Should we fully exclude HR and People titles even if they influence the founder?</td></tr>
+          <tr><td>Market</td><td>Which market should we prioritize in week 1 and week 2?</td></tr>
+          <tr><td>DNC</td><td>Which current clients, partners, friends, competitors, and target accounts must we exclude?</td></tr>
+          <tr><td>Proof</td><td>Can we use the 28 percent churn result and 65 staff case in copy?</td></tr>
+          <tr><td>Booking</td><td>Who takes calls and what calendar link should prospects receive?</td></tr>
+          <tr><td>Sender</td><td>Is Vanessa’s LinkedIn profile ready, or should we clean it before outreach?</td></tr>
+          <tr><td>Email</td><td>When will the two Google Workspace or Microsoft inboxes be ready?</td></tr>
+        </table>
+      </section>
+
+      <section class="card span-6 yes">
+        <div class="kicker">Ready</div>
+        <h2>What is already usable</h2>
+        <ul>
+          <li>Agreement and payment status.</li>
+          <li>Query form with detailed ICP.</li>
+          <li>Clear founder only buyer rule.</li>
+          <li>Offer and objection map.</li>
+          <li>Public websites for brand and positioning.</li>
+        </ul>
+      </section>
+      <section class="card span-6 warn">
+        <div class="kicker">Still needed</div>
+        <h2>Do not launch until these close</h2>
+        <ul>
+          <li>Vanessa LinkedIn access and Unipile connection.</li>
+          <li>Two email inboxes and DNS setup.</li>
+          <li>DNC and existing relationship list.</li>
+          <li>Calendar link and meeting owner.</li>
+          <li>Approved copy.</li>
+          <li>First vetted database.</li>
+        </ul>
+      </section>
+
+      <section class="card span-12">
+        <div class="kicker">Source notes</div>
+        <h2>Research base</h2>
+        <ul>
+          <li>TalentBSA website, accessed 2026-06-18: <a href="https://talentbsa.com">talentbsa.com</a></li>
+          <li>Bravo Advisors website, accessed 2026-06-18: <a href="https://bravoadvisor.com">bravoadvisor.com</a></li>
+          <li>Client query form: Prospect Engine Lead Generation Query Form, Bravo Advisors.</li>
+          <li>Email thread: Prospect Engine Mail, Bravo Advisors, Jerrell Bravo.</li>
+          <li>Fathom export: 2026-06-10 meeting with Jerrell from BSA, recording ID 153742187.</li>
+          <li>Service agreement and invoice in the Bravo Advisors client folder.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer">
+      <div>
+        <div class="pe">Prospect Engine</div>
+        <div>Onboarding brief for the Bravo Advisors campaign.</div>
+      </div>
+      <div>Prepared for today’s onboarding discussion</div>
+    </div>
+  </main>
+</body>
+</html>
