@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sehat Jobs Launch Review Pack</title>
+  <style>
+    :root {
+      --navy:#061d3b;
+      --teal:#13aeb0;
+      --green:#68be7a;
+      --ink:#142c37;
+      --muted:#61717a;
+      --line:#d9e7e8;
+      --soft:#eef9f7;
+      --paper:#ffffff;
+      --bg:#f6faf9;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.58;
+    }
+    header {
+      background:linear-gradient(135deg, var(--navy), #075a68 62%, var(--teal));
+      color:white;
+      padding:38px 28px 34px;
+    }
+    .wrap { max-width:1080px; margin:0 auto; }
+    .brand {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:32px;
+    }
+    .brand img { max-height:58px; width:auto; object-fit:contain; }
+    .brand .pe { max-height:42px; opacity:.96; }
+    h1 {
+      margin:0 0 12px;
+      font-size:38px;
+      line-height:1.12;
+      letter-spacing:0;
+      max-width:840px;
+    }
+    .lead {
+      max-width:860px;
+      margin:0;
+      color:#e7fbfb;
+      font-size:17px;
+    }
+    main { padding:30px 20px 54px; }
+    section, article {
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:24px;
+      margin:0 0 22px;
+      box-shadow:0 8px 22px rgba(6, 50, 77, .055);
+    }
+    h2 {
+      margin:0 0 14px;
+      color:var(--navy);
+      font-size:23px;
+      line-height:1.2;
+      letter-spacing:0;
+    }
+    h3 {
+      margin:5px 0 16px;
+      color:var(--navy);
+      font-size:22px;
+      line-height:1.25;
+      letter-spacing:0;
+    }
+    p { margin:0 0 12px; }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    .card {
+      border:1px solid var(--line);
+      border-left:4px solid var(--teal);
+      border-radius:8px;
+      padding:14px;
+      background:#fbfefe;
+      min-height:92px;
+    }
+    .card strong {
+      display:block;
+      color:var(--navy);
+      margin-bottom:5px;
+    }
+    .callout {
+      background:#eef9f7;
+      border:1px solid #bfe4df;
+      border-radius:8px;
+      padding:16px;
+      margin-top:12px;
+    }
+    .copy {
+      white-space:pre-wrap;
+      font-size:16px;
+    }
+    .kicker {
+      color:#087980;
+      font-size:13px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .source {
+      margin-top:16px;
+      padding-top:13px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    ul { margin:8px 0 0; padding-left:20px; }
+    li { margin:5px 0; }
+    footer {
+      padding:24px 20px 38px;
+      color:var(--muted);
+      text-align:center;
+      font-size:13px;
+    }
+    @media (max-width:760px) {
+      h1 { font-size:29px; }
+      .brand { align-items:flex-start; flex-direction:column; }
+      .grid { grid-template-columns:1fr; }
+      section, article { padding:18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <img src="data:image/webp;base64,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" alt="Sehat Jobs">
+        <img class="pe" src="data:image/webp;base64,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" alt="Prospect Engine">
+      </div>
+      <h1>Sehat Jobs Launch Review Pack</h1>
+      <p class="lead">Prepared for Santhya Maria. This pack shows the current launch preparation, database direction, message copy status, content direction, image plan, and the first 5 rewritten thought leadership posts.</p>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <section>
+        <h2>Where We Are</h2>
+        <p>We are in launch preparation. No outreach has gone live yet. The current work is focused on building the right employer database, shaping the message, and preparing content that positions Sehat Jobs as a specialist healthcare hiring partner.</p>
+        <div class="grid">
+          <div class="card"><strong>Database</strong>Tier 1 and Tier 2 healthcare employers are being organised with strict current client and do not contact checks.</div>
+          <div class="card"><strong>Outreach</strong>Message copy is drafted, but it should be refined after your pitch deck, 3 hiring options, booking flow, and voice samples are shared.</div>
+          <div class="card"><strong>Content</strong>The first 5 posts have been rewritten to be more detailed, more healthcare specific, and stronger for credibility building.</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Database Direction</h2>
+        <p>The database model has two main tracks.</p>
+        <div class="grid">
+          <div class="card"><strong>Tier 1 Intel</strong>Top hospital groups and flagship accounts. These are for warm approach support and decision maker intelligence, not cold outreach unless approved.</div>
+          <div class="card"><strong>Tier 2 Outreach</strong>Mid sized and large healthcare employers that can become direct outreach targets after verification and copy approval.</div>
+          <div class="card"><strong>Excluded List</strong>Current clients, do not contact rows, and relationship only accounts are separated so they do not enter the outreach queue.</div>
+        </div>
+        <div class="callout">Current DB agent report summary: 78 source rows preserved, 17 Tier 1 intel rows, 53 Tier 2 outreach candidate rows, 2 reserve rows, and 6 excluded or relationship only rows.</div>
+      </section>
+
+      <section>
+        <h2>Message Copy Status</h2>
+        <p>First pass LinkedIn and WhatsApp copy has been prepared from your query form. The final version should wait for your company profile, exact 3 hiring options, booking flow, and any voice examples you want us to match.</p>
+        <div class="callout">The positioning we are protecting: Sehat Jobs should not look like a generic recruitment agency. The message should show healthcare hiring depth, nurse reach, candidate preparation, and long term pipeline support.</div>
+      </section>
+
+      <section>
+        <h2>Content And Image Plan</h2>
+        <p>The content goal is to create awareness among Malaysian healthcare employers, build credibility with hospital leaders, and show Sehat Jobs as a serious specialist in healthcare hiring.</p>
+        <ul>
+          <li>Recommended cadence: 3 posts per week to start.</li>
+          <li>Best publishing rhythm: Monday, Wednesday, Friday at Malaysia local 10:00 after approval.</li>
+          <li>Visual style: clean healthcare look using white, teal, navy, and soft green.</li>
+          <li>Image rule: no generic handshake stock images, no futuristic AI look, and no named hospital images or logos without permission.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Source And Accuracy Notes</h2>
+        <p>The current content is based on your completed query form, Sehat Jobs source material, target and do not contact files, and official hospital evidence checks used during the database pass.</p>
+        <ul>
+          <li>Healthcare workforce and nursing context was checked against WHO sources.</li>
+          <li>Hospital expansion and hiring examples were checked against official hospital pages.</li>
+          <li>No unsupported success rate, named client claim, or exact hiring option claim has been added.</li>
+          <li>The exact 3 hiring options should be added only after you confirm them.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>First 5 Rewritten Posts</h2>
+        <p>These posts are rewritten to be more detailed and more authority led than the first draft. They are still drafts, so your review and tone feedback will help us refine them further.</p>
+      </section>
+
+      
+        <article class="post">
+          <div class="kicker">Post 1</div>
+          <h3>The hospital may be ready before the workforce is.
+
+### Draft
+The hospital may be ready before the workforce is.
+
+That is one of the quietest risks in Malaysian healthcare right now.
+
+A new ward can be planned.
+A new service can be announced.
+A new building can be fitted with the right beds, machines, software, and safety systems.
+
+But if the nursing team is not ready, the opening still slows down.
+
+This is the part many people outside healthcare do not see.
+
+Hospital growth is not only a construction story.
+It is a workforce story.
+
+Malaysia is seeing real movement in private healthcare. Large groups are expanding. Specialist centres are opening. Hospitals are building stronger departments for women, children, cardiology, screening, critical care, and international patients.
+
+That growth is good for patients.
+It is good for the country.
+It is good for healthcare careers.
+
+But it also puts pressure on HR, nursing leaders, and hospital operations.
+
+Because one nurse shortage does not stay inside one vacancy box.
+
+It affects shifts.
+It affects patient flow.
+It affects service readiness.
+It affects the senior nurses who must carry the extra load.
+It affects accreditation preparation.
+It affects whether a new department can run at the standard it promised.
+
+This is why I believe hospitals need to stop treating hiring as a last minute rescue task.
+
+For healthcare employers, a healthy candidate pipeline should be part of readiness planning.
+
+Before a ward opens.
+Before a recruitment drive is announced.
+Before the shortage becomes visible on the floor.
+
+A strong pipeline means three things.
+
+1. The hospital knows which roles will be hard to fill.
+2. Serious candidates are already being warmed and screened.
+3. The joining process is clear before the first interview happens.
+
+Recruitment is not just about sending CVs.
+
+In healthcare, recruitment is part of patient care capacity.
+
+If the people plan is late, the service plan is already at risk.
+
+That is the conversation more hospital leaders should be having now.
+
+### Internal source notes
+Sunway Medical Centre expansion page, Northern Heart Hospital fact sheet and careers page, Sehat Jobs query form.</h3>
+          <div class="copy">The hospital may be ready before the workforce is.
+
+That is one of the quietest risks in Malaysian healthcare right now.
+
+A new ward can be planned.
+A new service can be announced.
+A new building can be fitted with the right beds, machines, software, and safety systems.
+
+But if the nursing team is not ready, the opening still slows down.
+
+This is the part many people outside healthcare do not see.
+
+Hospital growth is not only a construction story.
+It is a workforce story.
+
+Malaysia is seeing real movement in private healthcare. Large groups are expanding. Specialist centres are opening. Hospitals are building stronger departments for women, children, cardiology, screening, critical care, and international patients.
+
+That growth is good for patients.
+It is good for the country.
+It is good for healthcare careers.
+
+But it also puts pressure on HR, nursing leaders, and hospital operations.
+
+Because one nurse shortage does not stay inside one vacancy box.
+
+It affects shifts.
+It affects patient flow.
+It affects service readiness.
+It affects the senior nurses who must carry the extra load.
+It affects accreditation preparation.
+It affects whether a new department can run at the standard it promised.
+
+This is why I believe hospitals need to stop treating hiring as a last minute rescue task.
+
+For healthcare employers, a healthy candidate pipeline should be part of readiness planning.
+
+Before a ward opens.
+Before a recruitment drive is announced.
+Before the shortage becomes visible on the floor.
+
+A strong pipeline means three things.
+
+1. The hospital knows which roles will be hard to fill.
+2. Serious candidates are already being warmed and screened.
+3. The joining process is clear before the first interview happens.
+
+Recruitment is not just about sending CVs.
+
+In healthcare, recruitment is part of patient care capacity.
+
+If the people plan is late, the service plan is already at risk.
+
+That is the conversation more hospital leaders should be having now.
+
+### Internal source notes
+Sunway Medical Centre expansion page, Northern Heart Hospital fact sheet and careers page, Sehat Jobs query form.</div>
+          <p class="source"><strong>Source note:</strong> Sunway Medical Centre expansion page, Northern Heart Hospital fact sheet and careers page, Sehat Jobs query form.</p>
+        </article>
+        
+        <article class="post">
+          <div class="kicker">Post 2</div>
+          <h3>Nurses do not wait for a slow hiring process anymore.
+
+### Draft
+Nurses do not wait for a slow hiring process anymore.
+
+That is not a complaint.
+That is the market.
+
+Good nurses have more choices now.
+
+They can move between hospitals.
+They can look at specialist centres.
+They can consider different shifts, better support, better pay, better culture, or overseas pathways.
+
+So when a hospital says, &quot;We need nurses urgently&quot;, the real question is not only:
+
+How many CVs can we get?
+
+The better question is:
+
+Can we move fast without lowering the standard?
+
+That is where many hiring processes break.
+
+If the process is too slow, serious candidates disappear.
+
+If the process is too rushed, the wrong candidates get through.
+
+If expectations are not explained early, the nurse may accept the interview but not show up.
+
+If the role is not clearly understood, the nurse may join and leave quickly.
+
+Then the hospital pays twice.
+
+Once in time.
+Once in pressure on the existing team.
+
+WHO reported in 2025 that nurses are the largest occupational group in healthcare, and that the world still faces a projected shortage of millions of nurses and midwives by 2030.
+
+That global pressure is felt locally too.
+
+In Malaysia, hospital leaders already know the truth on the ground.
+
+Nursing roles are not easy to fill.
+Critical care roles are even harder.
+Experienced nurses are harder again.
+And when hospitals expand, the pressure does not wait politely for HR to catch up.
+
+This is why speed and quality cannot be treated as opposite goals.
+
+The best hiring systems protect both.
+
+They screen seriousness early.
+They explain the role clearly.
+They keep candidates warm between steps.
+They help candidates prepare before interview.
+They make joining requirements simple.
+They follow up after placement.
+
+That is not admin.
+
+That is workforce discipline.
+
+For hospitals, the next hiring advantage will not come from shouting louder in the market.
+
+It will come from being easier to trust, faster to decide, and better at keeping the right nurses engaged from first contact to first day.
+
+### Internal source notes
+WHO nursing and midwifery fact sheet, WHO State of the World&#x27;s Nursing 2025 report, Sehat Jobs query form.</h3>
+          <div class="copy">Nurses do not wait for a slow hiring process anymore.
+
+That is not a complaint.
+That is the market.
+
+Good nurses have more choices now.
+
+They can move between hospitals.
+They can look at specialist centres.
+They can consider different shifts, better support, better pay, better culture, or overseas pathways.
+
+So when a hospital says, &quot;We need nurses urgently&quot;, the real question is not only:
+
+How many CVs can we get?
+
+The better question is:
+
+Can we move fast without lowering the standard?
+
+That is where many hiring processes break.
+
+If the process is too slow, serious candidates disappear.
+
+If the process is too rushed, the wrong candidates get through.
+
+If expectations are not explained early, the nurse may accept the interview but not show up.
+
+If the role is not clearly understood, the nurse may join and leave quickly.
+
+Then the hospital pays twice.
+
+Once in time.
+Once in pressure on the existing team.
+
+WHO reported in 2025 that nurses are the largest occupational group in healthcare, and that the world still faces a projected shortage of millions of nurses and midwives by 2030.
+
+That global pressure is felt locally too.
+
+In Malaysia, hospital leaders already know the truth on the ground.
+
+Nursing roles are not easy to fill.
+Critical care roles are even harder.
+Experienced nurses are harder again.
+And when hospitals expand, the pressure does not wait politely for HR to catch up.
+
+This is why speed and quality cannot be treated as opposite goals.
+
+The best hiring systems protect both.
+
+They screen seriousness early.
+They explain the role clearly.
+They keep candidates warm between steps.
+They help candidates prepare before interview.
+They make joining requirements simple.
+They follow up after placement.
+
+That is not admin.
+
+That is workforce discipline.
+
+For hospitals, the next hiring advantage will not come from shouting louder in the market.
+
+It will come from being easier to trust, faster to decide, and better at keeping the right nurses engaged from first contact to first day.
+
+### Internal source notes
+WHO nursing and midwifery fact sheet, WHO State of the World&#x27;s Nursing 2025 report, Sehat Jobs query form.</div>
+          <p class="source"><strong>Source note:</strong> WHO nursing and midwifery fact sheet, WHO State of the World&#x27;s Nursing 2025 report, Sehat Jobs query form.</p>
+        </article>
+        
+        <article class="post">
+          <div class="kicker">Post 3</div>
+          <h3>Bulk hiring fails when it is treated like a bigger version of normal hiring.
+
+### Draft
+Bulk hiring fails when it is treated like a bigger version of normal hiring.
+
+It is not.
+
+Hiring 3 nurses and hiring 30 healthcare staff are different problems.
+
+The first is a recruitment task.
+The second is an operations project.
+
+When a hospital runs a mass interview or recruitment drive, every weak point becomes visible.
+
+The candidate pool was not ready.
+The screening was too light.
+The salary expectation was unclear.
+The interview slots were not tight.
+The documents were incomplete.
+The hiring team was not aligned.
+The candidates were not followed up quickly.
+
+On paper, the event may look active.
+
+In reality, the conversion is poor.
+
+This matters because many Malaysian healthcare employers are not hiring for one isolated role.
+
+They are hiring for ward coverage.
+They are hiring for new services.
+They are hiring for branch growth.
+They are hiring for replacement gaps.
+They are hiring for roles that touch patient experience, quality, and accreditation readiness.
+
+In our own Sehat Jobs planning, the target employers are not tiny teams.
+
+We are looking at hospitals and healthcare employers with 1000 to 30000 employees, and roles that often include HR Directors, CEOs, CHROs, Directors of Nursing, and HR Managers.
+
+That is a serious buying committee.
+
+They do not need more noise.
+
+They need a cleaner hiring machine.
+
+A good recruitment drive should have five things before the date is announced.
+
+1. A clear role mix.
+2. A serious candidate pool.
+3. A fast screening rhythm.
+4. A prepared interview flow.
+5. A follow up plan that starts the same day.
+
+The follow up is where many drives lose value.
+
+A candidate who is warm today may be cold next week.
+
+A nurse who is interested today may accept another offer if nobody guides the next step.
+
+And a hiring team that waits too long may think the market is weak, when the real issue was the process.
+
+Bulk hiring is not about volume alone.
+
+It is about controlled movement.
+
+The best recruitment drive is not the one with the most names.
+
+It is the one where the right people move from interest to interview to joining with the least confusion.
+
+### Internal source notes
+Sehat Jobs query form, Sehat Jobs persona map, Northern Heart Hospital careers page as an example of active multi role clinical hiring.</h3>
+          <div class="copy">Bulk hiring fails when it is treated like a bigger version of normal hiring.
+
+It is not.
+
+Hiring 3 nurses and hiring 30 healthcare staff are different problems.
+
+The first is a recruitment task.
+The second is an operations project.
+
+When a hospital runs a mass interview or recruitment drive, every weak point becomes visible.
+
+The candidate pool was not ready.
+The screening was too light.
+The salary expectation was unclear.
+The interview slots were not tight.
+The documents were incomplete.
+The hiring team was not aligned.
+The candidates were not followed up quickly.
+
+On paper, the event may look active.
+
+In reality, the conversion is poor.
+
+This matters because many Malaysian healthcare employers are not hiring for one isolated role.
+
+They are hiring for ward coverage.
+They are hiring for new services.
+They are hiring for branch growth.
+They are hiring for replacement gaps.
+They are hiring for roles that touch patient experience, quality, and accreditation readiness.
+
+In our own Sehat Jobs planning, the target employers are not tiny teams.
+
+We are looking at hospitals and healthcare employers with 1000 to 30000 employees, and roles that often include HR Directors, CEOs, CHROs, Directors of Nursing, and HR Managers.
+
+That is a serious buying committee.
+
+They do not need more noise.
+
+They need a cleaner hiring machine.
+
+A good recruitment drive should have five things before the date is announced.
+
+1. A clear role mix.
+2. A serious candidate pool.
+3. A fast screening rhythm.
+4. A prepared interview flow.
+5. A follow up plan that starts the same day.
+
+The follow up is where many drives lose value.
+
+A candidate who is warm today may be cold next week.
+
+A nurse who is interested today may accept another offer if nobody guides the next step.
+
+And a hiring team that waits too long may think the market is weak, when the real issue was the process.
+
+Bulk hiring is not about volume alone.
+
+It is about controlled movement.
+
+The best recruitment drive is not the one with the most names.
+
+It is the one where the right people move from interest to interview to joining with the least confusion.
+
+### Internal source notes
+Sehat Jobs query form, Sehat Jobs persona map, Northern Heart Hospital careers page as an example of active multi role clinical hiring.</div>
+          <p class="source"><strong>Source note:</strong> Sehat Jobs query form, Sehat Jobs persona map, Northern Heart Hospital careers page as an example of active multi role clinical hiring.</p>
+        </article>
+        
+        <article class="post">
+          <div class="kicker">Post 4</div>
+          <h3>The recruitment fee is not the real fear.
+
+### Draft
+The recruitment fee is not the real fear.
+
+When hospitals say an agency is expensive, I listen carefully.
+
+Most of the time, the real fear is not the fee.
+
+The real fear is this:
+
+What if the nurse leaves after we pay?
+
+That is a fair concern.
+
+Healthcare hiring is not like filling a simple office role.
+
+A nurse who joins a hospital has to understand the shift pattern, patient load, documentation habits, team culture, ward expectations, supervisor style, and clinical pressure.
+
+If these things are not explained early, both sides can be disappointed.
+
+The hospital thinks the candidate was not serious.
+The candidate thinks the role was not what they expected.
+The ward goes short again.
+HR starts again.
+The existing team carries the gap again.
+
+That is why I do not believe healthcare recruitment should end at placement.
+
+For hospitals, the better question is not:
+
+Can you send candidates?
+
+The better question is:
+
+How do you prepare candidates so they have a better chance to stay?
+
+This is where a specialist healthcare hiring partner should earn trust.
+
+Before interview, candidates should understand the real role.
+Before joining, documents and expectations should be clear.
+After joining, there should be follow up.
+
+Not to interfere with hospital HR.
+
+To support the outcome both sides want.
+
+Hospitals want stable teams.
+Nurses want a workplace where they can succeed.
+Patients need enough trained people on the floor.
+
+That is why retention starts before day one.
+
+It starts in the first conversation.
+
+It starts when the candidate is told the truth about the role.
+
+It starts when the hospital is clear about what kind of person will fit the team.
+
+A placement is a transaction.
+
+A healthy nursing pipeline is a relationship.
+
+Hospitals need fewer transactions and more relationships now.
+
+### Internal source notes
+Sehat Jobs query form, Santhya&#x27;s stated objections and retention focused differentiation.</h3>
+          <div class="copy">The recruitment fee is not the real fear.
+
+When hospitals say an agency is expensive, I listen carefully.
+
+Most of the time, the real fear is not the fee.
+
+The real fear is this:
+
+What if the nurse leaves after we pay?
+
+That is a fair concern.
+
+Healthcare hiring is not like filling a simple office role.
+
+A nurse who joins a hospital has to understand the shift pattern, patient load, documentation habits, team culture, ward expectations, supervisor style, and clinical pressure.
+
+If these things are not explained early, both sides can be disappointed.
+
+The hospital thinks the candidate was not serious.
+The candidate thinks the role was not what they expected.
+The ward goes short again.
+HR starts again.
+The existing team carries the gap again.
+
+That is why I do not believe healthcare recruitment should end at placement.
+
+For hospitals, the better question is not:
+
+Can you send candidates?
+
+The better question is:
+
+How do you prepare candidates so they have a better chance to stay?
+
+This is where a specialist healthcare hiring partner should earn trust.
+
+Before interview, candidates should understand the real role.
+Before joining, documents and expectations should be clear.
+After joining, there should be follow up.
+
+Not to interfere with hospital HR.
+
+To support the outcome both sides want.
+
+Hospitals want stable teams.
+Nurses want a workplace where they can succeed.
+Patients need enough trained people on the floor.
+
+That is why retention starts before day one.
+
+It starts in the first conversation.
+
+It starts when the candidate is told the truth about the role.
+
+It starts when the hospital is clear about what kind of person will fit the team.
+
+A placement is a transaction.
+
+A healthy nursing pipeline is a relationship.
+
+Hospitals need fewer transactions and more relationships now.
+
+### Internal source notes
+Sehat Jobs query form, Santhya&#x27;s stated objections and retention focused differentiation.</div>
+          <p class="source"><strong>Source note:</strong> Sehat Jobs query form, Santhya&#x27;s stated objections and retention focused differentiation.</p>
+        </article>
+        
+        <article class="post">
+          <div class="kicker">Post 5</div>
+          <h3>International hiring is not a shortcut.
+
+### Draft
+International hiring is not a shortcut.
+
+It can help hospitals.
+
+But only when it is handled with care.
+
+This is important because healthcare workforce pressure is now global.
+
+WHO reported in 2025 that one in every eight nurses works in a country other than where they were born or trained.
+
+That tells us something.
+
+Healthcare talent is moving.
+
+But movement alone does not solve the problem.
+
+If a hospital brings in international candidates without proper preparation, the risk simply changes shape.
+
+Documents can delay.
+Expectations can be unclear.
+Culture fit can be missed.
+Start dates can slip.
+Managers can lose confidence.
+Candidates can feel unsupported.
+
+Then everyone says international hiring does not work.
+
+Sometimes the real issue is not the candidate.
+
+It is the process.
+
+For Malaysian healthcare employers, international talent can be part of the answer when local supply is tight, especially for hospitals that are expanding, opening departments, or preparing for larger recruitment needs.
+
+But it should never be treated as a quick fix.
+
+The right way is slower at the beginning and faster later.
+
+Check seriousness early.
+Explain the workplace clearly.
+Prepare documents properly.
+Align the salary and role expectations.
+Help candidates understand the hospital environment.
+Keep communication warm until joining.
+Follow up after placement.
+
+That is how international hiring becomes responsible.
+
+Not just for the hospital.
+
+Also for the nurse.
+
+Also for the team receiving them.
+
+Also for the patients who need stable care.
+
+The future of healthcare hiring will not be local or international.
+
+It will be prepared or unprepared.
+
+Hospitals that understand this will build stronger pipelines before the shortage becomes a crisis.
+
+### Internal source notes
+WHO nursing and midwifery fact sheet, Sehat Jobs query form, Sehat Jobs current offer around Indian, Sri Lankan and Indonesian healthcare candidates.</h3>
+          <div class="copy">International hiring is not a shortcut.
+
+It can help hospitals.
+
+But only when it is handled with care.
+
+This is important because healthcare workforce pressure is now global.
+
+WHO reported in 2025 that one in every eight nurses works in a country other than where they were born or trained.
+
+That tells us something.
+
+Healthcare talent is moving.
+
+But movement alone does not solve the problem.
+
+If a hospital brings in international candidates without proper preparation, the risk simply changes shape.
+
+Documents can delay.
+Expectations can be unclear.
+Culture fit can be missed.
+Start dates can slip.
+Managers can lose confidence.
+Candidates can feel unsupported.
+
+Then everyone says international hiring does not work.
+
+Sometimes the real issue is not the candidate.
+
+It is the process.
+
+For Malaysian healthcare employers, international talent can be part of the answer when local supply is tight, especially for hospitals that are expanding, opening departments, or preparing for larger recruitment needs.
+
+But it should never be treated as a quick fix.
+
+The right way is slower at the beginning and faster later.
+
+Check seriousness early.
+Explain the workplace clearly.
+Prepare documents properly.
+Align the salary and role expectations.
+Help candidates understand the hospital environment.
+Keep communication warm until joining.
+Follow up after placement.
+
+That is how international hiring becomes responsible.
+
+Not just for the hospital.
+
+Also for the nurse.
+
+Also for the team receiving them.
+
+Also for the patients who need stable care.
+
+The future of healthcare hiring will not be local or international.
+
+It will be prepared or unprepared.
+
+Hospitals that understand this will build stronger pipelines before the shortage becomes a crisis.
+
+### Internal source notes
+WHO nursing and midwifery fact sheet, Sehat Jobs query form, Sehat Jobs current offer around Indian, Sri Lankan and Indonesian healthcare candidates.</div>
+          <p class="source"><strong>Source note:</strong> WHO nursing and midwifery fact sheet, Sehat Jobs query form, Sehat Jobs current offer around Indian, Sri Lankan and Indonesian healthcare candidates.</p>
+        </article>
+        
+
+      <section>
+        <h2>What We Still Need From You</h2>
+        <ul>
+          <li>Your pitch deck or company profile.</li>
+          <li>The separate message plan, if you have one.</li>
+          <li>The exact 3 hiring options for hospitals.</li>
+          <li>The LinkedIn profile and login details we should use for outreach.</li>
+          <li>The best booking flow for confirmed meetings.</li>
+          <li>Any voice notes or past messages you want us to match.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer>Prepared by Prospect Engine for Sehat Jobs. Created 23 June 2026.</footer>
+</body>
+</html>
