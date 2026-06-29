@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saif Profile KPI Report</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #667085;
+      --line: #e5e7eb;
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --accent: #c1121f;
+      --dark: #07111f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .top {
+      background: var(--dark);
+      color: white;
+      padding: 34px 28px;
+      border-bottom: 5px solid var(--accent);
+    }
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 8px 0 8px;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .sub {
+      color: #d1d5db;
+      max-width: 760px;
+      margin: 0;
+      font-size: 16px;
+    }
+    main {
+      max-width: 1040px;
+      margin: 28px auto;
+      padding: 0 18px 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .num {
+      margin-top: 8px;
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .note {
+      color: var(--muted);
+      margin-top: 9px;
+      font-size: 14px;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      background: #fafafa;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #fff1f2;
+      color: #9f1239;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+    li { margin: 6px 0; }
+    .footer {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 18px;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      .grid, .two { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+      .num { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="eyebrow">Prospect Engine internal report</div>
+      <h1>Saif Profile KPI Report</h1>
+      <p class="sub">Current daily KPI reference for Saif's LinkedIn profile. This separates invitation activity, engagement campaign activity, and boost activity so the numbers do not get mixed.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid">
+      <div class="card">
+        <div class="label">Standard invitations</div>
+        <div class="num">30/day</div>
+        <div class="note">Main Saif invite engine, invites first before other Saif-account activity.</div>
+      </div>
+      <div class="card">
+        <div class="label">Warm re-engagement invitations</div>
+        <div class="num">30/day</div>
+        <div class="note">Warm funnel top-up, paced and stopped on LinkedIn account limits.</div>
+      </div>
+      <div class="card">
+        <div class="label">Engagement campaign</div>
+        <div class="num">30 + 15</div>
+        <div class="note">30 ICP post reactions and 15 ICP post comments per day from Saif.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Invitation KPI</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Stream</th>
+            <th>Daily KPI</th>
+            <th>Safety rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Standard new invitations</td>
+            <td><span class="pill">30 per day</span></td>
+            <td>Weekly safety cap remains 200. Stop on 429, restriction, or account wall.</td>
+          </tr>
+          <tr>
+            <td>Warm re-engagement invitations</td>
+            <td><span class="pill">Up to 30 per day</span></td>
+            <td>Run from warmest first, live checks, skip unresolved or replied contacts.</td>
+          </tr>
+          <tr>
+            <td>Total practical daily invitation target</td>
+            <td><span class="pill">Up to 60 per day</span></td>
+            <td>Only when LinkedIn capacity allows. Do not force failed retries.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="two">
+      <div class="card">
+        <h2>Engagement KPI</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Daily KPI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ICP post reactions from Saif</td>
+              <td><span class="pill">30 per day</span></td>
+            </tr>
+            <tr>
+              <td>ICP post comments from Saif</td>
+              <td><span class="pill">15 per day</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Comment Quality Rules</h2>
+        <ul>
+          <li>ICP fit only.</li>
+          <li>Post must be in Saif's lane.</li>
+          <li>Like before comment.</li>
+          <li>Each comment must be unique and based on the actual post.</li>
+          <li>No pitch, no generic praise, no recycled comment bank.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>Today's Reference Snapshot</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Observed today</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Invitation volume</td>
+            <td>59 total</td>
+            <td>30 standard invitations plus 29 warm funnel invitations.</td>
+          </tr>
+          <tr>
+            <td>Engagement campaign KPI</td>
+            <td>30 reactions and 15 comments target</td>
+            <td>This is the campaign KPI from Saif profile, not boost-pool activity.</td>
+          </tr>
+          <tr>
+            <td>Excluded from engagement KPI</td>
+            <td>Boosts and client warm-up</td>
+            <td>Company-page boosts, Saif post boosts, and client or network warm-up are separate tracks.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="footer">Prepared 2026-06-29 for Prospect Engine Operations.</div>
+  </main>
+</body>
+</html>
