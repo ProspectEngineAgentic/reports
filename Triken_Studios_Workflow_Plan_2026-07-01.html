@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Triken Studios Workflow Plan</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5c6670;
+      --line: #d9e1e8;
+      --paper: #f6f8fb;
+      --card: #ffffff;
+      --blue: #143c7d;
+      --cyan: #18a6b7;
+      --green: #14845f;
+      --amber: #9a6700;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+    .top {
+      background: #101820;
+      color: #fff;
+      padding: 30px 28px;
+      border-bottom: 5px solid var(--cyan);
+    }
+    .top-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+    }
+    .brand {
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #c7f2f7;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 8px 0 8px;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      max-width: 760px;
+      color: #d7e3ee;
+      font-size: 16px;
+      margin: 0;
+    }
+    .meta {
+      text-align: right;
+      color: #d7e3ee;
+      font-size: 13px;
+      min-width: 210px;
+    }
+    main {
+      max-width: 1100px;
+      margin: 24px auto 56px;
+      padding: 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    section, .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    section { margin-bottom: 16px; }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 10px; }
+    ul, ol { margin: 8px 0 0; padding-left: 20px; }
+    li { margin: 6px 0; }
+    .pill {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #e9f8fa;
+      color: #0c6570;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 4px 6px 4px 0;
+    }
+    .quote {
+      border-left: 4px solid var(--cyan);
+      padding: 12px 14px;
+      background: #f0fbfc;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+    .ok { color: var(--green); font-weight: 700; }
+    .warn { color: var(--amber); font-weight: 700; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+    }
+    th { color: var(--blue); background: #f4f7fb; }
+    .footer {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    @media (max-width: 780px) {
+      .top-inner { grid-template-columns: 1fr; }
+      .meta { text-align: left; }
+      h1 { font-size: 28px; }
+      .span-4, .span-6, .span-8, .span-12 { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <div class="brand">Prospect Engine for Triken Studios</div>
+        <h1>Workflow, Campaign Plan, and Launch Steps</h1>
+        <p class="subtitle">Prepared from the Triken WhatsApp group, Vignesh confirmation, and the onboarding query form. Built to protect lead quality and avoid weak meetings.</p>
+      </div>
+      <div class="meta">
+        <div>Prepared: 2026-07-01</div>
+        <div>Status: Onboarding</div>
+        <div>Channel: LinkedIn plus Email</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section class="span-8">
+        <h2>Confirmed Alignment</h2>
+        <p>Vignesh asked for clarity before setup continued. He does not want random meetings, collaboration calls, vendor calls, or people who only agreed to speak with no real context.</p>
+        <div class="quote">
+          <p><strong>Confirmed rule:</strong> A qualified appointment must match the buyer profile, have a product or campaign explanation problem, understand Triken, show interest in Product Story Mapping or animation production, and be open to discussing their own need.</p>
+          <p class="ok">Vignesh accepted this and replied: Sounds good, Thanks Saiful.</p>
+        </div>
+      </section>
+
+      <section class="span-4">
+        <h2>Current Setup</h2>
+        <p><span class="ok">Done:</span> Triken project opened.</p>
+        <p><span class="ok">Done:</span> Two outreach inboxes configured and warm-up started.</p>
+        <p><span class="ok">Done:</span> Query form reviewed.</p>
+        <p><span class="warn">Pending:</span> Sales Navigator setup confirmation.</p>
+        <p><span class="warn">Pending:</span> Unipile account id.</p>
+      </section>
+    </div>
+
+    <section>
+      <h2>Positioning</h2>
+      <p>Triken should not be positioned as a cheaper animation vendor. The campaign should sell the upstream strategy problem.</p>
+      <p><strong>Core angle:</strong> Before a team spends five figures on a product video, they need a product story clear enough to animate.</p>
+      <span class="pill">Product Story Mapping</span>
+      <span class="pill">Complex product explanation</span>
+      <span class="pill">Medtech</span>
+      <span class="pill">AI SaaS</span>
+      <span class="pill">Enterprise systems</span>
+      <span class="pill">Singapore first</span>
+    </section>
+
+    <div class="grid">
+      <section class="span-6">
+        <h2>Offers</h2>
+        <h3>Product Story Mapping Session</h3>
+        <ul>
+          <li>90-minute live working session.</li>
+          <li>Uses Triken's AI-powered Blueprint Canvas.</li>
+          <li>Turns decks, PDFs, product notes, and website copy into a Product Blueprint.</li>
+          <li>Same-day deliverable.</li>
+          <li>Credited against animation production if they proceed within 30 days.</li>
+        </ul>
+        <h3>Full Animation Production</h3>
+        <ul>
+          <li>Concept, scripting, storyboarding, animation, and revision management.</li>
+          <li>Typical project range: $10,000 to $18,000.</li>
+          <li>Best for companies with a confirmed launch, campaign, or product education need.</li>
+        </ul>
+      </section>
+
+      <section class="span-6">
+        <h2>ICP</h2>
+        <table>
+          <tr><th>Field</th><th>Target</th></tr>
+          <tr><td>Geography</td><td>Singapore first, Southeast Asia second, global only for strong fits.</td></tr>
+          <tr><td>Industries</td><td>Healthcare, pharma, medtech, biotech, AI, SaaS, fintech, engineering, industrial systems, enterprise systems, complex FMCG.</td></tr>
+          <tr><td>Company size</td><td>50 to 5,000 employees.</td></tr>
+          <tr><td>Departments</td><td>Marketing, Product, Communications.</td></tr>
+          <tr><td>Titles</td><td>Head of Marketing, Product Marketing Director, Head of Product, Communications Director, VP Marketing.</td></tr>
+        </table>
+      </section>
+    </div>
+
+    <section>
+      <h2>Lead List Building Steps</h2>
+      <ol>
+        <li>Build the first 100 reviewed leads before launch.</li>
+        <li>Start with Singapore medtech, biotech, healthcare technology, pharma, AI SaaS, fintech, and industrial technology.</li>
+        <li>Require a clear trigger such as product launch, funding, new campaign, new product page, event, hiring in product marketing, or market expansion.</li>
+        <li>Collect 2 to 3 contacts per target company when possible.</li>
+        <li>Enrich emails with Apollo.</li>
+        <li>Mark LinkedIn degree. First-degree goes to warm outreach. Second and third-degree go to connection plus email lanes.</li>
+        <li>Reject vendors, animation studios, agencies, freelancers, job seekers, investors, and collaboration-only profiles.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>First-Degree Data Sort</h2>
+      <table>
+        <tr><th>Tier</th><th>Rule</th><th>Action</th></tr>
+        <tr><td>Tier 1</td><td>Target industry plus marketing, product, or communications buyer.</td><td>Warm relationship-aware outreach.</td></tr>
+        <tr><td>Tier 2</td><td>Target industry but not a direct buyer.</td><td>Referral or soft nurture only.</td></tr>
+        <tr><td>Tier 3</td><td>Outside ICP or weak fit.</td><td>Skip.</td></tr>
+      </table>
+      <p>Every existing thread must be checked before sending. Do not pitch existing Prospect Engine clients or internal contacts.</p>
+    </section>
+
+    <div class="grid">
+      <section class="span-6">
+        <h2>LinkedIn Flow</h2>
+        <ol>
+          <li>Silent connection request unless a note is manually approved.</li>
+          <li>M1 after accept: short opener around complex product explanation.</li>
+          <li>M2 after 4 days: explain that many video problems are really story problems.</li>
+          <li>M3 after 7 days: introduce the 90-minute Product Story Mapping Session.</li>
+          <li>M4 after 10 days: soft close.</li>
+          <li>Stop on any reply and qualify before booking.</li>
+        </ol>
+      </section>
+
+      <section class="span-6">
+        <h2>Email Flow</h2>
+        <ol>
+          <li>Email 1: product story problem.</li>
+          <li>Email 2: fix the brief before video production.</li>
+          <li>Email 3: avoid revision loops.</li>
+          <li>Email 4: close the loop.</li>
+          <li>Positive reply: ask what they are trying to explain and whether it is linked to a launch, campaign, investor, sales, or customer education need.</li>
+        </ol>
+      </section>
+    </div>
+
+    <section>
+      <h2>Launch Gates</h2>
+      <ul>
+        <li>Signed agreement or invoice stored locally.</li>
+        <li>Final Product Story Mapping price confirmed because the form shows both $1,980 and $1,500.</li>
+        <li>Sales Navigator setup confirmed.</li>
+        <li>Unipile account id confirmed.</li>
+        <li>Two warmed inbox addresses confirmed.</li>
+        <li>First 100 leads built and reviewed.</li>
+        <li>Campaign angle and message flow approved by Vignesh before outreach goes live.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Result Metrics</h2>
+      <table>
+        <tr><th>Metric</th><th>Why it matters</th></tr>
+        <tr><td>Qualified leads reviewed</td><td>Prevents weak database quality.</td></tr>
+        <tr><td>Reply rate</td><td>Shows whether the angle is resonating.</td></tr>
+        <tr><td>Positive reply rate</td><td>Measures actual opportunity creation.</td></tr>
+        <tr><td>Qualified meetings passed</td><td>Main delivery metric for Vignesh.</td></tr>
+        <tr><td>Disqualified calls avoided</td><td>Protects Vignesh from the exact problem he flagged.</td></tr>
+        <tr><td>Product Story Mapping bookings</td><td>Best near-term revenue signal.</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Immediate Next Steps</h2>
+      <ol>
+        <li>Confirm Sales Navigator and Unipile access.</li>
+        <li>Confirm the two outreach inbox names.</li>
+        <li>Confirm final Product Story Mapping price.</li>
+        <li>Build first 100 reviewed leads.</li>
+        <li>Share message flow with Vignesh for approval.</li>
+        <li>Launch with conservative daily volume after approval.</li>
+      </ol>
+    </section>
+
+    <div class="footer">
+      Prospect Engine internal review. Source files live in /home/saif/PC/Clients/TrikenStudios.
+    </div>
+  </main>
+</body>
+</html>
