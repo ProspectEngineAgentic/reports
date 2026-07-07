@@ -1,0 +1,9 @@
+# reports repo hygiene
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.*
+*token*
+*.log
