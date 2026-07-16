@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>deeploans ROI Recovery Call Pack</title>
+  <style>
+    :root {
+      --ink: #17202a;
+      --muted: #5f6f7a;
+      --line: #dce5ea;
+      --blue: #0f5b8f;
+      --cyan: #2aa7b8;
+      --green: #2e7d5b;
+      --amber: #a66a00;
+      --red: #a33d3d;
+      --bg: #f5f8fa;
+      --panel: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.45;
+    }
+    .top {
+      background: #0b1f2f;
+      color: white;
+      padding: 28px 36px;
+      border-bottom: 6px solid var(--cyan);
+    }
+    .brandrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .wordmark {
+      font-weight: 800;
+      letter-spacing: 0;
+      font-size: 24px;
+    }
+    .pe {
+      font-size: 13px;
+      color: #c8d7df;
+      text-align: right;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      max-width: 920px;
+    }
+    .subtitle {
+      max-width: 850px;
+      color: #d9e7ee;
+      font-size: 16px;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 24px 44px;
+    }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 18px 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 15px;
+      color: var(--blue);
+      letter-spacing: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 108px;
+      background: #fbfdfe;
+    }
+    .metric .num {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--blue);
+    }
+    .metric .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .metric.bad .num { color: var(--red); }
+    .metric.warn .num { color: var(--amber); }
+    .metric.good .num { color: var(--green); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+    }
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .callout {
+      border-left: 5px solid var(--blue);
+      background: #eef7fb;
+      padding: 16px 18px;
+      border-radius: 6px;
+      margin: 12px 0;
+    }
+    .risk {
+      border-left-color: var(--red);
+      background: #fff4f4;
+    }
+    .plan {
+      border-left-color: var(--green);
+      background: #f0faf5;
+    }
+    ol, ul {
+      margin: 8px 0 0 22px;
+      padding: 0;
+    }
+    li { margin: 7px 0; }
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #e8f2f7;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+    a { color: var(--blue); }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .brandrow { align-items: flex-start; flex-direction: column; }
+      .pe { text-align: left; }
+      h1 { font-size: 28px; }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .top { padding: 22px; }
+      main { padding: 18px 14px 34px; }
+      section { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brandrow">
+      <div class="wordmark">deeploans</div>
+      <div class="pe">Prepared by Prospect Engine<br>16 July 2026</div>
+    </div>
+    <h1>ROI recovery call pack</h1>
+    <div class="subtitle">A direct view of what moved, what did not move, and the next operating plan for turning activity into meetings and useful contributor signals.</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Executive view</h2>
+      <div class="callout risk">
+        Luca is right. The work volume has been real, but the business outcome is not strong enough yet. The next phase should be judged by booked meetings, verified warm replies, verified emails, and GitHub movement. Not by raw outreach volume.
+      </div>
+      <div class="grid">
+        <div class="metric"><div class="num">1,485</div><div class="label">Prospects in the current pipeline</div></div>
+        <div class="metric warn"><div class="num">42</div><div class="label">Engaged or replied prospects</div></div>
+        <div class="metric bad"><div class="num">0</div><div class="label">Confirmed meetings visible locally</div></div>
+        <div class="metric bad"><div class="num">0</div><div class="label">New GitHub stars or forks this week</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Current funnel truth</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Current state</th>
+            <th>What it means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pipeline</td>
+            <td>1,485 total prospects. 855 invited. 191 in sequence. 412 still in list. 27 marked replied in the prospect file.</td>
+            <td>The list is large enough. The issue is conversion quality, not only volume.</td>
+          </tr>
+          <tr>
+            <td>Replies</td>
+            <td>42 merged live and database repliers. 18 Persona B, 15 Persona C, 9 Persona A.</td>
+            <td>There is market conversation, but the handoff from reply to calendar has been too weak.</td>
+          </tr>
+          <tr>
+            <td>Warm paths</td>
+            <td>20 warm, 1 hot, 1 referral, 1 contributor signal, 11 declined, 8 polite.</td>
+            <td>There are usable paths, but they need direct handling rather than another automated touch.</td>
+          </tr>
+          <tr>
+            <td>GitHub</td>
+            <td>16 stars, 11 forks, 1 watcher, 1 external contributor, 16 open PRs with 1 external.</td>
+            <td>Repo activity is stable, not growing. Contributor proof is still below target.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>What moved</h2>
+      <ul>
+        <li>The campaign pivoted from hackathon registration to Persona B and Persona C meetings around the open source credit world model.</li>
+        <li>Six higher quality meeting paths were worked from 10 July: Jose Manuel de la Chica, Oscar Barlow, Andreia Silva, Billy Nguedong, Mouad Belmekki, and Isaias Jesus Bueno Andrades.</li>
+        <li>Oscar Barlow has a verified email and Luca emailed him on 15 July.</li>
+        <li>Persona B and C outreach restarted under a tighter fit gate on 14 and 15 July. 25 new targeted invites were sent across those two days.</li>
+        <li>Connected prospect reengagement sent 11 current foundation model messages across 14 and 15 July.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What did not move</h2>
+      <ul>
+        <li>No confirmed meetings are visible in the local record.</li>
+        <li>The five live scheduling nudges sent on 13 July have not produced a visible reply yet.</li>
+        <li>Isaias cannot currently be retried from Farhan because Unipile returned blocked recipient.</li>
+        <li>Only Oscar has a verified email among the six immediate targets. Sharing guessed emails would damage trust.</li>
+        <li>GitHub KPIs have stayed flat since 9 July.</li>
+        <li>The daily sync wrapper is still unreliable on Linux after chat pull, even though tracker artifacts exist from the scheduled run.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why the market angle is still viable</h2>
+      <div class="callout plan">
+        The foundation model for credit angle is not the problem. The problem is that the campaign has not yet created enough direct institutional conversations around data customization, validation, and governance.
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Research signal</th>
+            <th>Why it matters for deeploans</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Recent credit risk research says tabular foundation models can perform especially well in smaller data settings such as SME lending and specialized corporate portfolios.</td>
+            <td>That supports Luca's credit world model direction, but it also means the buyer conversation must be specific to institution data and model validation.</td>
+          </tr>
+          <tr>
+            <td>Recent data quality research shows that credit risk model performance depends heavily on missing values, noisy attributes, outliers, and label errors.</td>
+            <td>This is a strong deeploans entry point. The pitch should start with trusted loan data and validation before talking about a model.</td>
+          </tr>
+          <tr>
+            <td>BCBS 239 is still current and says banks need stronger risk data aggregation and internal reporting capability.</td>
+            <td>The best Persona C hook is not generic AI. It is risk data quality, auditability, and whether a credit model can use bank data safely.</td>
+          </tr>
+          <tr>
+            <td>UK financial regulators are increasing scrutiny of critical technology providers for financial institutions.</td>
+            <td>Institutions will be cautious. We should lead with governance, explainability, and data control rather than a broad AI promise.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Sources: <a href="https://arxiv.org/abs/2605.18147">Foundation Models for Credit Risk Prediction, arXiv, May 2026</a>. <a href="https://arxiv.org/abs/2511.10964">How Data Quality Affects Machine Learning Models for Credit Risk Assessment, arXiv, November 2025</a>. <a href="https://www.bis.org/publ/bcbs239.htm">BIS BCBS 239 risk data aggregation principles</a>. <a href="https://www.theguardian.com/business/2026/jul/10/bank-of-england-handed-powers-to-regulate-key-tech-firms-including-amazon-and-google">Bank of England critical third party regulation coverage, July 2026</a>.</p>
+    </section>
+
+    <section>
+      <h2>10 day recovery plan</h2>
+      <ol>
+        <li>Move the top five Persona B and Persona C paths out of passive LinkedIn follow up and into direct handoff where possible.</li>
+        <li>Use Luca personally on verified email paths. Keep Oscar active first because that is the only verified email today.</li>
+        <li>Build a 25 account institution shortlist, not a person list. Prioritize banks and credit teams with loan data, IRB, model risk, structured finance, regulatory reporting, or data quality ownership.</li>
+        <li>For each account, map one senior sponsor and one practitioner. The senior sponsor gets the customization and governance angle. The practitioner gets the data quality and validation angle.</li>
+        <li>Stop reporting raw outreach as progress. Report only booked calls, verified warm replies, verified emails, and repo movement.</li>
+        <li>Fix the daily sync wrapper so every update is backed by stable tracker evidence.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Immediate target list</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Why they matter</th>
+            <th>Next action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Oscar Barlow, Starling Bank</td>
+            <td>Head of AI Advocacy. Verified email exists. Luca already emailed him.</td>
+            <td>Watch both the Farhan LinkedIn thread and Luca's email path. If Oscar replies anywhere, route immediately to a Luca call.</td>
+          </tr>
+          <tr>
+            <td>Jose Manuel de la Chica, Santander</td>
+            <td>Head of Global AI Lab. Strong Persona C fit.</td>
+            <td>Keep as a priority senior target, but do not send another generic LinkedIn nudge. Seek verified email or referral route.</td>
+          </tr>
+          <tr>
+            <td>Andreia Silva, HSBC</td>
+            <td>Head of Data Transformation. Senior data change owner.</td>
+            <td>Use the data transformation and governance angle if a verified email or reply appears.</td>
+          </tr>
+          <tr>
+            <td>Billy Nguedong, Virgin Money</td>
+            <td>Credit risk modelling practitioner. Asked how he can help.</td>
+            <td>Ask for one practical feedback call or a data team referral. Keep the ask narrow.</td>
+          </tr>
+          <tr>
+            <td>Mouad Belmekki, Credit Agricole Personal Finance</td>
+            <td>Credit risk analyst. Asked detailed questions about stage and collaboration.</td>
+            <td>Use him as a practitioner validation path. Avoid broad sales language.</td>
+          </tr>
+          <tr>
+            <td>Bart G, Euroclear</td>
+            <td>Referral path. Already pointed us toward Natacha Segers.</td>
+            <td>Do not overuse the referral. Verify fit and ask Bart for the cleanest introduction path.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Call position</h2>
+      <div class="callout">
+        The right opening is: You are right. The work has been there, but the outcome has not been enough. We should judge this by meetings and contributors, not by messages sent. We have a better market angle now, but we need to run it through a much tighter account based recovery plan.
+      </div>
+      <h3>Do say</h3>
+      <ul>
+        <li>We agree the ROI is not where it should be.</li>
+        <li>The next plan is smaller, sharper, and measured only on outcomes.</li>
+        <li>The strongest angle is trusted credit data for model customization, not generic AI outreach.</li>
+      </ul>
+      <h3>Do not say</h3>
+      <ul>
+        <li>Do not defend the campaign by listing sends.</li>
+        <li>Do not promise meetings from unverified contacts.</li>
+        <li>Do not share guessed emails.</li>
+        <li>Do not discuss commercial terms in WhatsApp before Rokibul confirms the position.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
