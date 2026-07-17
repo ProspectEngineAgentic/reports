@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Capsule Campaign Meeting Brief</title>
+  <style>
+    :root {
+      --ink: #162033;
+      --muted: #667085;
+      --line: #d9e2ec;
+      --soft: #f5f8fb;
+      --panel: #ffffff;
+      --navy: #0f2742;
+      --teal: #00a99d;
+      --green: #12805c;
+      --amber: #a45f00;
+      --red: #b42318;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef3f8;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 24px auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(15, 39, 66, 0.12);
+    }
+
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 28px 32px;
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      display: inline-grid;
+      place-items: center;
+      background: var(--teal);
+      color: #031d2d;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 780px;
+      color: #d8e7f5;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .section {
+      padding: 26px 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      min-height: 112px;
+    }
+
+    .metric {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #e7f8f4;
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .pill.amber {
+      background: #fff3df;
+      color: var(--amber);
+    }
+
+    .pill.red {
+      background: #fff0ed;
+      color: var(--red);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      text-align: left;
+      background: var(--soft);
+      color: #344054;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    th,
+    td {
+      padding: 11px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .callout {
+      border-left: 4px solid var(--teal);
+      background: #effbf9;
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 18px 32px;
+      color: #d8e7f5;
+      background: var(--navy);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 880px) {
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand-row">
+        <div class="brand"><span class="mark">CC</span> Code Capsule</div>
+        <div class="brand"><span class="mark">PE</span> Prospect Engine</div>
+      </div>
+      <h1>Campaign Meeting Brief</h1>
+      <p class="subtitle">A short operating report for the Code Capsule LinkedIn campaign, prepared for the client meeting on 17 July 2026.</p>
+    </header>
+
+    <section class="section">
+      <h2>Executive Summary</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="metric">179</span>
+          <div class="label">LinkedIn invites sent from the campaign logs.</div>
+        </div>
+        <div class="card">
+          <span class="metric">50</span>
+          <div class="label">First messages sent after accepted connections. Acceptance proxy is 27.9 percent.</div>
+        </div>
+        <div class="card">
+          <span class="metric">204</span>
+          <div class="label">Strict ICP prospects are ready in the active queue after the new Sales Navigator rebuild.</div>
+        </div>
+        <div class="card">
+          <span class="metric">1</span>
+          <div class="label">Current meeting intent lead is active, with more warm conversations for nurture.</div>
+        </div>
+      </div>
+      <div class="callout">
+        The campaign has real positive signals. The main next step is operational: Jason's LinkedIn connection needs to be reconnected so invites, follow ups, and inbox checks can continue from the ready queue.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Campaign Analytics</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Current result</th>
+            <th>What it means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Invites sent</td>
+            <td>179</td>
+            <td>Campaign activity is live, with daily sending limited by LinkedIn account capacity and current account connection status.</td>
+          </tr>
+          <tr>
+            <td>First messages</td>
+            <td>50 M1 messages</td>
+            <td>This gives a 27.9 percent invite to accepted connection proxy, based on M1 delivery after acceptance.</td>
+          </tr>
+          <tr>
+            <td>Follow ups</td>
+            <td>33 M2, 19 M3, 15 M4</td>
+            <td>The follow up engine is working through connected leads and stops when a reply is detected.</td>
+          </tr>
+          <tr>
+            <td>Reply benchmark</td>
+            <td>13.3 percent from the 1 July audit</td>
+            <td>Earlier audit showed 4 replies from 30 first messages. Current warm leads are listed below.</td>
+          </tr>
+          <tr>
+            <td>Confirmed meetings</td>
+            <td>0 visible in the files</td>
+            <td>There is meeting intent, but no confirmed booked meeting is visible yet. The next step is faster scheduling on warm replies.</td>
+          </tr>
+          <tr>
+            <td>New database work</td>
+            <td>3,022 sourced, 243 kept, 204 active queue eligible</td>
+            <td>The list has been tightened to healthcare operations, clinic chains, and regulated operations buyers in Singapore and Malaysia.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Note: workbook reply flags include disqualified or stopped rows, so this report uses only verified warm or useful conversations.</p>
+    </section>
+
+    <section class="section">
+      <h2>Positive And Interested Leads</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Lead</th>
+            <th>Signal</th>
+            <th>Status</th>
+            <th>Next action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fakhrudin Fauzi</strong><br>CEO, Alrazi Healthcare Berhad</td>
+            <td><span class="pill">Meeting intent</span><br>He asked for an exploration meeting.</td>
+            <td>Calendly reply was sent on 14 July. Sequence is stopped so no automated follow up touches him.</td>
+            <td>Watch for his booking or time preference. If no slot appears, send a short human follow up after reconnect.</td>
+          </tr>
+          <tr>
+            <td><strong>Thomas Vargoczky</strong><br>Managing Director, Herbaferm Singapore</td>
+            <td><span class="pill">Warm</span><br>He said he would love to catch up when possible.</td>
+            <td>Jason replied warmly and asked him to pick a day. No confirmed time is visible yet.</td>
+            <td>Reopen gently with two time options or Jason's booking link.</td>
+          </tr>
+          <tr>
+            <td><strong>Jaycee Chong</strong><br>Healthcare operations contact</td>
+            <td><span class="pill amber">Future fit</span><br>Discussed internal systems and Malaysia expansion.</td>
+            <td>Conversation was friendly and relevant, but not a direct meeting ask yet.</td>
+            <td>Keep in nurture with a Malaysia expansion angle and a light systems question.</td>
+          </tr>
+          <tr>
+            <td><strong>Dr Ramon Varughese</strong><br>CEO of Primary Care, Qualitas Health Malaysia</td>
+            <td><span class="pill">Warm</span><br>Reply was surfaced to Jason in May.</td>
+            <td>Jason later confirmed he replied. Current meeting status is not visible in the files.</td>
+            <td>Confirm whether a follow up or meeting happened, then decide the next message.</td>
+          </tr>
+          <tr>
+            <td><strong>Kean Hin Tan</strong><br>Healthcare operations leader</td>
+            <td><span class="pill amber">Soft signal</span><br>He said approval would need to come from the group.</td>
+            <td>Useful for account mapping, not an immediate booking signal.</td>
+            <td>Keep in long term nurture and use group approval language if contacted again.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <div class="two-col">
+        <div>
+          <h2>What Improved</h2>
+          <ul>
+            <li>The early broad list has been replaced with a stricter ICP queue.</li>
+            <li>The new queue focuses on healthcare operators, clinic chains, regulated operations, and active profiles.</li>
+            <li>The invite engine now has enough eligible records for about one week of daily sending at a 30 invite pace.</li>
+            <li>Warm lead handling is now protected so interested prospects are not touched by automated follow ups.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Current Open Items</h2>
+          <ul>
+            <li>Reconnect Jason's LinkedIn account in Unipile. A WhatsApp request has already been sent to the client group.</li>
+            <li>Share short project examples or case study notes so the content and outreach can become more specific.</li>
+            <li>Provide two working email inboxes if Code Capsule wants the cold email channel to start.</li>
+            <li>Confirm the status of Dr Ramon and Thomas so we do not duplicate any live conversation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Next 7 Days</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Priority</th>
+            <th>Action</th>
+            <th>Target result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Reconnect LinkedIn and resume the ready queue.</td>
+            <td>Restart daily invites and follow ups without losing the refined database work.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Follow Fakhrudin and Thomas manually.</td>
+            <td>Move warm interest into a booked call or a clear next step.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Keep the strict queue active and add new clean leads only after live profile checks.</td>
+            <td>Protect reply quality and avoid low fit or unclear data.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Use project notes from Jason to strengthen content and messages.</td>
+            <td>Make the campaign feel more specific to Code Capsule's real work.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <span>Prepared by Prospect Engine for Code Capsule.</span>
+      <span>Meeting brief date: 17 July 2026</span>
+    </footer>
+  </main>
+</body>
+</html>
