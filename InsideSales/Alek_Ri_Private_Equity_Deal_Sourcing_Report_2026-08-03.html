@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Equity Deal Sourcing Report | Prospect Engine</title>
+  <style>
+    :root {
+      --navy: #07111f;
+      --navy-2: #101c2d;
+      --red: #c1121f;
+      --red-dark: #8f0d17;
+      --ink: #111827;
+      --muted: #667085;
+      --soft: #f7f8fb;
+      --card: #ffffff;
+      --line: #e2e8f0;
+      --blue: #1d4ed8;
+      --green: #087a55;
+      --gold: #b7791f;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--soft);
+      color: var(--ink);
+      line-height: 1.58;
+      letter-spacing: 0;
+    }
+    .hero {
+      background:
+        linear-gradient(120deg, rgba(7, 17, 31, 0.96), rgba(16, 28, 45, 0.94)),
+        radial-gradient(circle at 88% 18%, rgba(193, 18, 31, 0.32), transparent 32%);
+      color: #ffffff;
+      border-bottom: 6px solid var(--red);
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .hero-inner {
+      padding: 34px 0 38px;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 34px;
+    }
+    .logo-box {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+    .logo-box img {
+      width: 122px;
+      height: auto;
+      display: block;
+    }
+    .doc-meta {
+      text-align: right;
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+    .eyebrow {
+      color: #fecdd3;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      margin: 18px 0 0;
+      max-width: 780px;
+      color: #e2e8f0;
+      font-size: 18px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .hero-stat {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .stat-num {
+      font-size: 24px;
+      line-height: 1.1;
+      font-weight: 850;
+    }
+    .stat-label {
+      color: #cbd5e1;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    main {
+      padding: 28px 0 46px;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 25px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 18px 0 8px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0; padding-left: 22px; }
+    li { margin: 7px 0; }
+    .lead {
+      font-size: 17px;
+      color: #344054;
+      max-width: 940px;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .mini-card {
+      border: 1px solid var(--line);
+      background: #fbfcff;
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 100%;
+    }
+    .mini-card strong {
+      display: block;
+      margin-bottom: 7px;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--red-dark);
+      background: #fff1f2;
+      margin-bottom: 10px;
+    }
+    .badge.blue { color: var(--blue); background: #eef4ff; }
+    .badge.green { color: var(--green); background: #ecfdf3; }
+    .badge.gold { color: var(--gold); background: #fffbeb; }
+    .callout {
+      background: #fff7f8;
+      border: 1px solid #fecdd3;
+      border-left: 5px solid var(--red);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 14px 0 0;
+      font-weight: 700;
+      color: #2d1115;
+    }
+    .model {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .step {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 16px 16px 60px;
+      background: #ffffff;
+    }
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 850;
+    }
+    .step-title {
+      font-weight: 850;
+      margin-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f8fafc;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      font-size: 12px;
+      font-weight: 850;
+    }
+    .proof-name {
+      font-weight: 850;
+      color: var(--navy);
+    }
+    .metric {
+      color: var(--green);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .script {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 15px;
+    }
+    .script p {
+      margin-bottom: 10px;
+    }
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+      padding: 14px 0 0;
+    }
+    @media (max-width: 900px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .brand-row { align-items: flex-start; flex-direction: column; }
+      .doc-meta { text-align: left; }
+      .hero-grid, .three-col, .two-col { grid-template-columns: 1fr; }
+      section { padding: 19px; }
+      table { font-size: 13px; }
+      th, td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="brand-row">
+        <div class="logo-box">
+          <img alt="Prospect Engine" src="data:image/png;base64,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">
+        </div>
+        <div class="doc-meta">Prepared for Alek Ri conversation<br>August 3, 2026</div>
+      </div>
+      <div class="eyebrow">Private Equity Growth Report</div>
+      <h1>Building a Deal Sourcing Engine for Cross Border Company Acquisition</h1>
+      <p class="hero-copy">A practical strategy for finding founder led companies with international growth potential, opening trusted conversations, and converting warm replies into qualified acquisition or partnership discussions.</p>
+      <div class="hero-grid">
+        <div class="hero-stat"><div class="stat-num">97</div><div class="stat-label">case studies in PE knowledge base</div></div>
+        <div class="hero-stat"><div class="stat-num">39</div><div class="stat-label">opportunities in VC and PE case</div></div>
+        <div class="hero-stat"><div class="stat-num">16</div><div class="stat-label">meetings in asset management Asia case</div></div>
+        <div class="hero-stat"><div class="stat-num">7 to 8x</div><div class="stat-label">estimated ROI in Japan M&A case</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Executive Summary</h2>
+      <p class="lead">Based on Alek Ri's stated interest, the opportunity is not a standard cold email campaign. The better fit is a private equity deal sourcing and referral engine focused on companies with international growth potential.</p>
+      <div class="two-col">
+        <div>
+          <p>Alek appears to be looking for access to owners, co-founders, and larger company operators who may be relevant for acquisition, growth capital, partnership, market entry, or strategic referral routes. His specific interest in Pakistani or South Asian networks suggests that founder access and trusted introduction paths may be more valuable than raw lead volume.</p>
+          <p>Prospect Engine can position the work as a structured system: define the acquisition thesis, build a company and founder map, score the targets, start soft conversations, and move warm replies into qualified calls.</p>
+        </div>
+        <div class="mini-card">
+          <span class="badge">Core Recommendation</span>
+          <p><strong>Lead with deal sourcing, not lead generation.</strong></p>
+          <p>For private equity, the real value is not the number of emails sent. The value is the number of credible founder conversations, referral partners, and companies that match the buyer's thesis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Alek Is Likely Trying To Achieve</h2>
+      <div class="three-col">
+        <div class="mini-card">
+          <span class="badge blue">Primary Goal</span>
+          <strong>Qualified deal flow</strong>
+          <p>Access to companies he can buy, invest in, partner with, or bring into an international growth strategy.</p>
+        </div>
+        <div class="mini-card">
+          <span class="badge green">Profit Logic</span>
+          <strong>Buy, grow, and revalue</strong>
+          <p>Acquire or invest in a company, improve growth and market access, then earn from dividends, exit value, or success fees.</p>
+        </div>
+        <div class="mini-card">
+          <span class="badge gold">Trust Requirement</span>
+          <strong>Soft first conversation</strong>
+          <p>The first contact should not ask if someone wants to sell. It should open a serious growth, partnership, or strategic options discussion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>The Five Step Deal Sourcing Model</h2>
+      <div class="model">
+        <div class="step">
+          <div class="step-title">Define the acquisition thesis</div>
+          <div>Clarify target sectors, company size, geography, ownership type, desired deal structure, and what international growth potential means in practice.</div>
+        </div>
+        <div class="step">
+          <div class="step-title">Build the company and founder map</div>
+          <div>Identify owners, co-founders, family business operators, exporters, SaaS founders, manufacturing leaders, and referral partners in the chosen markets.</div>
+        </div>
+        <div class="step">
+          <div class="step-title">Score each target for fit and timing</div>
+          <div>Rank companies by growth signals, international readiness, founder reachability, industry fit, ownership profile, and likely reason to talk now.</div>
+        </div>
+        <div class="step">
+          <div class="step-title">Start trusted conversations</div>
+          <div>Use LinkedIn, referral routes, and carefully controlled email where appropriate. The message should feel strategic, specific, and reputation safe.</div>
+        </div>
+        <div class="step">
+          <div class="step-title">Convert interest into qualified calls</div>
+          <div>Classify replies, separate direct opportunities from referral partners, manage follow ups, and hand Alek serious calls with context.</div>
+        </div>
+      </div>
+      <div class="callout">The campaign KPI should be qualified founder conversations and referral partners, not message volume.</div>
+    </section>
+
+    <section>
+      <h2>Most Relevant Prospect Engine Proof</h2>
+      <table>
+        <tr>
+          <th>Case Study</th>
+          <th>Why It Matters For Alek</th>
+          <th>Measured Outcome</th>
+          <th>How To Use It In Conversation</th>
+        </tr>
+        <tr>
+          <td><div class="proof-name">Naciel Holdings, Japan</div><div class="muted">M&A, franchising, recruitment</div></td>
+          <td>Directly relevant to cross border M&A. The campaign targeted overseas buyers, sellers, F&B groups, private equity firms, investment banks, and franchise partners.</td>
+          <td><span class="metric">20.7%</span> acceptance<br><span class="metric">21.8%</span> reply<br><span class="metric">9</span> qualified leads<br><span class="metric">7 to 8x</span> estimated ROI</td>
+          <td>"We have direct proof in a Japanese M&A and franchising campaign, not only normal B2B lead generation."</td>
+        </tr>
+        <tr>
+          <td><div class="proof-name">Hasan.VC / Ethis, Singapore</div><div class="muted">Venture capital and private equity principals</div></td>
+          <td>Closest proof for VC and PE style trust building across borders. The campaign focused on investor attention and qualified opportunity creation.</td>
+          <td><span class="metric">38.4%</span> connection<br><span class="metric">29.8%</span> reply<br><span class="metric">39</span> opportunities<br><span class="metric">128%</span> KPI achieved</td>
+          <td>"We have worked inside the venture capital and private equity category, where trust and fit matter more than volume."</td>
+        </tr>
+        <tr>
+          <td><div class="proof-name">The 79th Group, UK</div><div class="muted">Asset management expanding into Asia</div></td>
+          <td>Strong fit for financial services, investor trust, Asia expansion, senior executive outreach, and overcoming regulatory or security concerns.</td>
+          <td><span class="metric">39.1%</span> acceptance<br><span class="metric">48.2%</span> reply<br><span class="metric">53</span> leads<br><span class="metric">16</span> meetings</td>
+          <td>"We helped an asset management company open senior conversations in Asian markets where trust was the main barrier."</td>
+        </tr>
+        <tr>
+          <td><div class="proof-name">TradeTogether, Singapore</div><div class="muted">Financial services and wealth audience</div></td>
+          <td>Relevant for wealth management, accredited investor style audiences, APAC markets, and high trust financial messaging.</td>
+          <td><span class="metric">4,300+</span> people targeted<br><span class="metric">40%</span> acceptance<br><span class="metric">31%</span> reply<br><span class="metric">50+</span> SQLs</td>
+          <td>"We understand financial services audiences and how to make outreach feel serious instead of promotional."</td>
+        </tr>
+        <tr>
+          <td><div class="proof-name">BDG Consulting, Germany</div><div class="muted">Current market entry client</div></td>
+          <td>Relevant to Alek's international growth angle. BDG helps companies expand between Germany, Europe, India, the UK, and Eastern Europe.</td>
+          <td><span class="metric">Active</span> Germany and Europe market entry network project</td>
+          <td>"We also understand the market entry side, which is often how a buyer creates value after acquisition."</td>
+        </tr>
+        <tr>
+          <td><div class="proof-name">JapanIQ, Japan</div><div class="muted">Market entry and international expansion</div></td>
+          <td>Relevant to Western brands entering Japan, buyer networks, distributor access, and operational market entry.</td>
+          <td><span class="metric">Strategic</span> market entry proof point</td>
+          <td>"We can support not only acquisition target sourcing, but also the growth story that makes a target more valuable."</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Recommended Pilot Structure</h2>
+      <div class="two-col">
+        <div>
+          <h3>30 Day Pilot</h3>
+          <ul>
+            <li>Choose one thesis such as South Asian founder led companies with international expansion potential.</li>
+            <li>Select two or three sectors where Alek has real appetite.</li>
+            <li>Build a vetted list of companies, founders, owners, and referral partners.</li>
+            <li>Prepare soft outreach that opens a strategic conversation without sounding like a forced acquisition pitch.</li>
+            <li>Run controlled outreach and classify all replies into direct opportunity, referral partner, later, not fit, or not interested.</li>
+          </ul>
+        </div>
+        <div class="mini-card">
+          <span class="badge green">Pilot Success Metrics</span>
+          <ul>
+            <li>Qualified founder conversations</li>
+            <li>Referral partners with access to owners</li>
+            <li>Companies matching the acquisition thesis</li>
+            <li>Clear market response by sector</li>
+            <li>Documented objections and next best segment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Compliance And Reputation Safety</h2>
+      <p class="lead">Alek specifically asked about strict email rules and laws. This should be treated as a trust test, not a small operational question.</p>
+      <div class="three-col">
+        <div class="mini-card">
+          <strong>Email control</strong>
+          <p>Use accurate sender identity, relevant business targeting, clear subject lines, opt out handling, and immediate suppression after objection.</p>
+        </div>
+        <div class="mini-card">
+          <strong>LinkedIn control</strong>
+          <p>Keep activity measured, human reviewed, and relationship led. Avoid high volume behaviour that harms the buyer's reputation.</p>
+        </div>
+        <div class="mini-card">
+          <strong>Message control</strong>
+          <p>No hard ask to sell the company in the first message. Start with growth, strategic options, partnership, or expansion relevance.</p>
+        </div>
+      </div>
+      <div class="callout">For private equity, reputation protection is part of the product.</div>
+    </section>
+
+    <section>
+      <h2>Meeting Talk Track</h2>
+      <div class="script">
+        <p><strong>Open:</strong> "From your message, I understood that you are looking for companies with international growth potential, and possibly founder or co-founder networks in Pakistan or South Asia. Is that correct?"</p>
+        <p><strong>Position:</strong> "For your case, I would not recommend a normal lead generation campaign. I would build a deal sourcing and referral engine around your acquisition thesis."</p>
+        <p><strong>Proof:</strong> "We have seen this from three sides. Naciel Holdings was direct M&A and franchising in Japan. Hasan.VC was venture capital and private equity style investor outreach. The 79th Group was asset management expanding into Asia. BDG and JapanIQ add the market entry angle."</p>
+        <p><strong>Close:</strong> "If we know exactly what a good company looks like for you, we can build a repeatable system to find those companies, reach the owners, and turn warm replies into serious conversations."</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Discovery Questions To Ask Alek</h2>
+      <table>
+        <tr>
+          <th>Topic</th>
+          <th>Question</th>
+          <th>Reason</th>
+        </tr>
+        <tr>
+          <td>Thesis</td>
+          <td>What kind of companies are you trying to buy or invest in right now?</td>
+          <td>This defines the entire target list.</td>
+        </tr>
+        <tr>
+          <td>Deal type</td>
+          <td>Are you looking for majority acquisitions, minority stakes, partnerships, or referral opportunities?</td>
+          <td>The first message changes based on deal type.</td>
+        </tr>
+        <tr>
+          <td>Company size</td>
+          <td>What revenue, profit, employee size, or founder stage is ideal?</td>
+          <td>Prevents wasted calls with the wrong company size.</td>
+        </tr>
+        <tr>
+          <td>Growth signal</td>
+          <td>What tells you a company has international growth potential?</td>
+          <td>Examples may include export activity, foreign customers, product scalability, or weak overseas sales.</td>
+        </tr>
+        <tr>
+          <td>Network route</td>
+          <td>Do you want direct company owners first, or referral partners who know owners?</td>
+          <td>He mentioned referral engines, so this may be the strongest wedge.</td>
+        </tr>
+        <tr>
+          <td>First market</td>
+          <td>Should the first pilot focus on Pakistan, broader South Asia, or another region?</td>
+          <td>A narrow first market makes the pilot easier to measure.</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Important Positioning Guardrails</h2>
+      <ul>
+        <li>Do not say Prospect Engine already has a ready list of companies unless each company is validated.</li>
+        <li>Do not sell message volume. Sell vetted access to founders, owners, and referral partners.</li>
+        <li>Do not open conversations with "Do you want to sell your company?" That is too direct for most owners.</li>
+        <li>Do not promise acquisitions. Promise a controlled deal sourcing process and qualified conversations.</li>
+        <li>Use case studies carefully. Naciel and Hasan.VC are the closest. BDG and JapanIQ prove market entry logic, not private equity deal execution.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Recommended Next Step</h2>
+      <p class="lead">Offer Alek a focused strategy session after the meeting to define the first pilot thesis. The output should be a one page acquisition target profile and a proposed 30 day sourcing plan.</p>
+      <div class="callout">Best closing line: "You do not need a normal lead generation campaign. You need a trusted deal sourcing engine. That is what we should build first."</div>
+      <p class="muted">Prepared from Alek's stated LinkedIn conversation, Prospect Engine's DewX case study library, and current client knowledge. Public information on Alek was limited, so the report avoids assumptions about his exact fund, mandate, or acquisition criteria until confirmed in the meeting.</p>
+    </section>
+
+    <div class="footer">Prospect Engine | Private Equity Deal Sourcing Report | Internal review before client delivery</div>
+  </main>
+</body>
+</html>
